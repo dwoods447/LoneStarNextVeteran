@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @student_visit.student_id %>
+</p>
+
+<p>
+  <strong>Certifier:</strong>
+  <%= @student_visit.certifier_id %>
+</p>
+
+<p>
+  <strong>Issignedin:</strong>
+  <%= @student_visit.isSignedin %>
+</p>
+
+<p>
+  <strong>Service requested:</strong>
+  <%= @student_visit.service_requested %>
+</p>
+
+<%= link_to 'Edit', edit_student_visit_path(@student_visit) %> |
+<%= link_to 'Confirm', student_kiosk_index_path %>

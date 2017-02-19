@@ -1,0 +1,22 @@
+<h1 style="text-align: center;">Please Enter Your Information</h1>
+
+<%= render 'form', student: @student %>
+
+<%= link_to 'Cancel', student_kiosk_index_path %>
+
+<script>
+    $(document).ready(function(){
+
+        var $body = $('#body');
+
+        if(window.screen.width >= 0 && window.screen.width <= 1366){
+            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446053/projects-assets/aircraft-carrier-2-1366-768.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+        }
+        else{
+            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+        }
+
+
+
+    });
+</script>

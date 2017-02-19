@@ -1,0 +1,2 @@
+module FederalBenefitsHelper
+end

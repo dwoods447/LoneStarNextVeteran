@@ -1,0 +1,163 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<style>
+  #switchboard{
+    border: 1px solid #666;
+    height: 100%;
+    padding: 0px;
+    background-color: #3192DF;
+  }
+  .switchboard-header{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+   color: #fff;
+  }
+
+  .switchboard-users{
+    display: block;
+    list-style-type: none;
+    text-decoration:none !important;
+    margin: 6px;
+    padding:0.3em !important;
+
+  }
+  .switchboard-users li{
+    margin: 0.5em;
+    padding:0.5em;
+    border: 1px solid #C7C8CA;
+    background-color: #eee;
+  }
+  .switchboard-panel{
+    list-style-type: none;
+    display: block;
+    padding:0.5em !important;
+    margin: 11px;
+
+  }
+  .switchboard-header-container{
+    background-color: #214C7A;
+    padding: 0.5em;
+  }
+ .true{
+   background-color: green;
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border: 1px solid #000;
+ }
+
+ .false{
+   background-color: red;
+   display: inline-block;
+   width: 10px;
+   height: 10px;
+   border: 1px solid #000;
+ }
+
+ .lower-button{
+   display: inline-block;
+   margin: 13px;
+ }
+
+ th{
+   color: #fff;
+   font-weight: 600;
+   background-color: #214C7A;
+ }
+ .full-name{
+   color: #002953;
+   font-weight: 600;
+
+ }
+  .user-circle{
+    color: #002953;
+  }
+  .cert-status-button{
+    font-size: 1.3em;
+  }
+</style>
+
+<script>
+
+</script>
+<!--<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3"></div>
+  <div class="col-lg-9 col-md-9 col-sm-9">
+  <ul class="user-bar">
+    <li>Sign In</li>
+    <li>Sign Out</li>
+    <li>Set Available</li>
+    <li>Set Unavailable</li>
+  </ul>
+  </div>
+</div>-->
+<div class="row">
+  <div class="col-lg-3 col-md-3 col-sm-3" id="switchboard">
+      <div>
+      <div class="switchboard-header-container">
+      <h3 class="switchboard-header">User Switchboard</h3>
+      </div>
+      <ul class="switchboard-panel">
+        <li><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>&nbsp;Veteran Affair's Staff</li>
+
+
+
+
+        <ul class="switchboard-users">
+          <% @all_staff.each do |staff_member|%>
+              <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp; <%= certifier_status(staff_member.IsAvailable) %> &nbsp; <span class="badge"><%= student_visit_counts(staff_member.certifier_id) %></span>&nbsp;&nbsp;<span class="cert-status-button"><%=link_to edit_certifier_path(staff_member) do %><i class="fa fa-id-card-o" aria-hidden="true"></i><%end%></span></li>
+          <% end %>
+        </ul>
+
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-9 col-md-9 col-sm-9" id="students">
+
+    <table class="table table-bordered table-hover table-responsive">
+      <thead>
+      <tr>
+        <th>Student Name</th>
+        <th>Student ID</th>
+        <th>Certifying Official</th>
+        <th>Serivce Requested</th>
+
+      </tr>
+      </thead>
+      <tbody>
+      <% @student_visits.each do |student_visit| %>
+      <tr>
+        <td><%= student_visit.student.first_name %></td>
+        <td><%= student_visit.student_id %></td>
+        <td><%= student_visit.certifier.first_name %></td>
+        <td><%= student_visit.service_requested %></td>
+        <td><%= link_to 'Sign Out',  edit_student_visit_path(student_visit) %></td>
+        <td><%= link_to 'Remove', student_visits_destroy_path(student_visit) %></td>
+      </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div>
+    <ul class="lower-button-panel">
+      <li class="lower-button"><%=link_to students_new_path, :class => 'btn btn-default' do %> Add New Student&nbsp;<i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
+      <li class="lower-button"><%=link_to new_student_visit_path, :class => 'btn btn-default' do %> Sign Student In&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i><% end %></li></li>
+      <li class="lower-button"><%=link_to '', :class => 'btn btn-default' do %> Search Visitor&nbsp;<i class="fa fa-search" aria-hidden="true"></i><% end %></li></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<!-- This is a reload script that reloads the page every x seconds -->
+<script type="text/javascript">
+    setTimeout(function () { location.reload(true); }, 30000);
+</script>
+
+

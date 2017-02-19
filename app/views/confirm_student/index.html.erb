@@ -1,0 +1,94 @@
+
+
+<style>
+  /*
+  .page-header {
+    text-align: center;
+  }
+ .contact-card{
+   max-width: 522px;
+   margin: 0 auto;
+ }
+  .avatar{
+    font-size: 20em;
+   text-align: center;
+  }
+
+   .contact-list{
+     text-decoration: none;
+     margin: 0;
+     padding: 0;
+
+   }
+
+    .contact-item{
+      list-style: none;
+      padding: 1em;
+      border: 1px solid #eee;
+      color: #fff;
+      font-size:  1.6em;
+      font-weight: 600;
+      background-color: #003768;
+    }
+
+
+    .contact-name{
+      margin: 0;
+      margin-top: 25px;
+      background-color: #009edf;
+      padding: 0.5em;
+      text-align: center;
+    }
+    .contact-links-container{
+      max-width: 550px;
+      margin: 0 auto;
+    }
+
+     .link-list-item{
+      display: inline-block;
+       margin: 0.5em;
+     }
+
+*/
+
+</style>
+
+
+<h1 class="page-title">Confirm your contact info.</h1>
+
+<div class="contact-card">
+  <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+<h3 class="contact-name"><%= @student_first_name%>&nbsp;<%= @student_last_name %></h3>
+<ul class="contact-list">
+  <li class="contact-item">Student ID:  &nbsp; <%= @student_id %></li>
+  <li class="contact-item">Email: &nbsp; <%= @student_email %></li>
+  <li class="contact-item">Vestibulum at eros</li>
+</ul>
+<div class="contact-links-container">
+  <ul class="link-list">
+    <li class="link-list-item"> <%=link_to('Confirm this is\'nt you', student_kiosk_index_path,  :class => 'btn btn-default') %></li>
+    <li class="link-list-item"><%= link_to('Confirm this is you', new_student_visit_path, :class => 'btn btn-default') %></li>
+
+
+
+  </ul>
+</div>
+</div>
+
+
+<script>
+    $(document).ready(function(){
+
+        var $body = $('#body');
+
+        if(window.screen.width >= 0 && window.screen.width <= 1366){
+            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487443904/projects-assets/motor-lifeboat-2037942.jpg')", "background-repeat": "no-repeat", "background-position":  "left", "background-size": "cover"});
+        }
+        else{
+            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+        }
+
+
+
+    });
+</script>

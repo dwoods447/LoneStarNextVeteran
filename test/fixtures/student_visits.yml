@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  student_id: 1
+  certifier_id: 1
+  isSignedin: false
+  service_requested: MyString
+
+two:
+  student_id: 1
+  certifier_id: 1
+  isSignedin: false
+  service_requested: MyString

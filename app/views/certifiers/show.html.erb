@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Certifier:</strong>
+  <%= @certifier.certifier_id %>
+</p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @certifier.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @certifier.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @certifier.email %>
+</p>
+
+<p>
+  <strong>Benefit assigned:</strong>
+  <%= @certifier.benefit_assigned %>
+</p>
+
+<%= link_to 'Edit', edit_certifier_path(@certifier) %> |
+<%= link_to 'Back', certifiers_path %>

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  benefit_code: 1
+  benefit_name: MyString
+  benefit_type: MyString
+  benefit_type_federal: false
+
+two:
+  benefit_code: 1
+  benefit_name: MyString
+  benefit_type: MyString
+  benefit_type_federal: false
