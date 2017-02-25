@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require_self
+ *= require jquery-ui
  */
 body {
     color: #333;
@@ -99,18 +100,21 @@ a.visit-links{
     display: block;
     text-decoration: none;
     border: 3px solid #fff;
-    padding: 1em 3em;
+    padding: 0.9em 2.95em;
     margin: 1em;
     background-color: #B30838;
     color: #fff;
     text-align: center;
-    font-weight: 600;
+    font-weight: 400;
+    font-family: 'Francois One', sans-serif;
+    font-size: 1.1em;
 
 }
 
 a.visit-links:hover{
-    color: #a1d3ff;
+    color: #1B3884;
     background-color: #fff;
+    border: 2px solid #B30838;
 }
 
 
@@ -155,12 +159,20 @@ a.visit-links:hover{
     border-radius: 100%;
 }
 
-.stafflink{
-    margin: 0.5em auto;
-    max-width: 50px;
+.home-link-container{
+    margin: 0em auto;
+    max-width:  250px;
+}
+.home-link-container ul{
+    margin: 0;
+
+}
+.home-link-container ul li{
+   display: inline-block;
+   margin:  1em;
 }
 .stafflink a{
-    color: #fff;
+    color: #a1d3ff;
     font-weight: 800;
 
 }
@@ -221,6 +233,9 @@ CheckBoxes
 .back-link-style{
     text-decoration: none;
     font-size: 2em;
+    margin-top: 1em;
+    display: block;
+    color: #fff
 }
 
 
@@ -234,4 +249,8 @@ CheckBoxes
 
 
     text-align: center;
+}
+
+#dialog{
+    display: none;
 }

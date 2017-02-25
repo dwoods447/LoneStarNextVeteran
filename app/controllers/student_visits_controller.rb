@@ -6,6 +6,9 @@ class StudentVisitsController < ApplicationController
   # GET /student_visits
   # GET /student_visits.json
   def index
+
+    @username = session[:username]
+
     @this_staff_member = Certifier.where(:certifier_id => params[:certifier_id]).first
 
     @student_visits = StudentVisit.where(created_at: Time.parse("8:00am")..Time.parse("11:30pm")).where(:isSignedin => true)
@@ -25,13 +28,11 @@ class StudentVisitsController < ApplicationController
 
   # GET /student_visits/new
   def new
-
+    @student_visit = StudentVisit.new
+    @student_visit.build_reason_for_visit
     @return_student_id = session[:student_id]
     @new_student_id = session[:student_id]
-    @student_visit = StudentVisit.new
-
     @current_staff = Certifier.where(:IsAvailable => true)
-
     @all_staff = Certifier.all
   end
 
@@ -102,8 +103,9 @@ class StudentVisitsController < ApplicationController
       @student_visit = StudentVisit.find(params[:id])
     end
 
+
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_visit_params
-      params.require(:student_visit).permit(:student_id, :certifier_id, :isSignedin, :service_requested)
+      params.require(:student_visit).permit(:student_id, :certifier_id, :isSignedin, :service_requested, :visit_reason_id)
     end
 end

@@ -20,5 +20,22 @@
   <%= @student_visit.service_requested %>
 </p>
 
+<div id="dialog" title="Basic dialog">
+  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+</div>
+
 <%= link_to 'Edit', edit_student_visit_path(@student_visit) %> |
-<%= link_to 'Confirm', student_kiosk_index_path %>
+<%= link_to 'Confirm', student_kiosk_index_path, :id => 'confirm' %>
+
+<script>
+    $(function() {
+        $('#confirm').on('click', function(e){
+             e.preventDefault();
+            $("#dialog").toggle().dialog();
+            $('span.ui-button-icon-primary.ui-icon.ui-icon-closethick').on('click', function(){
+                window.location = "<%= student_kiosk_index_path %>";
+            });
+        });
+
+    });
+</script>

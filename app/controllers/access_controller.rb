@@ -1,6 +1,5 @@
 class AccessController < ApplicationController
-  def menu
-  end
+
 
   def login
   end
@@ -15,6 +14,7 @@ class AccessController < ApplicationController
 
     if authorized_user
       session[:user_id] = authorized_user.id
+      session[:username] = authorized_user.username
       flash[:notice] = "Login Successful"
       redirect_to(student_visits_path)
 
@@ -29,8 +29,9 @@ class AccessController < ApplicationController
   def logout
 
     session[:user_id] = nil
+    session[:username] = nil
     flash[:notice] =  "You are now logged out"
-    redirect_to(access_admin_path)
+    redirect_to(access_login_path)
 
   end
 

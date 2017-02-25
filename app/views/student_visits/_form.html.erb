@@ -4,9 +4,9 @@
   form{
     padding: 1.5em;
   }
-  .form-control{
-    padding: 1em;
-    width: 50%;
+  .form-control {
+    height: auto!important;
+    padding: 8px 12px !important;
   }
 
 </style>
@@ -109,9 +109,16 @@
       <span style="color: red;">***Must Be Checked</span>
     </div>
 
+
+
     <div class="field">
-      <%= f.label :service_requested %>
-      <%= f.text_field :service_requested, class: 'form-control' ,  placeholder: 'Service Requested'%>
+      <%= f.label 'Please Tell Us Your Reason For Visiting Today' %>
+      <%= f.collection_select :reason_for_visit_id, ReasonForVisit.all, :id, :visit_reason_name, {:include_blank => true} %>
+    </div>
+
+    <div class="field">
+      <%= f.label 'Addiotionl Notes' %>
+      <%= f.text_area :service_requested, rows: '5', cols: '10',  class: "form-control"%>
     </div>
 
     <div class="actions">

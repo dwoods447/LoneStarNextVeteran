@@ -82,9 +82,15 @@
 
   .submit-button{
     margin-top: 5px;
+    border: 1px solid #fff;
     border-radius: 0% !important;
+    border: 1px solid #fff;
   }
-
+  .submit-button:hover{
+    color:#fff;
+    background-color: darkblue;
+    border: 1px solid #1B3884;
+  }
  #student_campus_id{
    width: 200px !important;
  }
@@ -98,12 +104,22 @@
     background-color: #003768;
     */
     background-color: rgba(0, 55, 104, 0.8);
-    max-width: 31%;
+    max-width: 40%;
     padding: 1.8em;
   }
 </style>
+<div class="row">
+    <div class="col-lg-2 col-md-2 col-sm-2">
+      <%= link_to student_kiosk_index_path do %>
+          <span class="back-link-style"><strong>GO BACK</strong>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+      <%end %>
+    </div>
 
-<%= form_for(student ,  html: {class: "new-student"}) do |f| %>
+
+  <div class="col-lg-10 col-md-10 col-sm-10">
+    <h1 style="text-align: center; color: #fff; font-weight: 600; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;">Please Enter Your Information</h1>
+
+    <%= form_for(student ,  html: {class: "new-student"}) do |f| %>
   <% if student.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(student.errors.count, "error") %> prohibited this student from being saved:</h2>
@@ -121,7 +137,7 @@
       <div class="cols-sm-10">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-address-card-o" aria-hidden="true"></i></span>
-           <%= f.number_field :student_id, class: 'form-control' %>
+           <%= f.number_field :student_id, class: 'form-control', placeholder: 'Enter Your Student ID#' %>
         </div>
       </div>
     </div>
@@ -140,7 +156,7 @@
       <div class="cols-sm-10">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-           <%= f.text_field :first_name, class: 'form-control'%>
+           <%= f.text_field :first_name, class: 'form-control', placeholder: 'Enter Your First Name' %>
         </div>
       </div>
   </div>
@@ -150,7 +166,7 @@
       <div class="cols-sm-10">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-    <%= f.text_field :last_name, class: 'form-control' %>
+    <%= f.text_field :last_name, class: 'form-control', placeholder: 'Enter Your Last Name' %>
         </div>
       </div>
   </div>
@@ -160,7 +176,7 @@
       <div class="cols-sm-10">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-phone" aria-hidden="true"></i></span>
-    <%= f.text_field :phone, class: 'form-control' %>
+    <%= f.text_field :phone, class: 'form-control', placeholder: 'Enter your Phone Number ex.800-555-5555' %>
         </div>
       </div>
   </div>
@@ -170,7 +186,7 @@
       <div class="cols-sm-10">
         <div class="input-group">
           <span class="input-group-addon"><i class="fa fa-envelope" aria-hidden="true"></i></span>
-    <%= f.text_field :email, class: 'form-control'%>
+    <%= f.text_field :email, class: 'form-control', placeholder: 'Enter your Email Address'%>
         </div>
       </div>
   </div>
@@ -199,3 +215,11 @@
   </div>
  </div>
 <% end %>
+</div>
+</div>
+<script>
+    window.addEventListener('pageshow', function(event) {
+        console.log('pageshow:');
+        console.log(event);
+    });
+</script>

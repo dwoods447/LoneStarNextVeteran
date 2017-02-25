@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-
-
 
 <style>
   #switchboard{
@@ -25,7 +21,7 @@
 
   }
   .switchboard-users li{
-    margin: 0.5em;
+    margin: 0.5em auto;
     padding:0.5em;
     border: 1px solid #C7C8CA;
     background-color: #eee;
@@ -36,6 +32,10 @@
     padding:0.5em !important;
     margin: 11px;
 
+  }
+
+  .switchboard-group{
+    font-family: 'Francois One', sans-serif;
   }
   .switchboard-header-container{
     background-color: #214C7A;
@@ -78,6 +78,16 @@
   .cert-status-button{
     font-size: 1.3em;
   }
+
+  table{
+    font-size: 0.8em !important;
+    padding:  0.2em !important;
+  }
+
+  table td{
+    font-size: 0.98em !important;
+    padding:  0.2em !important;
+  }
 </style>
 
 <script>
@@ -94,6 +104,22 @@
   </ul>
   </div>
 </div>-->
+
+<!-- Begin Flash Notice -->
+<div class="row">
+
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <% if !flash[:notice].blank? %>
+
+        <div class="notice" >
+          <h4 style="font-weight: 400; text-align: center;"><%= flash[:notice] %></h4>
+        </div>
+
+    <% end %>
+  </div>
+</div>
+
+<!-- End Flash Notice -->
 <div class="row">
   <div class="col-lg-3 col-md-3 col-sm-3" id="switchboard">
       <div>
@@ -101,7 +127,7 @@
       <h3 class="switchboard-header">User Switchboard</h3>
       </div>
       <ul class="switchboard-panel">
-        <li><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>&nbsp;Veteran Affair's Staff</li>
+        <li class="switchboard-group"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>&nbsp;Veteran Affair's Staff</li>
 
 
 
@@ -123,16 +149,22 @@
         <th>Student Name</th>
         <th>Student ID</th>
         <th>Certifying Official</th>
-        <th>Serivce Requested</th>
+        <th>Federal Benefit</th>
+        <th>State Benefit</th>
+        <th>Reason For Visit</th>
+        <th>Additional Notes</th>
 
       </tr>
       </thead>
-      <tbody>
+      <tbody id="studentRow">
       <% @student_visits.each do |student_visit| %>
       <tr>
-        <td><%= student_visit.student.first_name %></td>
+        <td><%= student_visit.student.fullname%></td>
         <td><%= student_visit.student_id %></td>
-        <td><%= student_visit.certifier.first_name %></td>
+        <td><%= student_visit.certifier.set_fullname %></td>
+        <td><%= student_visit.student.federal_benefit.benefit_name %></td>
+        <td><%= student_visit.student.state_benefit.benefit_name %></td>
+        <td><%= student_visit.reason_for_visit.visit_reason_name %></td>
         <td><%= student_visit.service_requested %></td>
         <td><%= link_to 'Sign Out',  edit_student_visit_path(student_visit) %></td>
         <td><%= link_to 'Remove', student_visits_destroy_path(student_visit) %></td>
@@ -145,9 +177,10 @@
 
   <div>
     <ul class="lower-button-panel">
+      <li class="lower-button"><%=link_to admin_search_students_index_path, :class => 'btn btn-default' do %> Search Visitor&nbsp;<i class="fa fa-search" aria-hidden="true"></i><% end %></li></li>
       <li class="lower-button"><%=link_to students_new_path, :class => 'btn btn-default' do %> Add New Student&nbsp;<i class="fa fa-plus" aria-hidden="true"></i><% end %></li>
       <li class="lower-button"><%=link_to new_student_visit_path, :class => 'btn btn-default' do %> Sign Student In&nbsp;<i class="fa fa-calendar-check-o" aria-hidden="true"></i><% end %></li></li>
-      <li class="lower-button"><%=link_to '', :class => 'btn btn-default' do %> Search Visitor&nbsp;<i class="fa fa-search" aria-hidden="true"></i><% end %></li></li>
+
     </ul>
   </div>
 </div>
@@ -161,3 +194,36 @@
 </script>
 
 
+<!-- This code is supposed to check for elements added to the page but doesnt work -->
+<!--<script>
+  $(document).ready(function () {
+
+      var oldChildNodesLength = $('#studentRow').children().length;
+
+      $(document).on('load',  function(){
+          var currentChildNodesLength = $('#studentRow').children().length;
+
+          if(currentChildNodesLength > oldChildNodesLength){
+              alert("Something Changed");
+              currentChildNodesLength = currentChildNodesLength + oldChildNodesLength;
+              console.log(currentChildNodesLength);
+          }
+
+      });
+
+
+  });
+
+
+   /* var $currentChildNodesLength = */
+
+
+   function checkDOMChange()
+{
+    // check for any new element being inserted here,
+    // or a particular node being modified
+
+    // call the function again after 100 milliseconds
+    setTimeout( checkDOMChange, 100 );
+}
+</script>-->

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170219074421) do
+ActiveRecord::Schema.define(version: 20170225190231) do
 
   create_table "campuses", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "campus_id"
@@ -49,6 +49,14 @@ ActiveRecord::Schema.define(version: 20170219074421) do
     t.index ["federal_benefit_id"], name: "index_federal_benefits_on_federal_benefit_id", using: :btree
   end
 
+  create_table "reason_for_visits", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.integer  "reason_for_visit_id"
+    t.string   "visit_reason_name"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.index ["reason_for_visit_id"], name: "index_reason_for_visits_on_reason_for_visit_id", using: :btree
+  end
+
   create_table "state_benefits", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "state_benefit_id"
     t.string   "benefit_name"
@@ -60,10 +68,11 @@ ActiveRecord::Schema.define(version: 20170219074421) do
   create_table "student_visits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
     t.integer  "student_id"
     t.integer  "certifier_id"
-    t.boolean  "isSignedin",        default: true
-    t.string   "service_requested"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.boolean  "isSignedin",                        default: true
+    t.text     "service_requested",   limit: 65535
+    t.datetime "created_at",                                       null: false
+    t.datetime "updated_at",                                       null: false
+    t.integer  "reason_for_visit_id"
     t.index ["certifier_id"], name: "index_student_visits_on_certifier_id", using: :btree
     t.index ["student_id"], name: "index_student_visits_on_student_id", using: :btree
   end
@@ -79,6 +88,17 @@ ActiveRecord::Schema.define(version: 20170219074421) do
     t.datetime "updated_at",         null: false
     t.integer  "federal_benefit_id"
     t.integer  "state_benefit_id"
+  end
+
+  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["username"], name: "index_users_on_username", using: :btree
   end
 
 end

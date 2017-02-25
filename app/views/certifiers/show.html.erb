@@ -25,5 +25,12 @@
   <%= @certifier.benefit_assigned %>
 </p>
 
+
+<p>
+  <strong>Available:</strong>
+  <%= @certifier.IsAvailable %>
+</p>
+
+
 <%= link_to 'Edit', edit_certifier_path(@certifier) %> |
 <%= link_to 'Back', certifiers_path %>

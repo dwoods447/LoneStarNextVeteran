@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+
+
+  get 'users/index'
+
+  get 'users/show'
+
+  get 'users/new'
+
+  get 'users/edit'
+
+  get 'users/update'
+
   get 'state_benefits/index'
 
   get 'federal_benefits/index'
@@ -46,10 +58,9 @@ Rails.application.routes.draw do
 
   ############################ Login Logout Functionality ##########################3
 
-  get 'access/menu'
   get 'access/login'
   get  'access/logout'
-  get 'admin', :to =>  'access#menu'
+  get 'admin', :to =>  'student_visits#index'
   post 'access/attempt_login'
 
 
@@ -62,7 +73,14 @@ Rails.application.routes.draw do
   post 'search_students/findStudent'
   get 'search_students/index'
 
+########################### Certifer Student Search Functionality ##################################################
+  get 'admin_search_students/index'
+  post 'admin_search_students/search_student'
+  #get 'admin_search_students/show'
 
+  #get 'admin_search_students/edit'
+
+ # get 'admin_search_students/update'
 
 ########################## Student Kiosk #########################################
 

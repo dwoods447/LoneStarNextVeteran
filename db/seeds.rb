@@ -117,4 +117,25 @@ end
 
 
 
+
+
 =end
+
+StudentVisit.delete_all
+
+
+
+student_visits_info =[
+
+ [7101357, 7101357, true, "I need something", 1],
+ [7195584, 7101357, true, "I need something else", 1],
+
+]
+
+student_visit = []
+
+
+student_visits_info.each do |student_id, certifier_id, issignedin, service_requested, visit_reason_id|
+  student_visit  << StudentVisit.create(student_id: student_id, certifier_id: certifier_id,  isSignedin:  issignedin, service_requested: service_requested, visit_reason_id: visit_reason_id)
+end
+

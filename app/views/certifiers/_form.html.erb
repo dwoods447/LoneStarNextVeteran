@@ -42,6 +42,20 @@
       <%= f.file_field :avatar %>
     </div>
 
+    <div class="field">
+      <%= f.label 'Available' %>
+      <ul>
+      <li style="display: inline-block">
+      <%= f.radio_button :IsAvailable, true, :checked => true %>
+      <%= label :IsAvailable_yes, 'Yes' %>
+      </li>
+      <li style="display: inline-block">
+      <%= f.radio_button :IsAvailable, false %>
+      <%= label :IsAvailable_no, 'No' %>
+      </li>
+      </ul>
+    </div>
+
 
     <div class="actions">
     <%= f.submit %>

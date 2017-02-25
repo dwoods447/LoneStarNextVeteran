@@ -6,4 +6,8 @@ class Student < ApplicationRecord
 
    has_many :student_visits
    has_many :certifiers, through: :student_visits
+
+  def fullname
+    "#{first_name} #{last_name}"
+  end
 end
