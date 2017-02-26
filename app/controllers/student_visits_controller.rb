@@ -106,6 +106,6 @@ class StudentVisitsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_visit_params
-      params.require(:student_visit).permit(:student_id, :certifier_id, :isSignedin, :service_requested, :visit_reason_id)
+      params.require(:student_visit).permit(:student_id, :certifier_id, :isSignedin, :service_requested, :reason_for_visit_id)
     end
 end

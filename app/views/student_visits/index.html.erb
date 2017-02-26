@@ -85,8 +85,9 @@
   }
 
   table td{
-    font-size: 0.98em !important;
-    padding:  0.2em !important;
+    font-size: 1em !important;
+    padding:  0.5em !important;
+
   }
 </style>
 
@@ -162,10 +163,10 @@
         <td><%= student_visit.student.fullname%></td>
         <td><%= student_visit.student_id %></td>
         <td><%= student_visit.certifier.set_fullname %></td>
-        <td><%= student_visit.student.federal_benefit.benefit_name %></td>
-        <td><%= student_visit.student.state_benefit.benefit_name %></td>
-        <td><%= student_visit.reason_for_visit.visit_reason_name %></td>
-        <td><%= student_visit.service_requested %></td>
+        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.federal_benefit.benefit_name %>"><%= student_visit.student.federal_benefit.benefit_name %></td>
+        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.state_benefit.benefit_name %>"><%= student_visit.student.state_benefit.benefit_name %></td>
+        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.reason_for_visit.visit_reason_name %>"><%= student_visit.reason_for_visit.visit_reason_name %></td>
+        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 140px;" title="<%= student_visit.service_requested %>"><%= student_visit.service_requested %></td>
         <td><%= link_to 'Sign Out',  edit_student_visit_path(student_visit) %></td>
         <td><%= link_to 'Remove', student_visits_destroy_path(student_visit) %></td>
       </tr>
@@ -173,7 +174,11 @@
       </tbody>
     </table>
   </div>
-
+  <script>
+      $( function() {
+          $( document ).tooltip();
+      } );
+  </script>
 
   <div>
     <ul class="lower-button-panel">

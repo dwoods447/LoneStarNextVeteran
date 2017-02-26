@@ -222,7 +222,8 @@ CheckBoxes
 }
 
 #student_id{
-    padding: 2em;
+    font-size: 2em;
+    padding: 1.1099em;
 }
 #submit{
     background-color: #B30838;
