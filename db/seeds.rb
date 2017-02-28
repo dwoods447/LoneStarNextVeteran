@@ -15,8 +15,21 @@ Certifier.delete_all
 Student.delete_all
 StudentVisit.delete_all
 User.delete_all
+ReasonForVisit.delete_all
 
 
+
+reason_for_visit = [
+
+    [1, "I changed my degree plan"],
+    [2, "I added a class or classes"],
+    [3, "I dropped a class or classes"],
+    [4, "I didn't recieve full monthly stipend"],
+    [5, "I am a new student and need clarification on how to get started using benefits"],
+    [6, "I need to turn in required documents"],
+    [7, "Other not listed"]
+
+]
 
 user_info = [
 
@@ -99,14 +112,18 @@ student_visits_info =[
 ]
 
 user = []
-
 campus = []
 students = []
 state_benefit = []
 federal_benefit = []
 certifier = []
 student_visit = []
+reason = []
 
+
+reason_for_visit.each do |reason_for_visit_id, visit_reason_name|
+  reason << ReasonForVisit.create(reason_for_visit_id: reason_for_visit_id, visit_reason_name: visit_reason_name)
+end
 user_info.each do |first_name, last_name, email_addr, username, password |
  user << User.create(first_name: first_name, last_name: last_name, email: email_addr, username: username, password: password)
 end
