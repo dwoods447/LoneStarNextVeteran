@@ -1,5 +1,10 @@
 class StudentVisitsController < ApplicationController
+
+  before_action :confirm_logged_in, :only => [:index]
+
+
   before_action :set_student_visit, only: [:show, :edit, :update, :destroy]
+
 
   layout 'kiosk', :only => [:new]
 
@@ -54,7 +59,7 @@ class StudentVisitsController < ApplicationController
 
     respond_to do |format|
       if @student_visit.save
-        format.html { redirect_to @student_visit, notice: 'Student visit was successfully created.' }
+        format.html { redirect_to @student_visit }
         format.json { render :show, status: :created, location: @student_visit }
 
 
@@ -65,6 +70,7 @@ class StudentVisitsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @student_visit.errors, status: :unprocessable_entity }
+
       end
     end
   end
@@ -97,7 +103,20 @@ class StudentVisitsController < ApplicationController
     end
   end
 
+
+
   private
+  def confirm_logged_in
+    unless session[:user_id]
+      flash[:notice] = "Please Login"
+      redirect_to(access_login_path)
+    end
+  end
+
+
+
+  private
+
     # Use callbacks to share common setup or constraints between actions.
     def set_student_visit
       @student_visit = StudentVisit.find(params[:id])
@@ -108,4 +127,8 @@ class StudentVisitsController < ApplicationController
     def student_visit_params
       params.require(:student_visit).permit(:student_id, :certifier_id, :isSignedin, :service_requested, :reason_for_visit_id)
     end
+
+
+
 end
+

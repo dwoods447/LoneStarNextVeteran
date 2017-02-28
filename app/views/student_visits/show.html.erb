@@ -1,40 +1,45 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Student:</strong>
-  <%= @student_visit.student_id %>
-</p>
 
-<p>
-  <strong>Certifier:</strong>
-  <%= @student_visit.certifier_id %>
-</p>
-
-<p>
-  <strong>Issignedin:</strong>
-  <%= @student_visit.isSignedin %>
-</p>
-
-<p>
-  <strong>Service requested:</strong>
-  <%= @student_visit.service_requested %>
-</p>
-
-<div id="dialog" title="Basic dialog">
-  <p>This is the default dialog which is useful for displaying information. The dialog window can be moved, resized and closed with the 'x' icon.</p>
+<div class="contact-card">
+  <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+  <h3 class="contact-name"><%= @student_visit.student.fullname %></h3>
+  <ul class="contact-list">
+    <li class="contact-item">Speak with:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
+    <li class="contact-item">Reason For Visit:  &nbsp;  <%= @student_visit.service_requested %></li>
+  </ul>
 </div>
 
-<%= link_to 'Edit', edit_student_visit_path(@student_visit) %> |
-<%= link_to 'Confirm', student_kiosk_index_path, :id => 'confirm' %>
+
+<div class="contact-links-container">
+  <ul class="link-list">
+    <li class="link-list-item"><%= link_to('Sign Out', student_kiosk_index_path, :class => 'btn btn-default') %></li>
+    <li class="link-list-item"><%= link_to('Confirm', student_kiosk_index_path, :class => 'btn btn-default', :id => 'confirm') %></li>
+  </ul>
+</div>
+
+
+<div id="dialog" title="Success, Thank You!">
+  <p>Thank you <%= "#{@student_visit.student.first_name}" %>  for providing that information. Please have a seat and <%= "#{@student_visit.certifier.set_fullname}" %> will be with you shortly.</p>
+</div>
 
 <script>
     $(function() {
         $('#confirm').on('click', function(e){
-             e.preventDefault();
+            e.preventDefault();
             $("#dialog").toggle().dialog();
+            var redirect = setTimeout(redirectAfter13sec, 13000);
+
             $('span.ui-button-icon-primary.ui-icon.ui-icon-closethick').on('click', function(){
                 window.location = "<%= student_kiosk_index_path %>";
             });
+
+
+            function redirectAfter13sec() {
+                window.location = "<%= student_kiosk_index_path %>";
+                clearTimeout(redirect);
+            }
+
         });
 
     });

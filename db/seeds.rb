@@ -6,13 +6,15 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-=begin
+
 
 Campus.delete_all
 FederalBenefit.delete_all
 StateBenefit.delete_all
 Certifier.delete_all
 Student.delete_all
+StudentVisit.delete_all
+
 
 
 
@@ -68,30 +70,42 @@ students_info = [
 
 certifiers_info =[
 
-    [7101357, "Natasha", "Cornu", "Natasha.Cornbu@lonestar.edu", "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true ],
-    [7001121, "Sequoria", "Brown", "Sequoria.Brown@lonestar.edu", "Tuition Assistance" , true],
-    [7251151, "Claudia", "Greenhaw", "Claudia.Greenhaw@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true],
-    [7001151, "Patricia 'Trish'", "Obrien", "Particia.Obrien@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true],
-    [7229151, "Alexis", "Davis", "Alexis.C.Davis@LoneStar.edu" , "Coordinator II", true],
-    [7146151, "Siara", "McMahon", "Siara.L.McMahon2@LoneStar.edu" , "Program Manager", true],
-    [7111651, "Steven", "Hall", "Steven.L.Hall @LoneStar.edu" , "System Director of Veteran Affairs", false],
-    [7311651, "Lynda", "Nguyen", "Lynda.Nguyen@LoneStar.edu" , "Hazelwood Exemption", true],
+    [7101357, "Natasha", "Cornu", "Natasha.Cornbu@lonestar.edu", "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true, "./assets/images/sample.png" ],
+    [7001121, "Sequoria", "Brown", "Sequoria.Brown@lonestar.edu", "Tuition Assistance" , true, "./assets/images/sample.png"],
+    [7251151, "Claudia", "Greenhaw", "Claudia.Greenhaw@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true,  "./assets/images/sample.png"],
+    [7001151, "Trish", "Obrien", "Particia.Obrien@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true, "./assets/images/sample.png"],
+    [7229151, "Alexis", "Davis", "Alexis.C.Davis@LoneStar.edu" , "Coordinator II", true, "./assets/images/sample.png"],
+    [7146151, "Siara", "McMahon", "Siara.L.McMahon2@LoneStar.edu" , "Program Manager", true, "./assets/images/sample.png"],
+    [7111651, "Steven", "Hall", "Steven.L.Hall @LoneStar.edu" , "System Director of Veteran Affairs", false, "./assets/images/sample.png" ],
+    [7311651, "Lynda", "Nguyen", "Lynda.Nguyen@LoneStar.edu" , "Hazelwood Exemption", true, "./assets/images/sample.png"],
 
 ]
 
+
+student_visits_info =[
+
+ [7101357, 7101357, true, "I need to change my degree plan", 1],
+ [7195584, 7101357, true, "I added GEOL 1303 ", 2],
+ [7108745, 7001151, true, "I dropped Math 1310", 3],
+ [7106965, 7146151, true, "I my BAH stiped was not the full amount", 4],
+ [7108745, 7001121, true, "I'm a new transfer student and i dont know what to do first.", 5],
+
+]
+
+
+
+campus = []
 students = []
 state_benefit = []
 federal_benefit = []
 certifier = []
-campus = []
+student_visit = []
 
 
 
 campus_info.each do |campus_id, campus_name|
   campus << Campus.create(campus_id: campus_id, campus_name: campus_name)
 end
-
-
 
 
 state_benefit_info.each do |state_benefit_id, benefit_name|
@@ -106,36 +120,20 @@ end
 
 
 
-students_info.each do |student_id, campus_id, first_name,  last_name, phone,  email|
-  students << Student.create(student_id: student_id, campus_id: campus_id, first_name: first_name, last_name: last_name,  phone: phone, email: email)
+students_info.each do |student_id, campus_id, first_name,  last_name, phone,  email, federal_benefit_id, state_benefit_id|
+  students << Student.create(student_id: student_id, campus_id: campus_id, first_name: first_name, last_name: last_name,  phone: phone, email: email, federal_benefit_id: federal_benefit_id, state_benefit_id: state_benefit_id)
 end
 
 
-certifiers_info.each do |certifier_id, first_name,  last_name, email, benefit_assigned, isavailable|
-  certifier  << Certifier.create(certifier_id: certifier_id,  first_name: first_name, last_name: last_name,  email: email, benefit_assigned: benefit_assigned, IsAvailable: isavailable)
+certifiers_info.each do |certifier_id, first_name,  last_name, email, benefit_assigned, isavailable, avatar|
+  certifier  << Certifier.create(certifier_id: certifier_id,  first_name: first_name, last_name: last_name,  email: email, benefit_assigned: benefit_assigned, IsAvailable: isavailable, avatar:  avatar)
 end
 
 
 
 
 
-=end
-
-StudentVisit.delete_all
-
-
-
-student_visits_info =[
-
- [7101357, 7101357, true, "I need something", 1],
- [7195584, 7101357, true, "I need something else", 1],
-
-]
-
-student_visit = []
-
-
-student_visits_info.each do |student_id, certifier_id, issignedin, service_requested, visit_reason_id|
-  student_visit  << StudentVisit.create(student_id: student_id, certifier_id: certifier_id,  isSignedin:  issignedin, service_requested: service_requested, visit_reason_id: visit_reason_id)
+student_visits_info.each do |student_id, certifier_id, issignedin, service_requested, reason_for_visit_id|
+  student_visit  << StudentVisit.create(student_id: student_id, certifier_id: certifier_id,  isSignedin:  issignedin, service_requested: service_requested, reason_for_visit_id: reason_for_visit_id)
 end
 

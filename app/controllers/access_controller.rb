@@ -1,6 +1,8 @@
 class AccessController < ApplicationController
 
 
+
+
   def login
   end
 
@@ -34,5 +36,9 @@ class AccessController < ApplicationController
     redirect_to(access_login_path)
 
   end
+
+
+
+
 
 end

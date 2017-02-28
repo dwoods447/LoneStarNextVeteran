@@ -23,7 +23,7 @@
   }
 </style>
 
-<%= form_for(student_visit) do |f| %>
+<%= form_for(student_visit, remote: true) do |f| %>
     <% if student_visit.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(student_visit.errors.count, "error") %> prohibited this student_visit from being saved:</h2>
@@ -40,12 +40,12 @@
       <%= f.label :student_id %>
 
       <%  if @return_student_id.present? %>
-          <%= f.number_field :student_id,:value => @return_student_id, class: 'form-control' , placeholder: 'Student ID' %>
+          <%= f.number_field :student_id,:value => @return_student_id, class: 'form-control' , placeholder: 'Student ID', :required => true %>
 
       <% elsif @new_student_id.present? %>
-          <%= f.number_field :student_id,:value => @new_student_id , class: 'form-control' , placeholder: 'Student ID' %>
+          <%= f.number_field :student_id,:value => @new_student_id , class: 'form-control' , placeholder: 'Student ID', :required => true%>
       <%else %>
-          <%= f.number_field :student_id,:value => @edit_student_id, class: 'form-control' , placeholder: 'Student ID' %>
+          <%= f.number_field :student_id,:value => @edit_student_id, class: 'form-control' , placeholder: 'Student ID', :required => true %>
       <%end%>
     </div>
 
@@ -90,23 +90,12 @@
           </table>
       <%end%>
     </div>
-
-
-
     <div class="[ form-group ]">
       <!--<input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />-->
-      <%= f.check_box :isSignedin,  :id= => "fancy-checkbox-default", :autocomplete => "off" %>
+      <%= f.check_box :isSignedin,  :id= => "fancy-checkbox-default", :autocomplete => "off", :"data-toggle"  => "toggle",   :"data-on" => "Sign In",  "data-off" => "Sign Out"%>
       <div class="[ btn-group ]">
-        <%= label_tag('fancy-checkbox-default', :class => "[ btn btn-default ]" ) do%>
-            <span class="[ glyphicon glyphicon-ok ]"></span>
-            <span> </span>
-        <%end%>
-        <%= label_tag('fancy-checkbox-default', :class => "[ btn btn-default active ]" ) do%>
-           I want to Sign In
-
-        <%end%>
       </div>
-      <span style="color: red;">***Must Be Checked</span>
+
     </div>
 
 
@@ -122,6 +111,8 @@
     </div>
 
     <div class="actions">
-      <%= f.submit %>
+      <%= f.submit 'Proceed', class: 'btn btn-default', style: "width: 350px;" %>
     </div>
 <% end %>
+
+

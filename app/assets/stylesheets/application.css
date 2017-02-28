@@ -240,6 +240,8 @@ CheckBoxes
 }
 
 
+
+
 .header-message{
     text-align: center;
 }
@@ -254,4 +256,12 @@ CheckBoxes
 
 #dialog{
     display: none;
+
+}
+
+
+.ui-widget-header{
+    padding: 1.3em 4em !important;
+    background: #1B3884 !important;
+    color: #fff !important;
 }

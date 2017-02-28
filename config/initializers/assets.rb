@@ -14,3 +14,7 @@ Rails.application.config.assets.version = '1.0'
 #Rails.application.config.assets.precompile += %w(fade.css)
 #Rails.application.config.assets.precompile += %w(base.css)
 #Rails.application.config.assets.precompile += %w(loading.css)
+
+#Rails.application.config.assets.precompile += %w(bootstrap-switch.min.css)
+#Rails.application.config.assets.precompile += %w(bootstrap-switch.less)
+#Rails.application.config.assets.precompile += %w(bootstrap-switch.min.js)

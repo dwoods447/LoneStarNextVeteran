@@ -17,7 +17,7 @@
     list-style-type: none;
     text-decoration:none !important;
     margin: 6px;
-    padding:0.3em !important;
+    padding:0.2em !important;
 
   }
   .switchboard-users li{
@@ -29,8 +29,8 @@
   .switchboard-panel{
     list-style-type: none;
     display: block;
-    padding:0.5em !important;
-    margin: 11px;
+    padding:0.6em !important;
+    margin: 9px;
 
   }
 
@@ -128,7 +128,7 @@
       <h3 class="switchboard-header">User Switchboard</h3>
       </div>
       <ul class="switchboard-panel">
-        <li class="switchboard-group"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>&nbsp;Veteran Affair's Staff</li>
+        <li class="switchboard-group"><i class="fa fa-address-book fa-2x" aria-hidden="true"></i>&nbsp;<span style="font-size: 1.335em;">Veteran Affair's Staff</span></li>
 
 
 
@@ -168,7 +168,6 @@
         <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.reason_for_visit.visit_reason_name %>"><%= student_visit.reason_for_visit.visit_reason_name %></td>
         <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 140px;" title="<%= student_visit.service_requested %>"><%= student_visit.service_requested %></td>
         <td><%= link_to 'Sign Out',  edit_student_visit_path(student_visit) %></td>
-        <td><%= link_to 'Remove', student_visits_destroy_path(student_visit) %></td>
       </tr>
       <% end %>
       </tbody>
