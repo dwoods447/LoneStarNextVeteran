@@ -14,9 +14,15 @@ StateBenefit.delete_all
 Certifier.delete_all
 Student.delete_all
 StudentVisit.delete_all
+User.delete_all
 
 
 
+user_info = [
+
+    ["User", "One", "user.one@email.com", "user1", "password"],
+    ["User", "Two", "user.two@email.com", "user2", "password"],
+]
 
 campus_info = [
     [1115, "LSC-CyFair"],
@@ -92,7 +98,7 @@ student_visits_info =[
 
 ]
 
-
+user = []
 
 campus = []
 students = []
@@ -101,7 +107,9 @@ federal_benefit = []
 certifier = []
 student_visit = []
 
-
+user_info.each do |first_name, last_name, email_addr, username, password |
+ user << User.create(first_name: first_name, last_name: last_name, email: email_addr, username: username, password: password)
+end
 
 campus_info.each do |campus_id, campus_name|
   campus << Campus.create(campus_id: campus_id, campus_name: campus_name)
