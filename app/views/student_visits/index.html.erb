@@ -1,4 +1,15 @@
+<style>
 
+  @keyframes nodeInserted {
+    from { opacity: 0.99; }
+    to { opacity: 1; }
+  }
+
+  #studentRow > tr {
+    animation-duration: 0.001s;
+    animation-name: nodeInserted;
+  }
+</style>
 <style>
   #switchboard{
     border: 1px solid #666;
@@ -198,36 +209,39 @@
 </script>
 
 
-<!-- This code is supposed to check for elements added to the page but doesnt work -->
-<!--<script>
-  $(document).ready(function () {
-
-      var oldChildNodesLength = $('#studentRow').children().length;
-
-      $(document).on('load',  function(){
-          var currentChildNodesLength = $('#studentRow').children().length;
-
-          if(currentChildNodesLength > oldChildNodesLength){
-              alert("Something Changed");
-              currentChildNodesLength = currentChildNodesLength + oldChildNodesLength;
-              console.log(currentChildNodesLength);
-          }
-
-      });
+<!-- This code checks for newly added elements and if found makes a doorbell noise -->
 
 
-  });
+<script>
+  var audioElement = document.createElement("audio");
+
+  audioElement.src = "http://res.cloudinary.com/dpwoods/video/upload/v1488506247/anmisation/doorbell.mp3"
+  audioElement.volume = 0.10;
+  audioElement.autoPaly = true;
+  audioElement.preload = true;
 
 
-   /* var $currentChildNodesLength = */
 
 
-   function checkDOMChange()
-{
-    // check for any new element being inserted here,
-    // or a particular node being modified
 
-    // call the function again after 100 milliseconds
-    setTimeout( checkDOMChange, 100 );
-}
-</script>-->
+
+
+
+    var insertListener = function(event){
+        if (event.animationName == "nodeInserted") {
+            // This is the debug for knowing our listener worked!
+            // event.target is the new node!
+            /*console.warn(alert("Another node has been inserted! "), event, event.target);*/
+            audioElement.play();
+        }
+    }
+
+    document.addEventListener("animationstart", insertListener, false); // standard + firefox
+    document.addEventListener("MSAnimationStart", insertListener, false); // IE
+    document.addEventListener("webkitAnimationStart", insertListener, false); // Chrome + Safari
+
+
+
+
+</script>
+

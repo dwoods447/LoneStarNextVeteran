@@ -37,16 +37,10 @@
     <% end %>
 
     <div class="field">
+
       <%= f.label :student_id %>
+      <%= f.number_field :student_id,:value => (@student_visit.student),  class: 'form-control' , placeholder: 'Student ID', :required => true %>
 
-      <%  if @return_student_id.present? %>
-          <%= f.number_field :student_id,:value => @return_student_id, class: 'form-control' , placeholder: 'Student ID', :required => true %>
-
-      <% elsif @new_student_id.present? %>
-          <%= f.number_field :student_id,:value => @new_student_id , class: 'form-control' , placeholder: 'Student ID', :required => true%>
-      <%else %>
-          <%= f.number_field :student_id,:value => @edit_student_id, class: 'form-control' , placeholder: 'Student ID', :required => true %>
-      <%end%>
     </div>
 
     <div class="field">
@@ -82,7 +76,7 @@
               <td >
                 <div class="checkbox">
                   <%= label "#{staff.certifier_id}" ,  "#{staff.set_fullname}" do %>
-                      <input type="radio" name="student_visit[<%= :certifier_id %>]" value=<%= staff.certifier_id %>>
+                      <input type="radio" name="student_visit[<%= :certifier_id %>]" value=<%= staff.certifier_id %> required="required">
                   <%end%>
                 </div>
               </td>
