@@ -3,9 +3,9 @@ module StudentVisitsHelper
     options[:true_text] ||= ''
     options[:false_text] ||= ''
     if boolean
-      content_tag(:span, options[:true_text], :class => 'true')
+      content_tag(:span, options[:true_text], :class => 'available')
     else
-      content_tag(:span, options[:false_text], :class => 'false')
+      content_tag(:span, options[:false_text], :class => 'unavailable')
     end
   end
 

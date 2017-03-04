@@ -100,6 +100,27 @@
     padding:  0.5em !important;
 
   }
+ .available:after{
+       content: "\f087";
+       font-family: FontAwesome;
+       font-style: normal;
+       font-weight: 600;
+       font-size: 1.2em;
+       text-decoration: inherit;
+       z-index: -1;
+       color :green;
+     }
+
+  .unavailable:after{
+    content: "\f088";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: inherit;
+    z-index: -1;
+    color: red;
+  }
 </style>
 
 <script>
@@ -146,7 +167,7 @@
 
         <ul class="switchboard-users">
           <% @all_staff.each do |staff_member|%>
-              <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp; <%= certifier_status(staff_member.IsAvailable) %> &nbsp; <span class="badge"><%= student_visit_counts(staff_member.certifier_id) %></span>&nbsp;&nbsp;<span class="cert-status-button"><%=link_to edit_certifier_path(staff_member) do %><i class="fa fa-id-card-o" aria-hidden="true"></i><%end%></span></li>
+              <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="availability"> <%= certifier_status(staff_member.IsAvailable) %></span> &nbsp; <span class="badge"><%= student_visit_counts(staff_member.certifier_id) %></span>&nbsp;&nbsp;<span class="cert-status-button"><%=link_to edit_certifier_path(staff_member) do %><i class="fa fa-id-card-o" aria-hidden="true"></i><%end%></span></li>
           <% end %>
         </ul>
 

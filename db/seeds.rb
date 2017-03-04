@@ -15,7 +15,7 @@ Certifier.delete_all
 Student.delete_all
 StudentVisit.delete_all
 User.delete_all
-ReasonForVisit.delete_allcls
+ReasonForVisit.delete_all
 
 
 
