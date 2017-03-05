@@ -16,7 +16,7 @@ class StudentVisitsController < ApplicationController
 
     @this_staff_member = Certifier.where(:certifier_id => params[:certifier_id]).first
 
-    @student_visits = StudentVisit.where(created_at: Time.parse("8:00am")..Time.parse("11:30pm")).where(:isSignedin => true)
+    @student_visits = StudentVisit.where(created_at: Time.parse("8:00am CST")..Time.parse("11:30pm CST")).where(:isSignedin => true)
     #@student_visits_count  = StudentVisit.where(created_at: Time.parse("8:00am")..Time.parse("11:30pm")).where(:isSignedin => true).count
     @current_staff = Certifier.where(:IsAvailable => true)
 
