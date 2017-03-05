@@ -15,7 +15,7 @@ module StudentVisitsHelper
 
      if certifier_id
 
-      StudentVisit.where(created_at: Time.parse("8:00am")..Time.parse("11:30pm")).where(:isSignedin => true).where(:certifier_id => certifier_id ).count
+      StudentVisit.where(created_at: Time.parse("8:00am CST")..Time.parse("11:30pm CST")).where(:isSignedin => true).where(:certifier_id => certifier_id ).count
      end
 
 
