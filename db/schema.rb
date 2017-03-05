@@ -12,7 +12,10 @@
 
 ActiveRecord::Schema.define(version: 20170225190231) do
 
-  create_table "campuses", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
+  create_table "campuses", id: false, force: :cascade do |t|
     t.integer  "campus_id"
     t.string   "campus_name"
     t.datetime "created_at",  null: false
@@ -20,7 +23,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["campus_id"], name: "index_campuses_on_campus_id", using: :btree
   end
 
-  create_table "certifier_statuses", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "certifier_statuses", id: false, force: :cascade do |t|
     t.integer  "status_id"
     t.string   "status"
     t.datetime "created_at", null: false
@@ -28,7 +31,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["status_id"], name: "index_certifier_statuses_on_status_id", using: :btree
   end
 
-  create_table "certifiers", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "certifiers", id: false, force: :cascade do |t|
     t.integer  "certifier_id"
     t.string   "first_name"
     t.string   "last_name"
@@ -41,7 +44,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["certifier_id"], name: "index_certifiers_on_certifier_id", using: :btree
   end
 
-  create_table "federal_benefits", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "federal_benefits", id: false, force: :cascade do |t|
     t.integer  "federal_benefit_id"
     t.string   "benefit_name"
     t.datetime "created_at",         null: false
@@ -49,7 +52,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["federal_benefit_id"], name: "index_federal_benefits_on_federal_benefit_id", using: :btree
   end
 
-  create_table "reason_for_visits", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "reason_for_visits", id: false, force: :cascade do |t|
     t.integer  "reason_for_visit_id"
     t.string   "visit_reason_name"
     t.datetime "created_at",          null: false
@@ -57,7 +60,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["reason_for_visit_id"], name: "index_reason_for_visits_on_reason_for_visit_id", using: :btree
   end
 
-  create_table "state_benefits", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "state_benefits", id: false, force: :cascade do |t|
     t.integer  "state_benefit_id"
     t.string   "benefit_name"
     t.datetime "created_at",       null: false
@@ -65,19 +68,19 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["state_benefit_id"], name: "index_state_benefits_on_state_benefit_id", using: :btree
   end
 
-  create_table "student_visits", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "student_visits", force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "certifier_id"
-    t.boolean  "isSignedin",                        default: true
-    t.text     "service_requested",   limit: 65535
-    t.datetime "created_at",                                       null: false
-    t.datetime "updated_at",                                       null: false
+    t.boolean  "isSignedin",          default: true
+    t.text     "service_requested"
+    t.datetime "created_at",                         null: false
+    t.datetime "updated_at",                         null: false
     t.integer  "reason_for_visit_id"
     t.index ["certifier_id"], name: "index_student_visits_on_certifier_id", using: :btree
     t.index ["student_id"], name: "index_student_visits_on_student_id", using: :btree
   end
 
-  create_table "students", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "students", id: false, force: :cascade do |t|
     t.integer  "student_id"
     t.integer  "campus_id"
     t.string   "first_name"
@@ -90,7 +93,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.integer  "state_benefit_id"
   end
 
-  create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email"
