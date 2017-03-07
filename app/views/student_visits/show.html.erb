@@ -1,28 +1,6 @@
 <p id="notice"><%= notice %></p>
 
 
-<div class="contact-card">
-  <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
-  <h3 class="contact-name"><%= @student_visit.student.fullname %></h3>
-  <ul class="contact-list">
-    <li class="contact-item">Speak with:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
-    <li class="contact-item">Reason For Visit:  &nbsp;  <%= @student_visit.service_requested %></li>
-  </ul>
-</div>
-
-
-<div class="contact-links-container">
-  <ul class="link-list">
-    <li class="link-list-item"><%= link_to('Sign Out', student_kiosk_index_path, :class => 'btn btn-default') %></li>
-    <li class="link-list-item"><%= link_to('Confirm', student_kiosk_index_path, :class => 'btn btn-default', :id => 'confirm') %></li>
-  </ul>
-</div>
-
-
-<div id="dialog" title="Success, Thank You!">
-  <p>Thank you <%= "#{@student_visit.student.first_name}" %>  for providing that information. Please have a seat and <%= "#{@student_visit.certifier.set_fullname}" %> will be with you shortly.</p>
-</div>
-
 <script>
     $(function() {
         $('#confirm').on('click', function(e){
@@ -44,3 +22,24 @@
 
     });
 </script>
+<div class="contact-card">
+  <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+  <h3 class="contact-name"><%= @student_visit.student.fullname %></h3>
+  <ul class="contact-list">
+    <li class="contact-item">Speak with:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
+    <li class="contact-item">Reason For Visit:  &nbsp;  <%= @student_visit.service_requested %></li>
+  </ul>
+</div>
+
+
+<div class="contact-links-container">
+  <ul class="link-list">
+    <li class="link-list-item"><%= link_to('Sign Out', student_kiosk_index_path, :class => 'btn btn-default') %></li>
+    <li class="link-list-item"><%= link_to('Confirm', student_kiosk_index_path, :class => 'btn btn-default', :id => 'confirm') %></li>
+  </ul>
+</div>
+
+
+<div id="dialog" title="Success, Thank You!">
+  <p style="max-width: 85%;">Thank you <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.student.first_name}" %></span>  for providing that information. Please have a seat and <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.certifier.set_fullname}" %></span> will be with you shortly.</p>
+</div>

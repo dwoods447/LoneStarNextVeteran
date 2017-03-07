@@ -191,25 +191,21 @@
       </thead>
       <tbody id="studentRow">
       <% @student_visits.each do |student_visit| %>
-      <tr>
-        <td><%= student_visit.student.fullname%></td>
-        <td><%= student_visit.student_id %></td>
-        <td><%= student_visit.certifier.set_fullname %></td>
-        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.federal_benefit.benefit_name %>"><%= student_visit.student.federal_benefit.benefit_name %></td>
-        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.state_benefit.benefit_name %>"><%= student_visit.student.state_benefit.benefit_name %></td>
-        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.reason_for_visit.visit_reason_name %>"><%= student_visit.reason_for_visit.visit_reason_name %></td>
-        <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 140px;" title="<%= student_visit.service_requested %>"><%= student_visit.service_requested %></td>
-        <td><%= link_to 'Sign Out',  edit_student_visit_path(student_visit) %></td>
-      </tr>
+          <tr>
+            <td><%= student_visit.student.fullname%></td>
+            <td><%= student_visit.student_id %></td>
+            <td><%= student_visit.certifier.set_fullname %></td>
+            <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.federal_benefit.benefit_name %>"><%= student_visit.student.federal_benefit.benefit_name %></td>
+            <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.state_benefit.benefit_name %>"><%= student_visit.student.state_benefit.benefit_name %></td>
+            <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.reason_for_visit.visit_reason_name %>"><%= student_visit.reason_for_visit.visit_reason_name %></td>
+            <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 140px;" title="<%= student_visit.service_requested %>"><%= student_visit.service_requested %></td>
+            <td><%= link_to 'Sign Out',  edit_student_visit_path(student_visit) %></td>
+          </tr>
       <% end %>
       </tbody>
     </table>
   </div>
-  <script>
-      $( function() {
-          $( document ).tooltip();
-      } );
-  </script>
+
 
   <div>
     <ul class="lower-button-panel">
@@ -226,8 +222,15 @@
 
 <!-- This is a reload script that reloads the page every x seconds -->
 <script type="text/javascript">
-    setTimeout(function () { location.reload(true); }, 30000);
+    setTimeout(function () {
+
+        location.reload(true);
+
+
+    }, 30000);
+
 </script>
+
 
 
 <!-- This code checks for newly added elements and if found makes a doorbell noise -->
@@ -242,12 +245,6 @@
   audioElement.preload = true;
 
 
-
-
-
-
-
-
     var insertListener = function(event){
         if (event.animationName == "nodeInserted") {
             // This is the debug for knowing our listener worked!
@@ -260,9 +257,5 @@
     document.addEventListener("animationstart", insertListener, false); // standard + firefox
     document.addEventListener("MSAnimationStart", insertListener, false); // IE
     document.addEventListener("webkitAnimationStart", insertListener, false); // Chrome + Safari
-
-
-
-
 </script>
 

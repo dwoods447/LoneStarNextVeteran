@@ -14,7 +14,7 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-
+    @new_student_id = session[:student_id]
   end
 
   # GET /students/new

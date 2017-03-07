@@ -46,14 +46,19 @@ body {
 }
 
 
-.page-header {
+.page-title {
     text-align: center;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
 }
 .contact-card{
     max-width: 522px;
     margin: 0 auto;
     background-color: rgba(0, 55, 104, 0.6);
     padding: 1em;
+    border: 2px solid #fff;
+    box-shadow: 3px 3px 6px #26252B;
 }
 .avatar{
     font-size: 20em;
@@ -87,13 +92,20 @@ body {
     text-align: center;
 }
 .contact-links-container{
-    max-width: 550px;
+    max-width: 525px;
     margin: 0 auto;
 }
 
+
+.link-list{
+    display: block;
+    max-width: 350px;
+    margin: 0em auto;
+
+}
 .link-list-item{
     display: inline-block;
-    margin: 0.5em;
+    margin: 1.2em;
 }
 
 a.visit-links{
@@ -264,4 +276,31 @@ CheckBoxes
     padding: 1.3em 4em !important;
     background: #1B3884 !important;
     color: #fff !important;
+}
+
+
+
+CheckBoxes
+    /**********/
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
 }

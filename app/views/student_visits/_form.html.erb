@@ -21,9 +21,31 @@
   .checkbox{
     width: 122px;
   }
+
+  #student_visits_form{
+    display: block;
+    max-width: 88%;
+    margin: 0 auto;
+  }
+
+   tr{
+     display: inline-block;
+     width: 50%;
+     background-color: #3192DF;
+   }
+    #student-number{
+      max-width: 50%;
+      padding: 1em !important;
+    }
+
+    #student_visit_reason_for_visit_id{
+      font-size: 1.2em;
+      font-weight: 400;
+      color: #000000;
+    }
 </style>
 
-<%= form_for(student_visit, remote: true) do |f| %>
+<%= form_for(student_visit, :html => {:id => "student_visits_form"}) do |f| %>
     <% if student_visit.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(student_visit.errors.count, "error") %> prohibited this student_visit from being saved:</h2>
@@ -38,8 +60,8 @@
 
     <div class="field">
 
-      <%= f.label :student_id %>
-      <%= f.number_field :student_id,:value => (@student_visit.student),  class: 'form-control' , placeholder: 'Student ID', :required => true %>
+      <%= f.label 'Please enter your student id number'%>
+      <%= f.number_field :student_id, :value => @student_id,  class: 'form-control',  :id => 'student-number', placeholder: 'Please enter your Student ID', :required => true %>
 
     </div>
 
@@ -52,13 +74,14 @@
           border-radius: 100%;
         }
         .checkbox{
-          width: 160px;
+          max-width: 125px;
         }
       </style>
 
-      <h4>Please Select an Available Certifying Official</h4>
-      <% @current_staff.each do |staff| %>
-          <table class="table-bordered table-condensed" width="50%;">
+      <h4>Please select an available staff member</h4>
+
+          <table class="table-bordered table-condensed">
+            <% @current_staff.each do |staff| %>
             <tr>
               <td>
                 <div class="media">
@@ -81,16 +104,26 @@
                 </div>
               </td>
             </tr>
+            <%end%>
           </table>
-      <%end%>
+
     </div>
     <div class="[ form-group ]">
       <!--<input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />-->
-      <%= f.check_box :isSignedin,  :id= => "fancy-checkbox-default", :autocomplete => "off", :"data-toggle"  => "toggle",   :"data-on" => "Sign In",  "data-off" => "Sign Out"%>
+      <%= f.check_box :isSignedin,  :id= => "fancy-checkbox-default", :autocomplete => "off" %>
       <div class="[ btn-group ]">
-      </div>
+        <%= label_tag('fancy-checkbox-default', :class => "[ btn btn-default ]" ) do%>
+            <span class="[ glyphicon glyphicon-ok ]"></span>
+            <span> </span>
+        <%end%>
+        <%= label_tag('fancy-checkbox-default', :class => "[ btn btn-default active ]" ) do%>
+            I want to Sign In
 
+        <%end%>
+      </div>
+      <span style="color: red;">***Must Be Checked</span>
     </div>
+
 
 
 
@@ -105,8 +138,13 @@
     </div>
 
     <div class="actions">
-      <%= f.submit 'Proceed', class: 'btn btn-default', style: "width: 350px;" %>
+      <%= f.submit 'Proceed', class: 'btn btn-default' %>
     </div>
 <% end %>
 
 
+<script>
+    var body = document.getElementsByTagName("body")[0];
+    body.style.backgroundColor = "#003768";
+    body.style.color = "#fff";
+</script>

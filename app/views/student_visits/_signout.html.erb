@@ -1,0 +1,117 @@
+
+<style>
+
+  form{
+    padding: 1.5em;
+  }
+  .form-control {
+    height: auto!important;
+    padding: 8px 12px !important;
+  }
+
+</style>
+
+<style>
+  table tr td{
+    border: 1px solid #eeeeee;
+  }
+  .media-object{
+    border-radius: 100%;
+  }
+  .checkbox{
+    width: 122px;
+  }
+
+  #student_visits_form{
+    display: block;
+    max-width: 88%;
+    margin: 0 auto;
+  }
+
+  tr{
+    display: inline-block;
+    width: 50%;
+    background-color: #3192DF;
+  }
+  #student-number{
+    max-width: 50%;
+    padding: 1.2em !important;
+  }
+
+  #student_visit_reason_for_visit_id{
+    font-size: 1.2em;
+    font-weight: 600 !important;
+    color: #000000;
+  }
+  a.navbar-brand > img{
+    margin-top: -19px;
+    overflow: hidden !important;
+  }
+</style>
+
+
+
+
+<h2>Do you want to sign <%= @student_first_name %> out? </h2>
+<%= form_for(student_visit, :html => {:id => "student_visits_form"}) do |f| %>
+    <% if student_visit.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(student_visit.errors.count, "error") %> prohibited this student_visit from being saved:</h2>
+
+          <ul>
+            <% student_visit.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :student_id %>
+
+      <%  unless @edit_student_id.present? %>
+          <%= f.number_field :student_id,:value => @edit_student_id, class: 'form-control student_number' , placeholder: 'Please enter the Student ID', :required => true %>
+        <%end%>
+    </div>
+
+    <div class="field">
+      <style>
+        table tr td{
+          border: 1px solid #eeeeee;
+        }
+        .media-object{
+          border-radius: 100%;
+        }
+        .checkbox{
+          width: 160px;
+        }
+      </style>
+
+
+    </div>
+    <div class="actions">
+      <%= f.check_box :isSignedin, :id => "checkbox", "data-toggle" =>"toggle" , "data-on" => "Sign In",  "data-off" =>"Sign Out"%>
+
+
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit 'SignOut', class: 'btn btn-default' %>
+    </div>
+<% end %>
+<!--<script>
+
+    $('#checkbox').bootstrapToggle({
+        on: 'Enabled',
+        off: 'Disabled'
+    });
+
+</script>-->
+
+<script>
+    var body = document.getElementsByTagName("body")[0];
+    body.style.backgroundColor = "#003768";
+    body.style.color = "#fff";
+
+</script>

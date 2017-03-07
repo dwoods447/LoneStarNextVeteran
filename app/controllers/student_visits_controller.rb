@@ -26,6 +26,15 @@ class StudentVisitsController < ApplicationController
   # GET /student_visits/1
   # GET /student_visits/1.json
   def show
+
+    @student_id = session[:student_id]
+    @student_first_name = session[:first_name]
+    @student_last_name = session[:last_name]
+    @student_email  = session[:email]
+
+
+    @student_id = session[:student_id]
+    @return_student_id = session[:student_id]
     @show_student_id = session[:student_id]
     @current_staff = Certifier.where(:IsAvailable => true)
     @all_staff = Certifier.all
@@ -33,9 +42,15 @@ class StudentVisitsController < ApplicationController
 
   # GET /student_visits/new
   def new
+    @student_id = session[:student_id]
+    @student_first_name = session[:first_name]
+    @student_last_name = session[:last_name]
+    @student_email  = session[:email]
+
+
+    @student_first_name = session[:first_name]
     @student_visit = StudentVisit.new
     @student_visit.build_reason_for_visit
-    @return_student_id = session[:student_id]
     @new_student_id = session[:student_id]
     @current_staff = Certifier.where(:IsAvailable => true)
     @all_staff = Certifier.all
@@ -70,7 +85,6 @@ class StudentVisitsController < ApplicationController
       else
         format.html { render :new }
         format.json { render json: @student_visit.errors, status: :unprocessable_entity }
-
       end
     end
   end
