@@ -53,7 +53,7 @@ body {
     text-shadow: 2px 2px 4px #000000;
 }
 .contact-card{
-    max-width: 522px;
+    max-width: 39%;
     margin: 0 auto;
     background-color: rgba(0, 55, 104, 0.6);
     padding: 1em;
@@ -99,7 +99,7 @@ body {
 
 .link-list{
     display: block;
-    max-width: 350px;
+    max-width: 250px;
     margin: 0em auto;
 
 }

@@ -20,3 +20,8 @@
  // This is the code that allows for tooltip showing in the student_visits index
     $(document).tooltip();
 
+
+
+
+
+

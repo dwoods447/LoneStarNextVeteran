@@ -1,36 +1,42 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Certifier:</strong>
-  <%= @certifier.certifier_id %>
-</p>
+<script>
 
-<p>
-  <strong>First name:</strong>
-  <%= @certifier.first_name %>
-</p>
+$(function(){
+    var elementText = $('#status').text()
 
-<p>
-  <strong>Last name:</strong>
-  <%= @certifier.last_name %>
-</p>
+    if (elementText == "true") {
 
-<p>
-  <strong>Email:</strong>
-  <%= @certifier.email %>
-</p>
+        $("#status").html("Yes");
+    }
+    else {
+        $("#status").html("No");
+    }
+});
 
-<p>
-  <strong>Benefit assigned:</strong>
-  <%= @certifier.benefit_assigned %>
-</p>
+</script>
 
-
-<p>
-  <strong>Available:</strong>
-  <%= @certifier.IsAvailable %>
-</p>
+<div class="contact-card">
+  <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+  <h3 class="contact-name"><%= @certifier.first_name %>&nbsp;<%= @certifier.last_name %></h3>
+  <ul class="contact-list">
+    <li class="contact-item">Student ID:  &nbsp; <%= @certifier.certifier_id %></li>
+    <li class="contact-item">Email: &nbsp; <%= @certifier.email %></li>
+    <li class="contact-item">Available: &nbsp; <span id="status"><%= @certifier.IsAvailable %></span></li>
+  </ul>
+  <div class="contact-links-container">
+    <ul class="link-list">
+      <li class="link-list-item"> <%= link_to 'Edit', edit_certifier_path(@certifier), class: 'btn btn-default' %></li>
+      <li class="link-list-item"><%= link_to 'Return to Student Lobby', student_visits_path, class: 'btn btn-default' %></li>
 
 
-<%= link_to 'Edit', edit_certifier_path(@certifier) %> |
-<%= link_to 'Back', certifiers_path %>
+
+    </ul>
+  </div>
+</div>
+
+
+
+
+
+<!--# link_to 'Back', certifiers_path%>-->

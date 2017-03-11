@@ -22,7 +22,7 @@
     width: 122px;
   }
 
-  #student_visits_form{
+  #student_visits_sign_out_form{
     display: block;
     max-width: 88%;
     margin: 0 auto;
@@ -52,8 +52,10 @@
 
 
 
-<h2>Do you want to sign <%= @student_first_name %> out? </h2>
-<%= form_for(student_visit, :html => {:id => "student_visits_form"}) do |f| %>
+
+<%= form_for(student_visit, :html => {:id => "student_visits_sign_out_form"}) do |f| %>
+    <h2>Do you want to sign <%= student_visit.student.first_name %> out? </h2>
+    <p>Student ID: <%= student_visit.student.student_id %></p>
     <% if student_visit.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(student_visit.errors.count, "error") %> prohibited this student_visit from being saved:</h2>
@@ -67,9 +69,7 @@
     <% end %>
 
     <div class="field">
-      <%= f.label :student_id %>
-
-      <%  unless @edit_student_id.present? %>
+      <%  unless !@edit_student_id.present? %>
           <%= f.number_field :student_id,:value => @edit_student_id, class: 'form-control student_number' , placeholder: 'Please enter the Student ID', :required => true %>
         <%end%>
     </div>
@@ -90,16 +90,15 @@
 
     </div>
     <div class="actions">
-      <%= f.check_box :isSignedin, :id => "checkbox", "data-toggle" =>"toggle" , "data-on" => "Sign In",  "data-off" =>"Sign Out"%>
-
-
+      <%= f.label "Keep Student Signed In" %>
+      <%= f.check_box :isSignedin, :id => "checkbox", "data-toggle" =>"toggle" , "data-on" => "Yes",  "data-off" =>"No"%>
     </div>
 
 
     <div class="actions">
-      <%= f.submit 'SignOut', class: 'btn btn-default' %>
+      <%= f.submit 'Confirm', class: 'btn btn-default' %>
     </div>
-<% end %>
+    <% end %>
 <!--<script>
 
     $('#checkbox').bootstrapToggle({

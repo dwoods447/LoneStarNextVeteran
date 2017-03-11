@@ -1,4 +1,27 @@
-<%= form_for(certifier) do |f| %>
+<style>
+  .staff{
+    max-width: 85%;
+  }
+  .input-field{
+    width: 85%;
+  }
+
+  .form-group{
+    margin: 2em !important;
+  }
+
+  .col-sm-6{
+    padding: 1em;
+  }
+
+     .return{
+       margin: 2em;
+     }
+</style>
+
+<div class="container">
+
+<%= form_for(certifier, html: {class: 'staff'}) do |f| %>
   <% if certifier.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(certifier.errors.count, "error") %> prohibited this certifier from being saved:</h2>
@@ -11,38 +34,55 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :certifier_id %>
-    <%= f.number_field :certifier_id %>
-  </div>
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
 
 
-  <div class="field">
-    <%= f.label :benefit_assigned %>
-    <%= f.text_field :benefit_assigned %>
-  </div>
-
-    <div class="field">
-      <%= f.label 'Upload a Photo' %>
-      <%= f.file_field :avatar %>
+    <div class="form-group">
+      <div class="col-sm-12">
+        <h3>Editing <%= certifier.set_fullname %>'s information</h3>
+      </div>
     </div>
 
-    <div class="field">
+
+    <div class="form-group">
+      <div class="col-sm-12">
+    <%= f.label :certifier_id %>
+    <%= f.number_field :certifier_id, class: 'form-control input-lg input-field' %>
+      </div>
+  </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-6">
+        <%= f.label :first_name , for: 'first_name' %>
+       <%= f.text_field :first_name, class: 'form-control input-lg input-field', placeholder: 'Enter First Name' %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.label :last_name , for: 'last_name' %>
+        <%= f.text_field :last_name, class: 'form-control input-lg input-field', placeholder: 'Enter Last Name' %>
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <div class="col-sm-6">
+        <%= f.label :email %>
+        <%= f.text_field :email, class: 'form-control input-lg input-field' %>
+      </div>
+      <div class="col-sm-6">
+        <%= f.label :benefit_assigned %>
+        <%= f.text_field :benefit_assigned, class: 'form-control input-lg input-field' %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-12">
+      <%= f.label 'Upload a Photo' %>
+      <%= f.file_field :avatar %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-6">
       <%= f.label 'Available' %>
       <ul>
       <li style="display: inline-block">
@@ -54,10 +94,13 @@
       <%= label :IsAvailable_no, 'No' %>
       </li>
       </ul>
+      </div>
+
+      <div class="col-sm-6">
+        <%= f.submit 'Update Information', class: 'btn btn-default' %>
+      </div>
     </div>
 
 
-    <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
+</div>

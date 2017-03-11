@@ -46,6 +46,7 @@
 </style>
 
 <%= form_for(student_visit, :html => {:id => "student_visits_form"}) do |f| %>
+    <h2>Welcome <%= @student_first_name %></h2>
     <% if student_visit.errors.any? %>
         <div id="error_explanation">
           <h2><%= pluralize(student_visit.errors.count, "error") %> prohibited this student_visit from being saved:</h2>
@@ -110,34 +111,32 @@
     </div>
     <div class="[ form-group ]">
       <!--<input type="checkbox" name="fancy-checkbox-default" id="fancy-checkbox-default" autocomplete="off" />-->
-      <%= f.check_box :isSignedin,  :id= => "fancy-checkbox-default", :autocomplete => "off" %>
-      <div class="[ btn-group ]">
-        <%= label_tag('fancy-checkbox-default', :class => "[ btn btn-default ]" ) do%>
-            <span class="[ glyphicon glyphicon-ok ]"></span>
-            <span> </span>
-        <%end%>
-        <%= label_tag('fancy-checkbox-default', :class => "[ btn btn-default active ]" ) do%>
-            I want to Sign In
-
-        <%end%>
-      </div>
-      <span style="color: red;">***Must Be Checked</span>
+      <%= f.check_box :isSignedin,  "data-toggle" =>"toggle" , "data-on" => "Sign In",  "data-off" =>"Don't Sign In"%>
+      <span style="color: red;">***Please leave checked to sign in.</span>
     </div>
 
 
 
 
-    <div class="field">
+    <div class="form-group">
       <%= f.label 'Please Tell Us Your Reason For Visiting Today' %>
-      <%= f.collection_select :reason_for_visit_id, ReasonForVisit.all, :id, :visit_reason_name, {:include_blank => true} %>
+      <div class="cols-sm-10">
+        <div class="input-group">
+      <%= f.collection_select :reason_for_visit_id, ReasonForVisit.all, :id, :visit_reason_name, {:include_blank => true}, {class: "form-control dropdown-menu"} %>
+       </div>
+      </div>
     </div>
 
-    <div class="field">
-      <%= f.label 'Addiotionl Notes' %>
-      <%= f.text_area :service_requested, rows: '5', cols: '10',  class: "form-control"%>
+    <div class="form-group">
+      <%= f.label 'Enter additional notes' %>
+      <div class="cols-sm-12">
+        <div class="input-group">
+      <%= f.text_area :service_requested, rows: '5', cols: '100',  class: "form-control"%>
+        </div>
+    </div>
     </div>
 
-    <div class="actions">
+      <div class="form-group">
       <%= f.submit 'Proceed', class: 'btn btn-default' %>
     </div>
 <% end %>

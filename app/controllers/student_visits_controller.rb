@@ -58,6 +58,7 @@ class StudentVisitsController < ApplicationController
 
   # GET /student_visits/1/edit
   def edit
+    @student_visits =  StudentVisit
     @edit_student_id = session[:student_id]
     @current_staff = Certifier.where(:IsAvailable => true)
 
@@ -96,8 +97,9 @@ class StudentVisitsController < ApplicationController
     @all_staff = Certifier.all
     respond_to do |format|
       if @student_visit.update(student_visit_params)
-        format.html { redirect_to @student_visit, notice: 'Student visit was successfully updated.' }
-        format.json { render :show, status: :ok, location: @student_visit }
+        format.html { redirect_to access_login_path }
+        #format.html { redirect_to @student_visit, notice: 'Student visit was successfully updated.' }
+        #format.json { render :show, status: :ok, location: @student_visit }
       else
         format.html { render :edit }
         format.json { render json: @student_visit.errors, status: :unprocessable_entity }
