@@ -8,11 +8,31 @@
 
         var $body = $('#body');
 
+
+        var lapTopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1487908879/aircraft-carrier_1366x768_ji8deo.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489346242/projects-assets/airforce-1.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489344859/projects-assets/sqaud-goals.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446053/projects-assets/aircraft-carrier-2-1366-768.jpg')"];
+        var desktopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489348924/projects-assets/parachute-skydiving-parachuting-jumping-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489342756/projects-assets/soldiers-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489348510/projects-assets/coast_guard_1-1920-1080.jpg')"];
+
+
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+
+        function getImageIndex(){
+            var min = 0;
+            var max = 3;
+            var randomInt = getRandomInt(min, max);
+            return randomInt
+        }
+
         if(window.screen.width >= 0 && window.screen.width <= 1366){
-            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487908879/aircraft-carrier_1366x768_ji8deo.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+            $body.css({"background-image": lapTopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
         }
         else{
-            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+            $body.css({"background-image": desktopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
         }
     });
 </script>
