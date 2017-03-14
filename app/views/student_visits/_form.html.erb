@@ -31,13 +31,13 @@
 
   #student_visits_form{
     display: block;
-    max-width: 88%;
+    max-width: 75%;
     margin: 0 auto;
   }
 
    tr{
-     display: inline-block;
-     width: 50%;
+     display: block;
+     width: 100%;
      background-color: #3192DF;
    }
 
@@ -235,8 +235,8 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading"><%= staff.set_fullname%></h4>
-                    <p style="max-width: 95%;"><span style="font-size: 1.3em"><strong>Letters Assigned:</strong></span>&nbsp;<br/><%= staff.letters_assigned%></p>
-                    <p style="max-width: 95%;"><span style="font-size: 1.3em"><strong>Benefits Assigned:</strong></span>&nbsp;<br/><%= staff.benefit_assigned %></p>
+                    <p style="max-width: 95%;"><span style="font-size: 1.3em"><strong>Letters Assigned:</strong></span>&nbsp;<%= staff.letters_assigned%></p>
+                    <p style="max-width: 95%;"><span style="font-size: 1.3em"><strong>Benefits Assigned:</strong></span>&nbsp;<%= staff.benefit_assigned %></p>
 
                   </div>
                 </div>

@@ -7,25 +7,7 @@
     <list default="true" id="5c93e5a7-9cd8-470a-8e82-dc87802bc42a" name="Default" comment="">
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/31ea7dae-6ad6-49a7-9946-ed34f8904aaf.xml" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/dataSources/ee49c76a-b90e-4aa0-8c84-e4a5bf893ffe.xml" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/stylesheets/application.css" afterPath="$PROJECT_DIR$/app/assets/stylesheets/application.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/certifiers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/certifiers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/certifiers/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/certifiers/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/certifiers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/certifiers/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/confirm_student/index.html.erb" afterPath="$PROJECT_DIR$/app/views/confirm_student/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" afterPath="$PROJECT_DIR$/app/views/layouts/_footer.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/search_students/index.html.erb" afterPath="$PROJECT_DIR$/app/views/search_students/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student_kiosk/index.html.erb" afterPath="$PROJECT_DIR$/app/views/student_kiosk/index.html.erb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student_visits/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/student_visits/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student_visits/new.html.erb" afterPath="$PROJECT_DIR$/app/views/student_visits/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/student_visits/show.html.erb" afterPath="$PROJECT_DIR$/app/views/student_visits/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/students/_form.html.erb" afterPath="$PROJECT_DIR$/app/views/students/_form.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/students/edit.html.erb" afterPath="$PROJECT_DIR$/app/views/students/edit.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/students/new.html.erb" afterPath="$PROJECT_DIR$/app/views/students/new.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/students/show.html.erb" afterPath="$PROJECT_DIR$/app/views/students/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/database.yml" afterPath="$PROJECT_DIR$/config/database.yml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/schema.rb" afterPath="$PROJECT_DIR$/db/schema.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -65,10 +47,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/certifiers/_form.html.erb">
+        <entry file="file://$PROJECT_DIR$/app/views/student_visits/_form.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="426">
-              <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+            <state relative-caret-position="301">
+              <caret line="238" column="126" lean-forward="false" selection-start-line="238" selection-start-column="126" selection-end-line="238" selection-end-column="126" />
               <folding />
             </state>
           </provider>
@@ -152,8 +134,8 @@
         <option value="$PROJECT_DIR$/app/controllers/certifiers_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/certifiers/index.html.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
-        <option value="$PROJECT_DIR$/app/views/student_visits/_form.html.erb" />
         <option value="$PROJECT_DIR$/app/views/certifiers/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/student_visits/_form.html.erb" />
       </list>
     </option>
   </component>
@@ -234,7 +216,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="certifiers" />
+              <option name="myItemId" value="student_visits" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -849,15 +831,15 @@
       <workItem from="1489030002224" duration="6548000" />
       <workItem from="1489066266713" duration="5123000" />
       <workItem from="1489108740397" duration="29110000" />
-      <workItem from="1489421548047" duration="20413000" />
+      <workItem from="1489421548047" duration="20981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="260468000" />
+    <option name="totallyTimeSpent" value="261036000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1370" height="735" extended-state="1" />
+    <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1301,25 +1283,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/student_visits/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/certifiers/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-41">
-          <caret line="223" column="152" lean-forward="false" selection-start-line="223" selection-start-column="152" selection-end-line="223" selection-end-column="152" />
-          <folding>
-            <element signature="n#style#0;n#span#0;n#h6#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#h6#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#1;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#div#1;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#1;n#div#1;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#1;n#div#1;n#div#0;n#td#0;n#tr#0;n#table#0;n#div#2;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="799">
+          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/certifiers/_form.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/views/student_visits/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="426">
-          <caret line="47" column="34" lean-forward="false" selection-start-line="47" selection-start-column="34" selection-end-line="47" selection-end-column="34" />
+        <state relative-caret-position="301">
+          <caret line="238" column="126" lean-forward="false" selection-start-line="238" selection-start-column="126" selection-end-line="238" selection-end-column="126" />
           <folding />
         </state>
       </provider>
