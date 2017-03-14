@@ -41,5 +41,17 @@
 
 
 <div id="dialog" title="Success, Thank You!">
-  <p style="max-width: 85%;">Thank you <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.student.first_name}" %></span>  for providing that information. Please have a seat and <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.certifier.set_fullname}" %></span> will be with you shortly.</p>
+  <p style="max-width: 85%;">Thank you <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.student.first_name}" %></span>  for providing that information. <br /><br /> Please have a seat and <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.certifier.set_fullname}" %></span> will be with you shortly.</p>
 </div>
+
+
+<script>
+  $(function(){
+
+     $('#confirm').click(function(){
+
+         $('#dialog').css("max-width", "425px")
+     });
+
+  });
+</script>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170225190231) do
+ActiveRecord::Schema.define(version: 20170314044728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.index ["campus_id"], name: "index_campuses_on_campus_id", using: :btree
   end
 
-  create_table "certifier_statuses", id: false, force: :cascade do |t|
-    t.integer  "status_id"
-    t.string   "status"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["status_id"], name: "index_certifier_statuses_on_status_id", using: :btree
-  end
-
   create_table "certifiers", id: false, force: :cascade do |t|
     t.integer  "certifier_id"
     t.string   "first_name"
@@ -41,6 +33,7 @@ ActiveRecord::Schema.define(version: 20170225190231) do
     t.datetime "updated_at",                      null: false
     t.boolean  "IsAvailable",      default: true
     t.string   "avatar"
+    t.string   "letters_assigned"
     t.index ["certifier_id"], name: "index_certifiers_on_certifier_id", using: :btree
   end
 

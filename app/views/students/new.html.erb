@@ -1,7 +1,6 @@
 
 <%= render 'form', student: @student %>
 
-<%= link_to 'Cancel', student_kiosk_index_path %>
 
 <script>
     $(document).ready(function(){
@@ -23,7 +22,7 @@
 
         function getImageIndex(){
             var min = 0;
-            var max = 3;
+            var max = 4;
             var randomInt = getRandomInt(min, max);
             return randomInt
         }

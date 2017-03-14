@@ -16,7 +16,7 @@
 
 
 
-<h1 class="header-message">Please enter your <strong>Student ID</strong> number.</h1>
+<h1 class="page-title">Please enter your <strong>Student ID</strong> number.</h1>
 <%= form_tag(search_students_findStudent_path, :method => :post, :class => 'searchbox') do%>
     <div class="input-group">
     <%= text_field_tag(:student_id, params[:student_id], class: 'form-control', placeholder: 'Enter your Student ID', :id => 'student_id')%>
@@ -37,16 +37,40 @@
 </div>
 
 
+
+
+
+
 <script>
     $(document).ready(function(){
 
         var $body = $('#body');
 
+
+        var lapTopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1487443904/projects-assets/motor-lifeboat-2037942.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489350239/projects-assets/coast_guard_ship-1366_768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489465687/projects-assets/parachute-skydiving-parachuting-jumping-1366-768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446053/projects-assets/aircraft-carrier-2-1366-768.jpg')"];
+        var desktopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489348924/projects-assets/parachute-skydiving-parachuting-jumping-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489342756/projects-assets/soldiers-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489348510/projects-assets/coast_guard_1-1920-1080.jpg')"];
+
+
+
+        function getRandomInt(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+
+        function getImageIndex(){
+            var min = 0;
+            var max = 4;
+            var randomInt = getRandomInt(min, max);
+            return randomInt
+        }
+
         if(window.screen.width >= 0 && window.screen.width <= 1366){
-            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487443904/projects-assets/motor-lifeboat-2037942.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+            $body.css({"background-image": lapTopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
         }
         else{
-            $body.css({"background-image": "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "background-repeat": "no-repeat", "background-size": "cover"});
+            $body.css({"background-image": desktopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
         }
     });
 </script>

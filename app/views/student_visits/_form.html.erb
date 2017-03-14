@@ -9,6 +9,13 @@
     padding: 8px 12px !important;
   }
 
+     .btn-custom{
+       width: 250px !important;
+       height: 45px !important;
+       color: #fff !important;
+       font-weight: 600;
+
+     }
 </style>
 
 <style>
@@ -33,6 +40,10 @@
      width: 50%;
      background-color: #3192DF;
    }
+
+  tr:hover{
+    background-color: #ae0000;
+  }
     #student-number{
       max-width: 50%;
       padding: 1em !important;
@@ -43,6 +54,136 @@
       font-weight: 400;
       color: #000000;
     }
+
+</style>
+
+
+
+<style>
+
+  /*********************** Radio Button Styles **********************************/
+  .option-input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    position: relative;
+    top: 13.33333px;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.15s ease-out;
+    -moz-transition: all 0.15s ease-out;
+    transition: all 0.15s ease-out;
+    background: #cbd1d8;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    position: relative;
+    margin-right: 0.5rem;
+    z-index: 1000;
+  }
+
+  .option-input:hover { background: #9faab7; }
+
+  .option-input:checked { background: #40e0d0; }
+
+  .option-input:checked::before {
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    content: '\2716';
+    display: inline-block;
+    font-size: 26.66667px;
+    text-align: center;
+    line-height: 40px;
+  }
+
+  .option-input:checked::after {
+    -webkit-animation: click-wave 0.65s;
+    -moz-animation: click-wave 0.65s;
+    animation: click-wave 0.65s;
+    background: #40e0d0;
+    content: '';
+    display: block;
+    position: relative;
+    z-index: 100;
+  }
+
+  .option-input.radio { border-radius: 50%; }
+
+  .option-input.radio::after { border-radius: 50%; }
+
+
+  /********************Radio button Animations *******************************/
+
+  @-webkit-keyframes
+  click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+    100% {
+      width: 200px;
+      height: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0.0;
+    }
+  }
+
+  @-moz-keyframes
+  click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+    100% {
+      width: 200px;
+      height: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0.0;
+    }
+  }
+
+  @-o-keyframes
+  click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+    100% {
+      width: 200px;
+      height: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0.0;
+    }
+  }
+
+  @keyframes
+  click-wave { 0% {
+    width: 40px;
+    height: 40px;
+    opacity: 0.35;
+    position: relative;
+  }
+    100% {
+      width: 200px;
+      height: 200px;
+      margin-left: -80px;
+      margin-top: -80px;
+      opacity: 0.0;
+    }
+  }
+
+
 </style>
 
 <%= form_for(student_visit, :html => {:id => "student_visits_form"}) do |f| %>
@@ -80,6 +221,7 @@
       </style>
 
       <h4>Please select an available staff member</h4>
+      <h6>....based on the the <span style="color: #F7AD1A"><strong>first letter of your last name</strong></span> and your <span style="color: #F7AD1A"><strong>education benefit</strong></span></h6>
 
           <table class="table-bordered table-condensed">
             <% @current_staff.each do |staff| %>
@@ -93,15 +235,19 @@
                   </div>
                   <div class="media-body">
                     <h4 class="media-heading"><%= staff.set_fullname%></h4>
-                    <p><%= staff.benefit_assigned %></p>
+                    <p style="max-width: 95%;"><span style="font-size: 1.3em"><strong>Letters Assigned:</strong></span>&nbsp;<br/><%= staff.letters_assigned%></p>
+                    <p style="max-width: 95%;"><span style="font-size: 1.3em"><strong>Benefits Assigned:</strong></span>&nbsp;<br/><%= staff.benefit_assigned %></p>
+
                   </div>
                 </div>
               </td>
               <td >
                 <div class="checkbox">
+
                   <%= label "#{staff.certifier_id}" ,  "#{staff.set_fullname}" do %>
-                      <input type="radio" name="student_visit[<%= :certifier_id %>]" value=<%= staff.certifier_id %> required="required">
+                      <input   class="option-input radio" type="radio" autocomplete="off" name="student_visit[<%= :certifier_id %>]" value=<%= staff.certifier_id %>  required="required">
                   <%end%>
+
                 </div>
               </td>
             </tr>
@@ -137,8 +283,9 @@
     </div>
 
       <div class="form-group">
-      <%= f.submit 'Proceed', class: 'btn btn-default' %>
-    </div>
+      <%= link_to 'Cancel',  student_kiosk_index_path, class: 'btn btn-danger btn-custom', style: 'padding: 0.7em 0em !important;'%>
+      <%= f.submit 'Proceed', class: 'btn btn-success btn-custom' %>
+     </div>
 <% end %>
 
 

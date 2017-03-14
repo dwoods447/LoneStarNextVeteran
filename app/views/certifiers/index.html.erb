@@ -12,6 +12,7 @@
       <th>Benefit assigned</th>
       <th>Image File Path</th>
       <th>Available</th>
+      <th>Letters Assigned</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,6 +27,7 @@
         <td><%= certifier.benefit_assigned %></td>
         <td><%= certifier.avatar %></td>
         <td><%= certifier.IsAvailable%></td>
+        <td><%= certifier.letters_assigned%></td>
         <td><%= link_to 'Show', certifier, class: 'btn btn-primary' %></td>
         <td><%= link_to 'Edit', edit_certifier_path(certifier), class: 'btn btn-success' %></td>
         <td><%= link_to 'Destroy', certifier, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>

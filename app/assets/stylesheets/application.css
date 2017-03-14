@@ -53,7 +53,7 @@ body {
     text-shadow: 2px 2px 4px #000000;
 }
 .contact-card{
-    max-width: 39%;
+    max-width: 45%;
     margin: 0 auto;
     background-color: rgba(0, 55, 104, 0.6);
     padding: 1em;
@@ -273,7 +273,7 @@ CheckBoxes
 
 
 .ui-widget-header{
-    padding: 1.3em 4em !important;
+    padding: 1.3em 3.2em !important;
     background: #1B3884 !important;
     color: #fff !important;
 }

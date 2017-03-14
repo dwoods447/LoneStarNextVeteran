@@ -90,14 +90,14 @@ students_info = [
 
 certifiers_info =[
 
-    [7101357, "Natasha", "Cornu", "Natasha.Cornbu@lonestar.edu", "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true, "./assets/images/sample.png" ],
-    [7001121, "Sequoria", "Brown", "Sequoria.Brown@lonestar.edu", "Tuition Assistance" , true, "./assets/images/sample.png"],
-    [7251151, "Claudia", "Greenhaw", "Claudia.Greenhaw@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true,  "./assets/images/sample.png"],
-    [7001151, "Trish", "Obrien", "Particia.Obrien@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true, "./assets/images/sample.png"],
-    [7229151, "Alexis", "Davis", "Alexis.C.Davis@LoneStar.edu" , "Coordinator II", true, "./assets/images/sample.png"],
-    [7146151, "Siara", "McMahon", "Siara.L.McMahon2@LoneStar.edu" , "Program Manager", true, "./assets/images/sample.png"],
-    [7111651, "Steven", "Hall", "Steven.L.Hall @LoneStar.edu" , "System Director of Veteran Affairs", false, "./assets/images/sample.png" ],
-    [7311651, "Lynda", "Nguyen", "Lynda.Nguyen@LoneStar.edu" , "Hazelwood Exemption", true, "./assets/images/sample.png"],
+    [7101357, "Natasha", "Cornu", "Natasha.Cornbu@lonestar.edu", "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true, "./assets/images/sample.png", "M - P" ],
+    [7001121, "Sequoria", "Brown", "Sequoria.Brown@lonestar.edu", "Tuition Assistance" , true, "./assets/images/sample.png", "A - Z Tuition Assistance Only"],
+    [7251151, "Claudia", "Greenhaw", "Claudia.Greenhaw@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true,  "./assets/images/sample.png","A  -  G" ],
+    [7001151, "Trish", "Obrien", "Particia.Obrien@lonestar.edu" , "Ch 33, Ch31, Ch 30, Ch 35, Ch 1606, Ch 1607", true, "./assets/images/sample.png", "H - L, Q  - Z"],
+    [7229151, "Alexis", "Davis", "Alexis.C.Davis@LoneStar.edu" , "Coordinator II", true, "./assets/images/sample.png", "None"],
+    [7146151, "Siara", "McMahon", "Siara.L.McMahon2@LoneStar.edu" , "Program Manager", true, "./assets/images/sample.png", "None"],
+    [7111651, "Steven", "Hall", "Steven.L.Hall @LoneStar.edu" , "System Director of Veteran Affairs", false, "./assets/images/sample.png", "None" ],
+    [7311651, "Lynda", "Nguyen", "Lynda.Nguyen@LoneStar.edu" , "Hazelwood Exemption", true, "./assets/images/sample.png", "A - Z Hazlewood Only"],
 
 ]
 
@@ -151,8 +151,8 @@ students_info.each do |student_id, campus_id, first_name,  last_name, phone,  em
 end
 
 
-certifiers_info.each do |certifier_id, first_name,  last_name, email, benefit_assigned, isavailable, avatar|
-  certifier  << Certifier.create(certifier_id: certifier_id,  first_name: first_name, last_name: last_name,  email: email, benefit_assigned: benefit_assigned, IsAvailable: isavailable, avatar:  avatar)
+certifiers_info.each do |certifier_id, first_name,  last_name, email, benefit_assigned, isavailable, avatar, letters_assigned|
+  certifier  << Certifier.create(certifier_id: certifier_id,  first_name: first_name, last_name: last_name,  email: email, benefit_assigned: benefit_assigned, IsAvailable: isavailable, avatar:  avatar, letters_assigned: letters_assigned)
 end
 
 

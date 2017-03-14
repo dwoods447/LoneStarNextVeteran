@@ -14,8 +14,8 @@ default: &default
   adapter: postgresql
   encoding: unicode
   pool: 5
-  username: user1
-  password: pimpjuice
+  username: postgres
+  password: postgres
   host: localhost
 
 development:

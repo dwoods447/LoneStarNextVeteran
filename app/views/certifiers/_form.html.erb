@@ -45,7 +45,7 @@
 
     <div class="form-group">
       <div class="col-sm-12">
-    <%= f.label :certifier_id %>
+    <%= f.label 'Certifier\'s ID' %>
     <%= f.number_field :certifier_id, class: 'form-control input-lg input-field' %>
       </div>
   </div>
@@ -82,7 +82,7 @@
     </div>
 
     <div class="form-group">
-      <div class="col-sm-6">
+      <div class="col-sm-12">
       <%= f.label 'Available' %>
       <ul>
       <li style="display: inline-block">
@@ -96,7 +96,13 @@
       </ul>
       </div>
 
-      <div class="col-sm-6">
+
+      <div class="form-group">
+        <%= f.label :letters_assigned %>
+        <%= f.text_field :letters_assigned, class: 'form-control input-lg input-field' %>
+      </div>
+
+      <div class="form-group">
         <%= f.submit 'Update Information', class: 'btn btn-default' %>
       </div>
     </div>
