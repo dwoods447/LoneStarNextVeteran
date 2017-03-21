@@ -2,6 +2,12 @@ Rails.application.routes.draw do
 
 
 
+  get 'frequently_asked_questions/index'
+
+  get 'frequently_asked_questions/new'
+
+  get 'frequently_asked_questions/show'
+
   get 'users/index'
 
   get 'users/show'

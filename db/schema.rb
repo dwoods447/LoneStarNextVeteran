@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314044728) do
+ActiveRecord::Schema.define(version: 20170321023750) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -43,6 +43,13 @@ ActiveRecord::Schema.define(version: 20170314044728) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.index ["federal_benefit_id"], name: "index_federal_benefits_on_federal_benefit_id", using: :btree
+  end
+
+  create_table "frequently_asked_questions", force: :cascade do |t|
+    t.text     "question"
+    t.text     "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "reason_for_visits", id: false, force: :cascade do |t|

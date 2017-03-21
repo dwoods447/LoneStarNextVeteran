@@ -16,6 +16,24 @@ Student.delete_all
 StudentVisit.delete_all
 User.delete_all
 ReasonForVisit.delete_all
+FrequentlyAskedQuestion.delete_all
+
+frequently_asked_questions = [
+
+    ["Where can I find out more information about the Post 911 GI Bill ®, the Montgomery GI Bill ® or Vocational Rehabilitation and Employment Program Benefits?", "For additional information on VA Education Benefits for all chapters, logon to the Veteran Affairs website. You may also contact your campus liaison."],
+    ["What VA educational programs are available?", "Chapter 30 - Montgomery GI Bill ® – Active Duty (MGIB), Chapter 31 - Vocational Rehabilitation and Employment, Chapter 33 – Post 911 GI Bill ®, Chapter 35 - Dependents Educational Assistance (DEA), Chapter 1606 - Montgomery GI Bill ® – Selected Reserve, Chapter 1607 - Reserve Educational Assistance Program (REAP)"],
+    ["How do I apply for VA Education Benefits?", "Please visit the GI Bill Website: http://www.gibill.va.gov/apply-for-benefits/application/"],
+    ["What are the current VA payment rates?", "A listing of Education Benefit Payment Rates can be found on the VA website's Rate Tables. http://www.benefits.va.gov/GIBILL/resources/benefits_resources/rate_tables.asp#ch33"],
+    ["Do I need to fill out the Request for Certification form each semester?", "Yes. You must complete a Request for Certification form for each semester you wish to use your VA education benefits. This form lets our Certifying Officials know you want to use your benefits and for which classes. Remember, you cannot be certified for a class if it is not required for your degree."],
+    ["Can I turn in my request for certification form after the priority deadline date?", "Yes, you can. However, there are some common problems that can occur when you turn in a request form after the deadline."],
+    ["What classes can I have certified?", "You may request to have any class certified that fits your degree with Lone Star College. Please consult with you campus liaison/advisor, if you have questions regarding if a course can be certified."],
+    ["Can I take classes that do not fit my degree plan?", "Possibly. Generally speaking, the only classes that you can take, that are not specifically listed on your degree plan, are electives. However, there are certain circumstances where even electives may not be able to be certified. If you ever have questions about whether a class will fit your degree plan or if it can be certified please contact your campus VA liaison."],
+    ["How do I receive credit for my Physical Education requirement?", "In order to receive credit for your Physical Education requirement, please see your campus liaison to fill out and submit a Prior Learning Assessment form, along with a copy of your DD-214. Please keep in mind that you must also have an official copy of your military transcript on file with the Admissions office."],
+    ["What is Round out?", "When a student is completing their degree they can round out up to full time. Coursed can be taken that are not required for the degree or coursed that have been completed may be retaken to improve grade. This is a onetime per degree."],
+    ["Will the VA cover the cost of repeating a course for the 3rd time?", "When a student repeats a course for a 3rd time the student will incur a $60 charge 1 credit hour ($180 for 3 credit hour courses) this charge cannot be billed to the VA and student will be responsible for the charges."],
+
+]
+
 
 
 
@@ -120,7 +138,16 @@ federal_benefit = []
 certifier = []
 student_visit = []
 reason = []
+frequently_asked_question = []
 
+
+
+
+
+
+frequently_asked_questions.each do |question, answer|
+  frequently_asked_question << FrequentlyAskedQuestion.create(question: question, answer: answer)
+end
 
 reason_for_visit.each do |reason_for_visit_id, visit_reason_name|
   reason << ReasonForVisit.create(reason_for_visit_id: reason_for_visit_id, visit_reason_name: visit_reason_name)

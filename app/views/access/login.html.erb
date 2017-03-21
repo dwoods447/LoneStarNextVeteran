@@ -2,8 +2,8 @@
   .form-signin
   {
     max-width: 330px;
-    padding: 15px;
-    margin: 0 auto;
+    padding: 5% 0%;
+    margin: 5% auto;
   }
   .form-signin .form-signin-heading, .form-signin .checkbox
   {
@@ -74,6 +74,10 @@
     display: block;
     margin-top: 10px;
   }
+
+  .credential-item{
+    list-style-type: none;
+  }
 </style>
 
 <div class="container">
@@ -89,6 +93,13 @@
             <%= submit_tag("Login", class: 'btn btn-lg btn-primary btn-block') %>
         <%end%>
 
+        <div>
+          <p>Please use the credentials below to login</p>
+          <ul class="credential">
+            <li class="credential-item"><span style="color:red;"><strong>Username</strong></span>:&nbsp;<span>user1</span></li>
+            <li class="credential-item"><span style="color:red;"><strong>Password</strong></span>:&nbsp;<span>password</span></li>
+          </ul>
+        </div>
 
       </div>
 

@@ -1,0 +1,31 @@
+<h1 class="page-title">Frequently Asked Questions</h1>
+
+<style>
+  .question{
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+  .answer{
+    margin: 0.5em;
+    padding: 0.5em;
+  }
+</style>
+<ul>
+  <% @faq.each do |faq| %>
+   <ul class="faq-container">
+     <li class="question"><span style="font-weight: 800;">Q:&nbsp;</span><%= faq.question %><br/></li>
+   <li class="answer"><span style="font-weight: 800;">A:&nbsp;</span><%= faq.answer %></li>
+   </ul>
+  <% end %>
+</ul>
+
+
+<ul style="text-decoration: none;">
+  <li style="list-style-type: none; font-size: 2em;"><%=link_to 'Back to Student Kiosk',  student_kiosk_index_path, :style => 'color: #fff;'%>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></li>
+</ul>
+
+<script>
+    var body = document.getElementsByTagName("body")[0];
+    body.style.backgroundColor = "#003768";
+    body.style.color = "#fff";
+</script>
