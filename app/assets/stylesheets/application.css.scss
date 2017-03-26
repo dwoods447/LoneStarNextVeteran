@@ -13,7 +13,11 @@
  *= require_tree .
  *= require_self
  *= require jquery-ui
+ *= require bootstrap-toggle
  */
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 body {
     color: #333;
     font-family: verdana, arial, helvetica, sans-serif;
@@ -172,8 +176,8 @@ a.visit-links:hover{
 }
 
 .home-link-container{
-    margin: 0em auto;
-    max-width:  300px;
+    margin: 0.8em auto;
+    max-width:  450px;
 }
 .home-link-container ul{
     margin: 0;

@@ -102,7 +102,21 @@ students_info = [
     [7104172, 1116, "Britt", " Goss", "832-415-4225", "BrittTGoss@lonestar.edu", 991606, 999981],
     [7106514, 1112, "Katherine ", " Leonard", "713-511-1515", "KatherineALeonard@lonestar.edu",990001, 999982 ],
     [7107784, 1114, "Michael ", " Marx",  "818-215-4552", "MichaelKMarx@lonestar.edu", 990001, 990002],
-    [7195584, 1114, "Kyle ", " Defro",  "713-215-4533", "KyleDefro2@lonestar.edu", 999933, 990002]
+    [7195584, 1114, "Kyle ", " Defro",  "713-215-4533", "KyleDefro2@lonestar.edu", 999933, 990002],
+
+
+
+
+
+    [7054974 , 1114, "Zachery", "Mathis", "850-377-4501" , "non.egestas.a@est.edu", 990001, 999984],
+    [7392249, 1113,  "Bryar", "Collier", "902-201-1551", "dolor@Phasellus.com", 999201, 990002],
+    [7420549, 1111, "Regan", "Flowers", "832-915-1486", "vestibulum@ornare.net", 999930, 999981 ],
+    [7719888, 1114, "Hedda", "Romero", "832-415-8554", "iaculis@Cumsociisnatoque.edu", 999935, 999983],
+    [7445524, 1115,  "Rosalyn", "Conway", "713-548-1159", "sodales.nisi.magna@arcuVivamus.org", 999931, 990002 ],
+    [7799957, 1116, "Larissa", "Shields", "832-415-4225", "feugiat@nisisem.net", 991606, 999981],
+    [7317062, 1112, "Declan", "Dixon", "713-511-1515", "elementum@libero.edu",990001, 999982 ],
+    [7822789, 1114, "Mohammad", "Mckay",  "818-215-4552", "gravida@mi.co.uk", 990001, 990002],
+    [7338896, 1114, "Samson", "Barlow",  "713-215-4533", "condimentum@semperegestas.com", 999933, 990002]
 
 ]
 
@@ -122,11 +136,23 @@ certifiers_info =[
 
 student_visits_info =[
 
- [7101357, 7101357, true, "I need to change my degree plan", 1],
- [7195584, 7101357, true, "I added GEOL 1303 ", 2],
- [7108745, 7001151, true, "I dropped Math 1310", 3],
- [7106965, 7146151, true, "I my BAH stiped was not the full amount", 4],
- [7108745, 7001121, true, "I'm a new transfer student and i dont know what to do first.", 5],
+ [7101357, 7101357, true, "I need to change my degree plan", "", "", 1],
+ [7195584, 7101357, true, "I added GEOL 1303 ",  "", "", 2],
+ [7108745, 7001151, true, "I dropped Math 1310",  "", "", 3],
+ [7106965, 7146151, true, "I my BAH stiped was not the full amount",  "", "", 4],
+ [7108745, 7001121, true, "I'm a new transfer student and i dont know what to do first.",  "", "", 5],
+
+
+ [7054974 ,  7101357, false, "I need to change my degree plan", "2016-03-21 04:51:23.062503", "2016-03-21 05:22:49.117839", 1],
+ [7392249, 7101357, false, "I need to change my degree plan", "2016-03-22 04:51:23.062503", "2017-03-22 05:22:49.117839",1],
+ [7420549, 7229151, false, "I need to change my degree plan", "2016-03-23 04:51:23.062503",   "2017-03-23 05:22:49.117839",1],
+ [7719888, 7146151, false, "I dropped Math 1310","2016-10-21 04:51:23.062503", "2017-10-21 05:22:49.117839", 3],
+ [7445524, 7146151, false, "I my BAH stiped was not the full amount","2016-10-21 04:59:23.062503", "2017-10-21 08:23:49.117839", 4],
+ [7799957, 7101357 , false, "I my BAH stiped was not the full amount","2016-10-22 04:59:23.062503", "2017-10-22 08:23:49.117839", 4],
+ [7317062,  7251151 , false,  "I'm a new transfer student and i dont know what to do first.", "2016-03-22 04:51:23.062503",   "2017-03-21 03:22:49.117839", 5],
+ [7822789,  7101357 , false,  "I'm a new transfer student and i dont know what to do first.", "2016-03-29 04:51:23.062503",   "2017-03-29 08:22:49.117839", 5],
+ [7338896, 7101357 , false,  "I'm a new transfer student and i dont know what to do first.","2016-03-20 04:51:23.062503",    "2017-03-20 06:22:49.117839", 5],
+
 
 ]
 
@@ -186,7 +212,7 @@ end
 
 
 
-student_visits_info.each do |student_id, certifier_id, issignedin, service_requested, reason_for_visit_id|
-  student_visit  << StudentVisit.create(student_id: student_id, certifier_id: certifier_id,  isSignedin:  issignedin, service_requested: service_requested, reason_for_visit_id: reason_for_visit_id)
+student_visits_info.each do |student_id, certifier_id, issignedin, service_requested, created_at, updated_at, reason_for_visit_id|
+  student_visit  << StudentVisit.create(student_id: student_id, certifier_id: certifier_id,  isSignedin:  issignedin, service_requested: service_requested, created_at: created_at, updated_at: updated_at, reason_for_visit_id: reason_for_visit_id)
 end
 

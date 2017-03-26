@@ -37,8 +37,14 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave'
 
+# Postgres
+
 gem 'pg'
 
+# Bootstrap
+gem 'bootstrap-sass'
+
+gem 'bootstrap-toggle-rails'
 #gem 'rmagick',  '~> 2.0'
 
 

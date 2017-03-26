@@ -1,2 +1,29 @@
-<h1>FrequentlyAskedQuestions#show</h1>
-<p>Find me in app/views/frequently_asked_questions/show.html.erb</p>
+<p id="notice"><%= notice %></p>
+
+<style>
+
+  .faq-link{
+    display: inline-block;
+    margin: 0.5em;
+  }
+
+</style>
+
+<p>
+  <strong>Question:</strong>
+  <%= @frequently_asked_question.question %>
+</p>
+
+<p>
+  <strong>Answer:</strong>
+  <%= @frequently_asked_question.answer %>
+</p>
+
+<ul>
+<li class="faq-link"><%= link_to 'Edit', edit_frequently_asked_question_path(@frequently_asked_question), class: 'btn btn-default' %></li>
+
+
+  <li class="faq-link"><%= link_to 'Back to Add New Question', frequently_asked_questions_path, class: 'btn btn-default' %></li>
+
+  <li class="faq-link"><%= link_to 'Back to Admin Panel', admin_users_path, class: 'btn btn-default' %></li>
+</ul>

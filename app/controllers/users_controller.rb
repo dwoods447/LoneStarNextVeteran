@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
-
-
+  def index
+    @users = User.all
+  end
 
   def new
     @user = User.new
@@ -18,6 +19,15 @@ class UsersController < ApplicationController
       else
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+    end
+  end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_access_path, notice: 'User was successfully destroyed.' }
+      format.json { head :no_content }
     end
   end
 

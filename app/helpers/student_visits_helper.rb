@@ -22,4 +22,74 @@ module StudentVisitsHelper
    end
 
 
+
+
+
+
+  def one_year_reason_report_visit_counts(reason_for_visit_id, options={})
+
+    if reason_for_visit_id
+
+      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:reason_for_visit_id => reason_for_visit_id).count
+    end
+
+
+  end
+
+
+
+
+
+  def six_months_reason_report_visit_counts(reason_for_visit_id, options={})
+
+    if reason_for_visit_id
+
+      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:reason_for_visit_id => reason_for_visit_id).count
+    end
+
+
+  end
+
+  def thirty_days_report_visit_counts(certifier_id, options={})
+
+    if certifier_id
+
+      StudentVisit.where(created_at: 30.days.ago..Time.now).where(:certifier_id => certifier_id ).count
+    end
+
+
+  end
+
+
+
+
+
+
+
+  def six_months_report_visit_counts(certifier_id, options={})
+
+    if certifier_id
+
+      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:certifier_id => certifier_id ).count
+    end
+
+
+  end
+
+
+
+
+
+
+
+  def one_year_report_visit_counts(certifier_id, options={})
+
+    if certifier_id
+
+      StudentVisit.where(created_at: 1.year.ago..Time.now).where(:certifier_id => certifier_id ).count
+    end
+
+
+  end
+
 end

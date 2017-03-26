@@ -1,0 +1,75 @@
+<h1>Reports#reports</h1>
+
+
+<div class="totals">
+  <p>Total Students seen in the Past 6 months: &nbsp;<%= @six_months %></p>
+
+
+
+  <p>Total Students seen in the Past Year: &nbsp;<%= @one_year_ago %></p>
+</div>
+
+
+
+
+<div>
+  <h3>Individual Staff Totals in the past year</h3>
+  <ul class="switchboard-users">
+    <% @all_staff.each do |staff_member|%>
+        <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="badge"><%= one_year_report_visit_counts(staff_member.certifier_id) %></span></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+<div>
+  <h3>Individual Staff Totals in the past 6 months</h3>
+  <ul class="switchboard-users">
+    <% @all_staff.each do |staff_member|%>
+        <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="badge"><%= six_months_report_visit_counts(staff_member.certifier_id) %></span></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+<div>
+  <h3>Individual Staff Totals in the past 30 days</h3>
+  <ul class="switchboard-users">
+    <% @all_staff.each do |staff_member|%>
+        <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="badge"><%= thirty_days_report_visit_counts(staff_member.certifier_id) %></span></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
+
+<div>
+  <h3>Individuals who had an ____ issue over the past year</h3>
+  <ul class="switchboard-users">
+    <% @reason_for_visit.each do |reason|%>
+        <li><span class="full-name"><%= reason.visit_reason_name%></span>&nbsp;<span class="badge"><%= one_year_reason_report_visit_counts(reason.reason_for_visit_id) %></span></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+<div>
+  <h3>Individuals who had an ____ issue over the past 6 months</h3>
+  <ul class="switchboard-users">
+    <% @reason_for_visit.each do |reason|%>
+        <li><span class="full-name"><%= reason.visit_reason_name%></span>&nbsp;<span class="badge"><%= six_months_reason_report_visit_counts(reason.reason_for_visit_id) %></span></li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
+<%= link_to  admin_users_path, class:'btn btn-default' do %>
+    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+<%  end %>

@@ -1,4 +1,7 @@
 class CertifiersController < ApplicationController
+  before_action :confirm_logged_in,  :only => [:edit, :update]
+  before_action :confirm_admin_user,  :only=> [:new, :delete, :index]
+
   before_action :set_certifier, only: [:show, :edit, :update, :destroy]
 
   # GET /certifiers
@@ -60,7 +63,24 @@ class CertifiersController < ApplicationController
       format.json { head :no_content }
     end
   end
+  private
+  def confirm_logged_in
 
+    unless session[:user_id] #if session id is missing login message will be displayed
+      flash[:notice] = "Please login in"
+      redirect_to(access_login_path)
+    end
+  end
+
+  private
+  def confirm_admin_user
+
+    unless session[:user_id]
+      flash[:notice]  = "Please login in"
+      redirect_to(admin_access_login_path)
+    end
+
+  end
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_certifier
