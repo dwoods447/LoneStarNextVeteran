@@ -56,6 +56,13 @@ user_info = [
     ["User", "Two", "user.two@email.com", "user2", "password"],
 ]
 
+
+admin_user_info = [
+
+    ["Administrator", "One", "user.one@email.com", "admin", "password"],
+    ["Administrator", "Two", "user.two@email.com", "admin2", "password"],
+]
+
 campus_info = [
     [1115, "LSC-CyFair"],
     [1114, "LSC-Kingwood"],
@@ -156,6 +163,8 @@ student_visits_info =[
 
 ]
 
+
+admin_user = []
 user = []
 campus = []
 students = []
@@ -181,6 +190,13 @@ end
 user_info.each do |first_name, last_name, email_addr, username, password |
  user << User.create(first_name: first_name, last_name: last_name, email: email_addr, username: username, password: password)
 end
+
+
+admin_user_info.each do |first_name, last_name, email_addr, username, password |
+  admin_user << User.create(first_name: first_name, last_name: last_name, email: email_addr, username: username, password: password)
+end
+
+
 
 campus_info.each do |campus_id, campus_name|
   campus << Campus.create(campus_id: campus_id, campus_name: campus_name)
