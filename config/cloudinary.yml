@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dpwoods
+  api_key: '413768232915865'
+  api_secret: i3GPD1MXY_lVl8axW2ExyjWVbys
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dpwoods
+  api_key: '413768232915865'
+  api_secret: i3GPD1MXY_lVl8axW2ExyjWVbys
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dpwoods
+  api_key: '413768232915865'
+  api_secret: i3GPD1MXY_lVl8axW2ExyjWVbys
+  enhance_image_tag: true
+  static_image_support: false

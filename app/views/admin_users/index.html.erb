@@ -111,7 +111,7 @@
         <div class="col-md-3 col-centered">
           <%=link_to reports_reports_path do%>
         <div class="avatar-container">
-        <%= image_tag('/assets/admin_logos/report.jpg')%>
+        <%= cl_image_tag("img_assets/report.jpg")%>
         <div class="overlay">
           <div class="text">View Reports</div>
         </div>
@@ -123,7 +123,7 @@
         <div class="col-md-3 col-centered">
           <%=link_to  certifiers_path do%>
       <div class="avatar-container">
-        <%= image_tag('/assets/admin_logos/management.jpg')%>
+        <%= cl_image_tag("img_assets/management.jpg")%>
         <div class="overlay">
           <div class="text">Manage VA Staff</div>
         </div>
@@ -137,7 +137,7 @@
         <div class="col-md-3 col-centered">
         <a href="javascript:void(0);">
           <div class="avatar-container">
-              <%= image_tag('/assets/admin_logos/users.jpg')%>
+              <%= cl_image_tag("img_assets/users.jpg")%>
              <div class="overlay">
                <%= link_to  users_new_path do%>
                 <div class="text">Add New Users</div>
@@ -156,7 +156,7 @@
         <div class="col-md-3 col-centered">
           <%=link_to  frequently_asked_questions_new_path do%>
         <div class="avatar-container">
-          <%= image_tag('/assets/admin_logos/question.jpg')%>
+          <%= cl_image_tag("img_assets/question.jpg")%>
           <div class="overlay">
             <div class="text">Manage Frequently Asked Questions</div>
           </div>
@@ -179,7 +179,7 @@
         <div class="col-md-3 col-centered">
           <%=link_to student_kiosk_index_path do%>
               <div class="avatar-container">
-                <%= image_tag('/assets/admin_logos/kiosk.jpg')%>
+                <%= cl_image_tag("img_assets/kiosk.jpg")%>
                 <div class="overlay">
                   <div class="text">Go to Student Kiosk</div>
                 </div>
@@ -191,7 +191,7 @@
         <div class="col-md-3 col-centered">
           <%=link_to  admin_path do%>
               <div class="avatar-container">
-                <%= image_tag('/assets/admin_logos/console.jpg')%>
+                <%= cl_image_tag("img_assets/console.jpg")%>
                 <div class="overlay">
                   <div class="text">Go to User Console</div>
                 </div>
@@ -205,7 +205,7 @@
         <div class="col-md-3 col-centered">
         <%= link_to  admin_access_logout_path do %>
               <div class="avatar-container">
-                <%= image_tag('/assets/admin_logos/exit.jpg')%>
+                <%= cl_image_tag("img_assets/exit.jpg")%>
                 <div class="overlay">
                   <div class="text">Exit</div>
                 </div>
