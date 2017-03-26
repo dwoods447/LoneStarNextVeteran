@@ -12,16 +12,14 @@
 //
 //= require jquery
 //= require jquery_ujs
-//= require turbolinks
 //= require jquery-ui
+//= require bootstrap-toggle
+//= require turbolinks
 //= require_tree .
 
 
  // This is the code that allows for tooltip showing in the student_visits index
     $(document).tooltip();
-
-
-
 
 
 

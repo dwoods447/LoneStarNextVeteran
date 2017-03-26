@@ -1,5 +1,12 @@
-<h1>New Certifier</h1>
+<h1 class="page-title">Add New Staff Member</h1>
+<style>
+  h3{
+    display: none;
+  }
+</style>
 
 <%= render 'form', certifier: @certifier %>
 
-<%= link_to 'Back', certifiers_path %>
+<%= link_to  admin_users_path, class:'btn btn-default' do %>
+    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+<%  end %>

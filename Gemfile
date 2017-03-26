@@ -37,10 +37,18 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem 'carrierwave'
 
+# Postgres
+
 gem 'pg'
 
+# Bootstrap
+gem 'bootstrap-sass'
+
+gem 'bootstrap-toggle-rails'
 #gem 'rmagick',  '~> 2.0'
 
+
+gem 'cloudinary'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

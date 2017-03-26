@@ -10,10 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170314044728) do
+ActiveRecord::Schema.define(version: 20170325204936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "admin_users", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "email"
+    t.string   "username"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["username"], name: "index_admin_users_on_username", using: :btree
+  end
 
   create_table "campuses", id: false, force: :cascade do |t|
     t.integer  "campus_id"
@@ -53,6 +64,13 @@ ActiveRecord::Schema.define(version: 20170314044728) do
     t.index ["federal_benefit_id"], name: "index_federal_benefits_on_federal_benefit_id", using: :btree
   end
 
+  create_table "frequently_asked_questions", force: :cascade do |t|
+    t.text     "question"
+    t.text     "answer"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "reason_for_visits", id: false, force: :cascade do |t|
     t.integer  "reason_for_visit_id"
     t.string   "visit_reason_name"
@@ -86,7 +104,7 @@ ActiveRecord::Schema.define(version: 20170314044728) do
     t.integer  "campus_id"
     t.string   "first_name"
     t.string   "last_name"
-    t.string   "phone"
+    t.string   "phone_number"
     t.string   "email"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false

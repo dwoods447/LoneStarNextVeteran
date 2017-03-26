@@ -27,6 +27,7 @@ class StudentVisitsController < ApplicationController
   # GET /student_visits/1.json
   def show
 
+
     @student_id = session[:student_id]
     @student_first_name = session[:first_name]
     @student_last_name = session[:last_name]
@@ -58,6 +59,8 @@ class StudentVisitsController < ApplicationController
 
   # GET /student_visits/1/edit
   def edit
+    @username = session[:username]
+
     @student_visits =  StudentVisit
     @edit_student_id = session[:student_id]
     @current_staff = Certifier.where(:IsAvailable => true)
@@ -93,11 +96,13 @@ class StudentVisitsController < ApplicationController
   # PATCH/PUT /student_visits/1
   # PATCH/PUT /student_visits/1.json
   def update
+    @username = session[:username]
+
     @current_staff = Certifier.where(:IsAvailable => true)
     @all_staff = Certifier.all
     respond_to do |format|
       if @student_visit.update(student_visit_params)
-        format.html { redirect_to access_login_path }
+        format.html { redirect_to admin_path }
         #format.html { redirect_to @student_visit, notice: 'Student visit was successfully updated.' }
         #format.json { render :show, status: :ok, location: @student_visit }
       else

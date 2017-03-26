@@ -1,6 +1,6 @@
 class AccessController < ApplicationController
 
-
+  before_action :confirm_logged_in,  :except => [:login, :attempt_login, :logout]
 
 
   def login
@@ -37,6 +37,17 @@ class AccessController < ApplicationController
 
   end
 
+
+  private
+
+  def confirm_logged_in
+
+    unless session[:user_id] #if session id is missing login message will be displayed
+      flash[:notice] = "Please login in"
+      redirect_to(access_login_path)
+    end
+
+  end
 
 
 

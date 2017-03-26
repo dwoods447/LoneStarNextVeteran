@@ -2,6 +2,33 @@ Rails.application.routes.draw do
 
 
 
+  resources :frequently_asked_questions
+  get 'frequently_asked_questions/index'
+
+  get 'frequently_asked_questions/new'
+
+  get 'frequently_asked_questions/create'
+
+  get 'frequently_asked_questions/destroy'
+
+
+  get 'reports/reports'
+
+  get 'admin_access/login'
+
+  resources :admin_users, :except => [:show] do
+    member do
+      get :delete
+    end
+  end
+
+  resources :reports, :only => [:reports] do
+
+  end
+
+
+
+
   get 'users/index'
 
   get 'users/show'
@@ -15,6 +42,7 @@ Rails.application.routes.draw do
   get 'state_benefits/index'
 
   get 'federal_benefits/index'
+
 
   root 'student_kiosk#index'
 
@@ -49,6 +77,21 @@ Rails.application.routes.draw do
   get 'certifiers/destroy'
 
 
+  post 'frequently_asked_questions/new', to: 'frequently_asked_questions#create'
+
+  get'frequently_asked_questions/new'
+  get'frequently_asked_questions/destroy'
+
+
+  ################## Admin User Login Logout Functionality #############################
+
+  post 'admin_access/attempt_login'
+  get  'admin_access/logout'
+
+  get 'admin_access',  :to  =>  'admin_access#index'
+
+
+
   ############################# Student Confirm ########################################
 
   get 'confirm_student/index'
@@ -56,7 +99,7 @@ Rails.application.routes.draw do
   get 'select_certifier/index'
 
 
-  ############################ Login Logout Functionality ##########################3
+  ############################ User Login Logout Functionality ##########################
 
   get 'access/login'
   get  'access/logout'
