@@ -17,6 +17,7 @@ StudentVisit.delete_all
 User.delete_all
 ReasonForVisit.delete_all
 FrequentlyAskedQuestion.delete_all
+AdminUser.delete_all
 
 frequently_asked_questions = [
 
@@ -59,8 +60,8 @@ user_info = [
 
 admin_user_info = [
 
-    ["Administrator", "One", "user.one@email.com", "admin", "password"],
-    ["Administrator", "Two", "user.two@email.com", "admin2", "password"],
+    ["Administrator", "One", "admin.user.one@email.com", "admin", "password"],
+    ["Administrator", "Two", "admin.user.two@email.com", "admin2", "password"],
 ]
 
 campus_info = [
