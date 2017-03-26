@@ -199,8 +199,8 @@ end
 
 
 
-students_info.each do |student_id, campus_id, first_name,  last_name, phone,  email, federal_benefit_id, state_benefit_id|
-  students << Student.create(student_id: student_id, campus_id: campus_id, first_name: first_name, last_name: last_name,  phone: phone, email: email, federal_benefit_id: federal_benefit_id, state_benefit_id: state_benefit_id)
+students_info.each do |student_id, campus_id, first_name,  last_name, phone_number,  email, federal_benefit_id, state_benefit_id|
+  students << Student.create(student_id: student_id, campus_id: campus_id, first_name: first_name, last_name: last_name,  phone_number: phone_number, email: email, federal_benefit_id: federal_benefit_id, state_benefit_id: state_benefit_id)
 end
 
 
