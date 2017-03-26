@@ -297,4 +297,13 @@
     var body = document.getElementsByTagName("body")[0];
     body.style.backgroundColor = "#003768";
     body.style.color = "#fff";
+  $(function() {
+    $("tr").click(function () {
+      $(this).find('input:radio').attr('checked', true);
+    });
+
+  })
+
+
+
 </script>

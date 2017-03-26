@@ -2,13 +2,37 @@
 <project version="4">
   <component name="dataSourceStorageLocal">
     <data-source name="postgres@localhost" uuid="30f69b0a-5de2-480c-80fb-9ee100957552">
-      <database-info product="PostgreSQL" version="9.6.2" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+      <database-info product="PostgreSQL" version="9.5.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
         <identifier-quote-string>&quot;</identifier-quote-string>
       </database-info>
       <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
       <secret-storage>master_key</secret-storage>
-      <user-name>user1</user-name>
+      <user-name>postgres</user-name>
+      <introspection-schemas>postgres:public</introspection-schemas>
       <resolve-scope>postgres:public,user1</resolve-scope>
+      <unqualified-resolve-schemas>postgres:public,user1</unqualified-resolve-schemas>
+    </data-source>
+    <data-source name="Rails cis4375: development" uuid="4859659d-45ed-4593-b75c-b12bbb41528a">
+      <database-info product="PostgreSQL" version="9.5.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>cis4375_psql_development:public</introspection-schemas>
+      <resolve-scope>cis4375_psql_development:postgres,public</resolve-scope>
+      <unqualified-resolve-schemas>cis4375_psql_development:postgres,public</unqualified-resolve-schemas>
+    </data-source>
+    <data-source name="Rails cis4375: production" uuid="ecc2c93f-be73-4026-9459-c20b98d8f09b">
+      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <user-name>postgres</user-name>
+    </data-source>
+    <data-source name="Rails cis4375: test" uuid="2dddf032-a2ac-436e-8c4c-088da190ed02">
+      <database-info product="PostgreSQL" version="9.5.4" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4 JDBC4 (build 1201)">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <user-name>postgres</user-name>
+      <introspection-schemas>cis4375_psql_test:public</introspection-schemas>
     </data-source>
   </component>
 </project>

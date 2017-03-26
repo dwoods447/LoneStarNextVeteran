@@ -7,5 +7,29 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="Rails cis4375: development" uuid="4859659d-45ed-4593-b75c-b12bbb41528a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/cis4375_psql_development</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails cis4375: production" uuid="ecc2c93f-be73-4026-9459-c20b98d8f09b">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/cis4375_psql_production</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="Rails cis4375: test" uuid="2dddf032-a2ac-436e-8c4c-088da190ed02">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <imported>true</imported>
+      <remarks>$PROJECT_DIR$/config/database.yml</remarks>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://127.0.0.1/cis4375_psql_test</jdbc-url>
+    </data-source>
   </component>
 </project>

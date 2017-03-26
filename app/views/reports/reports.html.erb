@@ -1,20 +1,151 @@
-<h1>Reports#reports</h1>
+<style>
+  .switchboard{
+    border: 1px solid #666;
+    height: 100%;
+    padding: 0px;
+    background-color: #3192DF;
+  }
+  .switchboard-header{
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+  }
 
+  .switchboard-users{
+    display: block;
+    list-style-type: none;
+    text-decoration:none !important;
+    margin: 6px;
+    padding:0.2em !important;
 
-<div class="totals">
-  <p>Total Students seen in the Past 6 months: &nbsp;<%= @six_months %></p>
+  }
+  .switchboard-users li{
+    margin: 0.7em auto;
+    padding:0.5em;
+    border: 1px solid #C7C8CA;
+    background-color: #eee;
+    box-shadow: 4px 4px 2px #214C7A;
+  }
+  .switchboard-panel{
+    list-style-type: none;
+    display: block;
+    padding:0.6em !important;
+    margin: 9px;
 
+  }
 
+  .switchboard-group{
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+    padding-left: 0.5em;
+    font-size: 1.1em;
+    font-family: 'Francois One', sans-serif;
+  }
+  .switchboard-header-container{
+    background-color: #214C7A;
+    padding: 0.5em;
+  }
+  .true{
+    background-color: green;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+  }
 
-  <p>Total Students seen in the Past Year: &nbsp;<%= @one_year_ago %></p>
-</div>
+  .false{
+    background-color: red;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #000;
+  }
 
+  .lower-button{
+    display: inline-block;
+    margin: 13px;
+  }
 
+  th{
+    color: #fff;
+    font-weight: 600;
+    background-color: #214C7A;
+  }
+  .full-name{
+    color: #002953;
+    font-weight: 600;
 
+  }
+  .user-circle{
+    color: #002953;
+  }
+  .cert-status-button{
+    font-size: 1.3em;
+  }
 
-<div>
-  <h3>Individual Staff Totals in the past year</h3>
-  <ul class="switchboard-users">
+  table{
+    font-size: 0.8em !important;
+    padding:  0.2em !important;
+  }
+
+  table td{
+    font-size: 1em !important;
+    padding:  0.5em !important;
+
+  }
+  .available:after{
+    content: "\f087";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 1.2em;
+    text-decoration: inherit;
+    z-index: -1;
+    color :green;
+  }
+
+  .unavailable:after{
+    content: "\f088";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-decoration: inherit;
+    z-index: -1;
+    color: red;
+  }
+</style>
+<div class="container">
+<h1>Reports</h1>
+
+  <center><h2>Total Students Seen</h2></center>
+  <div class="row">
+    <div class="switchboard col-md-6">
+      <div class="switchboard-header-container">
+        <h3 class="switchboard-header">Past 6 Months</h3>
+      </div>
+      <div class="switchboard-panel switchboard-group">
+        <center><span style="font-size: 2em;"><%= @six_months %></span></center>
+      </div>
+    </div>
+    <div class="switchboard col-md-6">
+      <div class="switchboard-header-container">
+        <h3 class="switchboard-header">Past Year</h3>
+      </div>
+        <div class="switchboard-panel switchboard-group">
+          <center><span style="font-size: 2em;"><%= @one_year_ago %></span></center>
+        </div>
+
+    </div>
+  </div>
+
+  <center><h2>Staff's Total Visitations</h2></center>
+<div class="row">
+<div class="switchboard col-md-4">
+  <div class="switchboard-header-container">
+  <h3 class="switchboard-header">Past Year</h3>
+  </div>
+    <ul class="switchboard-users switchboard-panel">
     <% @all_staff.each do |staff_member|%>
         <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="badge"><%= one_year_report_visit_counts(staff_member.certifier_id) %></span></li>
     <% end %>
@@ -23,33 +154,35 @@
 
 
 
-<div>
-  <h3>Individual Staff Totals in the past 6 months</h3>
-  <ul class="switchboard-users">
+<div class="switchboard col-md-4">
+  <div class="switchboard-header-container">
+  <h3 class="switchboard-header">Past 6 Months</h3>
+  </div>
+  <ul class="switchboard-users switchboard-panel">
     <% @all_staff.each do |staff_member|%>
         <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="badge"><%= six_months_report_visit_counts(staff_member.certifier_id) %></span></li>
     <% end %>
   </ul>
 </div>
 
-
-
-<div>
-  <h3>Individual Staff Totals in the past 30 days</h3>
-  <ul class="switchboard-users">
+<div class="switchboard col-md-4">
+  <div class="switchboard-header-container">
+  <h3 class="switchboard-header">Past 30 Days</h3>
+  </div>
+    <ul class="switchboard-users switchboard-panel">
     <% @all_staff.each do |staff_member|%>
         <li><span class="user-circle"><i class="fa fa-user-circle fa-2x" aria-hidden="true" ></i></span>&nbsp;<span class="full-name"><%= staff_member.set_fullname%></span>&nbsp;<span class="badge"><%= thirty_days_report_visit_counts(staff_member.certifier_id) %></span></li>
     <% end %>
   </ul>
 </div>
-
-
-
-
-
-<div>
-  <h3>Individuals who had an ____ issue over the past year</h3>
-  <ul class="switchboard-users">
+</div>
+  <center><h2>Reason for Visitation Totals</h2></center>
+  <div class="row">
+<div class="switchboard col-md-6">
+  <div class="switchboard-header-container">
+  <h3 class="switchboard-header"> Past Year</h3>
+  </div>
+  <ul class="switchboard-users switchboard-panel">
     <% @reason_for_visit.each do |reason|%>
         <li><span class="full-name"><%= reason.visit_reason_name%></span>&nbsp;<span class="badge"><%= one_year_reason_report_visit_counts(reason.reason_for_visit_id) %></span></li>
     <% end %>
@@ -57,17 +190,18 @@
 </div>
 
 
-
-<div>
-  <h3>Individuals who had an ____ issue over the past 6 months</h3>
-  <ul class="switchboard-users">
+<div class="switchboard col-md-6">
+  <div class="switchboard-header-container">
+  <h3 class="switchboard-header">Past 6 Months</h3>
+  </div>
+  <ul class="switchboard-users switchboard-panel">
     <% @reason_for_visit.each do |reason|%>
         <li><span class="full-name"><%= reason.visit_reason_name%></span>&nbsp;<span class="badge"><%= six_months_reason_report_visit_counts(reason.reason_for_visit_id) %></span></li>
     <% end %>
   </ul>
 </div>
-
-
+</div>
+</div>
 
 
 <%= link_to  admin_users_path, class:'btn btn-default' do %>

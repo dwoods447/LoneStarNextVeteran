@@ -1,0 +1,306 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require jquery-ui
+ */
+body {
+    color: #333;
+    font-family: verdana, arial, helvetica, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 0px;
+
+}
+.container-fluid {
+    margin: 0 !important;
+    padding: 1em !important;
+    overflow: hidden;
+
+}
+
+.navbar-brand{
+    width: 267px !important;
+    height: 113px !important;
+    display: block !important;
+
+
+}
+.navbar-inverse {
+    background-color: #002953;
+    border-color: #080808;
+    height: 120px;
+}
+.navbar {
+    border-radius: 0px !important;
+}
+
+
+.page-title {
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 2px 2px 4px #000000;
+}
+.contact-card{
+    max-width: 45%;
+    margin: 0 auto;
+    background-color: rgba(0, 55, 104, 0.6);
+    padding: 1em;
+    border: 2px solid #fff;
+    box-shadow: 3px 3px 6px #26252B;
+}
+.avatar{
+    font-size: 20em;
+    text-align: center;
+    color: #fff;
+}
+
+.contact-list{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.contact-item{
+    list-style: none;
+    padding: 0.5em;
+    border: 1px solid #eee;
+    color: #fff;
+    font-size:  1.6em;
+    font-weight: 600;
+    background-color: #003768;
+}
+
+
+.contact-name{
+    margin: 0;
+    margin-top: 25px;
+    background-color: #009edf;
+    padding: 0.5em;
+    text-align: center;
+}
+.contact-links-container{
+    max-width: 525px;
+    margin: 0 auto;
+}
+
+
+.link-list{
+    display: block;
+    max-width: 250px;
+    margin: 0em auto;
+
+}
+.link-list-item{
+    display: inline-block;
+    margin: 1.2em;
+}
+
+a.visit-links{
+    display: block;
+    text-decoration: none;
+    border: 3px solid #fff;
+    padding: 0.9em 2.95em;
+    margin: 1em;
+    background-color: #B30838;
+    color: #fff;
+    text-align: center;
+    font-weight: 400;
+    font-family: 'Francois One', sans-serif;
+    font-size: 1.1em;
+
+}
+
+a.visit-links:hover{
+    color: #1B3884;
+    background-color: #fff;
+    border: 2px solid #B30838;
+}
+
+
+#placeholder{
+    visibility: hidden;
+}
+
+.center-col-centered {
+    display:inline-block !important;
+    float:none !important;
+    /* reset the text-align */
+    text-align:left;
+    /* inline-block space fix */
+    margin-right:-4px;
+
+    max-width: 300px !important;
+}
+
+.row-row-centered{
+    text-align:center;
+}
+
+
+.desktop{
+    width: 35%;
+
+}
+
+.laptop{
+    width: 44%;
+}
+
+
+
+#img-links{
+    display: block;
+    margin: 0 auto;
+
+}
+
+.img_round{
+    border-radius: 100%;
+}
+
+.home-link-container{
+    margin: 0em auto;
+    max-width:  250px;
+}
+.home-link-container ul{
+    margin: 0;
+
+}
+.home-link-container ul li{
+   display: inline-block;
+   margin:  1em;
+}
+.stafflink a{
+    color: #a1d3ff;
+    font-weight: 800;
+
+}
+
+
+CheckBoxes
+/**********/
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}
+
+
+/***Search Student **/
+
+
+.student-search{
+    display: block;
+    margin: 0 auto;
+    width: 518px;
+    height: 425px;
+
+}
+
+
+.searchbox{
+    max-width: 422px;
+    margin: 5em auto;
+}
+
+#student_id{
+    font-size: 2em;
+    padding: 1.1099em;
+}
+#submit{
+    background-color: #B30838;
+      padding: 1.34em;
+    color: #fff;
+}
+
+.back-link-style{
+    text-decoration: none;
+    font-size: 2em;
+    margin-top: 1em;
+    display: block;
+    color: #fff
+}
+
+
+
+
+.header-message{
+    text-align: center;
+}
+
+
+
+.notice {
+
+
+    text-align: center;
+}
+
+#dialog{
+    display: none;
+
+}
+
+
+.ui-widget-header{
+    padding: 1.3em 3.2em !important;
+    background: #1B3884 !important;
+    color: #fff !important;
+}
+
+
+
+CheckBoxes
+    /**********/
+
+.form-group input[type="checkbox"] {
+    display: none;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span {
+    width: 20px;
+}
+
+.form-group input[type="checkbox"] + .btn-group > label span:first-child {
+    display: none;
+}
+.form-group input[type="checkbox"] + .btn-group > label span:last-child {
+    display: inline-block;
+}
+
+.form-group input[type="checkbox"]:checked + .btn-group > label span:first-child {
+    display: inline-block;
+}
+.form-group input[type="checkbox"]:checked + .btn-group > label span:last-child {
+    display: none;
+}

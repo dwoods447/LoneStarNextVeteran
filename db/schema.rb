@@ -34,6 +34,14 @@ ActiveRecord::Schema.define(version: 20170325204936) do
     t.index ["campus_id"], name: "index_campuses_on_campus_id", using: :btree
   end
 
+  create_table "certifier_statuses", id: false, force: :cascade do |t|
+    t.integer  "status_id"
+    t.string   "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["status_id"], name: "index_certifier_statuses_on_status_id", using: :btree
+  end
+
   create_table "certifiers", id: false, force: :cascade do |t|
     t.integer  "certifier_id"
     t.string   "first_name"

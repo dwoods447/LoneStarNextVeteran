@@ -1,46 +1,85 @@
-<%= form_for(user) do |f| %>
-  <% if user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<style>
+  .user {
+    max-width: 85%;
+  }
 
-      <ul>
-      <% user.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  .input-field {
+    width: 85%;
+  }
+
+  .form-group {
+    margin: 2em !important;
+  }
+
+  .col-sm-6 col-sm-12 {
+    padding: 1em;
+  }
+
+</style>
+<center>
+<div class="container">
+  <%= form_for(user, html: {class: 'user'}) do |f| %>
+
+      <% if user.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+            <ul>
+              <% user.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
-    </div>
+
+
+      <div class="form-group">
+        <div class="col-md-6">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control input-lg input-field', placeholder: 'Enter First Name' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control input-lg input-field', placeholder: 'Enter Last Name' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <%= f.label :email %>
+          <%= f.text_field :email, class: 'form-control input-lg input-field', placeholder: 'Enter Email Address' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <%= f.label :username %>
+          <%= f.text_field :username, class: 'form-control input-lg input-field', placeholder: 'Enter Username' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control input-lg input-field', placeholder: 'Create Password' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-6">
+          <%= f.label 'Password Confirmation' %>
+          <%= f.password_field :password_confirmation, class: 'form-control input-lg input-field', placeholder: 'Confirm Password' %>
+        </div>
+      </div>
+
+      <div class="row form-group">
+        <div class="col-md-offset-4 col-md-4">
+            <%= f.submit 'Submit', class: 'btn btn-danger input-lg input-field', style: 'margin-top:10px' %>
+        </div>
+
+      </div>
+
   <% end %>
-
-
-  <div class="field">
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %>
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-
-  <div class="field">
-    <%= f.label :username %>
-    <%= f.text_field :username %>
-  </div>
-
-
-    <div class="field">
-      <%= f.label :password %>
-      <%= f.text_field :password %>
-    </div>
-
-
-    <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
+</center>
+<%= link_to  admin_users_path, class:'btn btn-default' do %>
+    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+<%  end %>
