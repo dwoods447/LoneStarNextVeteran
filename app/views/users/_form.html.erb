@@ -16,6 +16,7 @@
   }
 
 </style>
+<center>
 <div class="container">
   <%= form_for(user, html: {class: 'user'}) do |f| %>
 
@@ -69,12 +70,16 @@
         </div>
       </div>
 
-      <div class="form-group">
-        <div class="col-sm-3">
+      <div class="row form-group">
+        <div class="col-md-offset-4 col-md-4">
             <%= f.submit 'Submit', class: 'btn btn-danger input-lg input-field', style: 'margin-top:10px' %>
         </div>
+
       </div>
 
   <% end %>
-
 </div>
+</center>
+<%= link_to  admin_users_path, class:'btn btn-default' do %>
+    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+<%  end %>
