@@ -193,7 +193,7 @@ end
 
 
 admin_user_info.each do |first_name, last_name, email_addr, username, password |
-  admin_user << User.create(first_name: first_name, last_name: last_name, email: email_addr, username: username, password: password)
+  admin_user << AdminUser.create(first_name: first_name, last_name: last_name, email: email_addr, username: username, password: password)
 end
 
 
