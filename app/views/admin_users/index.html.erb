@@ -25,16 +25,17 @@
 
   .avatar-container {
     position: relative;
-    display: inline-block;
     margin: 3em auto;
     width: 284px;
     height: 284px;
+
   }
 
   .image {
     display: block;
     width: 100%;
     height: auto;
+    text-align: center;
   }
 
   .overlay {
@@ -72,6 +73,15 @@
     left: 50%;
     transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
+  }
+
+  .avatar-label {
+    font-weight: bold;
+    font-family: "futura-pt", sans-serif;
+    font-size: 24px;
+    line-height: 30px;
+    color: #003768;
+    text-align: center;
   }
 
   .col-centered {
@@ -120,7 +130,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">View Reports</div>
+            <div class="avatar-label">View Reports</div>
           </div>
 
           <div class="col-md-3 col-centered">
@@ -132,7 +142,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">Manage VA Staff</div>
+            <div class="avatar-label">Manage VA Staff</div>
           </div>
           <div class="col-md-3 col-centered">
             <%= link_to students_path do %>
@@ -143,7 +153,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">Manage Students</div>
+            <div class="avatar-label">Manage Students</div>
           </div>
           <div class="col-md-3 col-centered">
             <a href="javascript:void(0);">
@@ -159,7 +169,7 @@
                 </div>
               </div>
             </a>
-            <div style="text-align: center">Manage System Users</div>
+            <div class="avatar-label">Manage System Users</div>
           </div>
         </div>
         <div class="row row-centered">
@@ -172,7 +182,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">Manage Frequently Asked Questions</div>
+            <div class="avatar-label">Manage FAQs</div>
           </div>
           <div class="col-md-3 col-centered">
             <%= link_to student_kiosk_index_path do %>
@@ -183,7 +193,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">Student Kiosk</div>
+            <div class="avatar-label">Student Kiosk</div>
           </div>
 
           <div class="col-md-3 col-centered">
@@ -195,7 +205,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">View User Console</div>
+            <div class="avatar-label">View User Console</div>
           </div>
 
 
@@ -208,7 +218,7 @@
                   </div>
                 </div>
             <% end %>
-            <div style="text-align: center">Logout</div>
+            <div class="avatar-label">Logout</div>
           </div>
 
 
