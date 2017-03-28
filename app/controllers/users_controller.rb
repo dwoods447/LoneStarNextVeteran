@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :confirm_admin_user,  :only => [:index, :delete, :edit]
+
   def index
     @users = User.all
   end
@@ -7,6 +9,15 @@ class UsersController < ApplicationController
   def new
     @user = User.new
   end
+
+
+  def show
+    @user = User.find(params[:id])
+  end
+
+   def edit
+    @user = User.find(params[:id])
+   end
 
 
   def create
@@ -17,6 +28,19 @@ class UsersController < ApplicationController
         format.html { redirect_to @user, notice: 'User was successfully created.' }
 
       else
+        format.json { render json: @user.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def update
+    respond_to do |format|
+      @user = User.find(params[:id])
+      if @user.update(user_params)
+        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        format.json { render :show, status: :ok, location: @user }
+      else
+        format.html { render :edit }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
@@ -35,6 +59,15 @@ class UsersController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_user
     @user = User.find(params[:id])
+  end
+  private
+  def confirm_admin_user
+
+    unless session[:user_id]
+      flash[:notice]  = 'Please login'
+      redirect_to(admin_access_login_path)
+    end
+
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

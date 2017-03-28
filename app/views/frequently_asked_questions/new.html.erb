@@ -1,7 +1,8 @@
-<h1>New Frequently Asked Question</h1>
+<h1 class="page-title-gray">New Frequently Asked Question</h1>
 
 <%= render 'form', frequently_asked_question: @frequently_asked_question %>
 
-<ul>
-  <li class="faq-link"><%= link_to 'Back to Admin Panel', admin_users_path, class: 'btn btn-default' %></li>
-</ul>
+
+<%= link_to  admin_users_path, class:'btn btn-default' do %>
+    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+<%  end %>

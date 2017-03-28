@@ -1,6 +1,7 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1 class="page-title">Current Veterans Affairs Staff Members</h1>
+<h1 class="page-title-gray">Current Veterans Affairs Staff Members</h1>
 
 <table class="table table-bordered table-hover table-responsive">
   <thead>
@@ -38,11 +39,11 @@
 
 <br>
 
-<%= link_to new_certifier_path, class:'btn btn-default' do %>
+<%= link_to new_certifier_path, class:'btn btn-default pull-right' do %>
     <span>Add New Staff Member</span>&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></span>
 
 <% end %>
-
+</div>
 <%= link_to admin_users_path, class:'btn btn-default' do %>
     <span><span>Back to Admin Panel</span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
 <% end %>

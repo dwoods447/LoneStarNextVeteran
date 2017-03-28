@@ -3,7 +3,7 @@
     max-width: 85%;
   }
   .input-field{
-    width: 85%;
+    width: 100%;
   }
 
   .form-group{
@@ -18,9 +18,8 @@
        margin: 2em;
      }
 </style>
-
+<center>
 <div class="container">
-
 <%= form_for(certifier, html: {class: 'staff'}) do |f| %>
   <% if certifier.errors.any? %>
     <div id="error_explanation">
@@ -36,77 +35,76 @@
 
 
 
-    <div class="form-group">
+    <div class="form-group row">
       <div class="col-sm-12">
         <h3>Editing <%= certifier.set_fullname %>'s information</h3>
       </div>
     </div>
 
 
-    <div class="form-group">
-      <div class="col-sm-12">
+    <div class="form-group row">
+      <div class="col-md-12">
     <%= f.label 'Certifier\'s ID' %>
     <%= f.number_field :certifier_id, class: 'form-control input-lg input-field' %>
       </div>
   </div>
 
 
-    <div class="form-group">
+    <div class="form-group row">
       <div class="col-sm-6">
-        <%= f.label :first_name , for: 'first_name' %>
+        <%= f.label :first_name , for: 'First Name' %>
        <%= f.text_field :first_name, class: 'form-control input-lg input-field', placeholder: 'Enter First Name' %>
       </div>
       <div class="col-sm-6">
-        <%= f.label :last_name , for: 'last_name' %>
+        <%= f.label :last_name , for: 'Last Name' %>
         <%= f.text_field :last_name, class: 'form-control input-lg input-field', placeholder: 'Enter Last Name' %>
       </div>
     </div>
 
 
-    <div class="form-group">
+    <div class="form-group row">
       <div class="col-sm-6">
-        <%= f.label :email %>
+        <%= f.label 'Email' %>
         <%= f.text_field :email, class: 'form-control input-lg input-field' %>
       </div>
       <div class="col-sm-6">
-        <%= f.label :benefit_assigned %>
+        <%= f.label 'Benefits Assigned' %>
         <%= f.text_field :benefit_assigned, class: 'form-control input-lg input-field' %>
       </div>
     </div>
 
-    <div class="form-group">
-      <div class="col-sm-12">
+    <div class="form-group row">
+      <div class="col-sm-6">
       <%= f.label 'Upload a Photo' %>
       <%= f.file_field :avatar %>
       </div>
+      <div class="col-sm-6">
+        <%= f.label 'Available' %>
+        <ul>
+          <li style="display: inline-block">
+            <%= f.radio_button :IsAvailable, true, :checked => true %>
+            <%= label :IsAvailable_yes, 'Yes' %>
+          </li>
+          <li style="display: inline-block">
+            <%= f.radio_button :IsAvailable, false %>
+            <%= label :IsAvailable_no, 'No' %>
+          </li>
+        </ul>
+      </div>
     </div>
 
-    <div class="form-group">
-      <div class="col-sm-12">
-      <%= f.label 'Available' %>
-      <ul>
-      <li style="display: inline-block">
-      <%= f.radio_button :IsAvailable, true, :checked => true %>
-      <%= label :IsAvailable_yes, 'Yes' %>
-      </li>
-      <li style="display: inline-block">
-      <%= f.radio_button :IsAvailable, false %>
-      <%= label :IsAvailable_no, 'No' %>
-      </li>
-      </ul>
-      </div>
-
-
-      <div class="form-group">
-        <%= f.label :letters_assigned %>
+    <div class="form-group row">
+      <div class="col-md-12">
+        <%= f.label 'Letters Assigned' %>
         <%= f.text_field :letters_assigned, class: 'form-control input-lg input-field' %>
       </div>
-
-      <div class="form-group">
-        <%= f.submit 'Add/Update Information', class: 'btn btn-default' %>
-      </div>
     </div>
-
+      <div class="form-group row">
+        <div class="col-md-12">
+          <%= f.submit 'Add/Update Information', class: 'btn btn-default' %>
+        </div>
+      </div>
 
 <% end %>
 </div>
+</center>

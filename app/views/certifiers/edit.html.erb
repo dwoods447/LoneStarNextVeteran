@@ -1,4 +1,4 @@
-<h1 class="page-title">Edit Staff Member's Information</h1>
+<h1 class="page-title-gray">Edit Staff Member's Information</h1>
 
 <%= render 'form', certifier: @certifier %>
 <script type="text/javascript">
@@ -8,8 +8,10 @@
 
     });
 </script>
+<center>
 <div class="return">
 <%= link_to 'Return to Student Lobby', student_visits_path , class: 'btn btn-default' %>
 
  <%= link_to 'Back to View All Staff', certifiers_path , class: 'btn btn-default' %>
 </div>
+</center>

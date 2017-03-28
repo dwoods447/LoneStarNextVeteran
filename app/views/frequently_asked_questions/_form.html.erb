@@ -1,28 +1,44 @@
-<%= form_for(frequently_asked_question) do |f| %>
-  <% if frequently_asked_question.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(frequently_asked_question.errors.count, "error") %> prohibited this frequently_asked_question from being saved:</h2>
+<style>
+  .form-group {
+    margin: 2em !important;
+  }
 
-      <ul>
-      <% frequently_asked_question.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+  .col-sm-6 col-sm-12 {
+    padding: 1em;
+  }
+</style>
+<center>
+  <div class="container">
+  <%= form_for(frequently_asked_question) do |f| %>
+      <% if frequently_asked_question.errors.any? %>
+          <div id="error_explanation">
+            <h2><%= pluralize(frequently_asked_question.errors.count, "error") %> prohibited this
+              frequently_asked_question from being saved:</h2>
+
+            <ul>
+              <% frequently_asked_question.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
       <% end %>
-      </ul>
-    </div>
+      <div class="form-group row">
+        <div class="col-md-offset-3 col-sm-6">
+          <%= f.label 'Question' %>
+          <%= f.text_area :question, class: 'form-control input-lg input-field' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-sm-offset-3 col-sm-6">
+          <%= f.label 'Answer' %>
+          <%= f.text_area :answer, class: 'form-control input-lg input-field' %>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-offset-4 col-md-4">
+          <%= f.submit 'Submit', class: 'btn btn-danger input-lg input-field', style: 'margin-top:10px' %>
+        </div>
+      </div>
   <% end %>
-
-  <div class="field">
-    <%= f.label :question %>
-    <%= f.text_area :question %>
-  </div>
-
-  <div class="field">
-    <%= f.label :answer %>
-    <%= f.text_area :answer %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
-
+</div>
+</center>

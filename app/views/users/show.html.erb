@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+
+
+
+<h1 class="page-title">Confirm your information is correct.</h1>
+
+<div class="contact-card">
+  <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
+  <h3 class="contact-name"><%= @user.first_name %>&nbsp;<%= @user.last_name %></h3>
+  <ul class="contact-list">
+    <li class="contact-item">User ID:&nbsp; <%= @user.id %></li>
+    <li class="contact-item">Email:&nbsp;  <%= @user.email %></li>
+  </ul>
+  <div class="contact-links-container">
+    <ul class="link-list">
+      <li class="link-list-item"><%= link_to('Edit Information',  edit_user_path(@user), :class => 'btn btn-default') %></li>
+      <li class="link-list-item"> <%=link_to('Add Another User', new_user_path(@selected_user),  :class => 'btn btn-default') %></li>
+    </ul>
+  </div>
+</div>
+
+<div style="margin: 20px auto; background-image: url('http://www.lonestar.edu/images/lscLogo_extended.svg'); background-repeat: no-repeat; background-position: top;">
+  <div style="visibility: hidden;"><img src="http://placehold.it/1200x70" id="lowerPlaceholder"></div>
+</div>
+
+<%= link_to  admin_users_path, class:'btn btn-default' do %>
+    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+<%  end %>

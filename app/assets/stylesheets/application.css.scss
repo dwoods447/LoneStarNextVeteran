@@ -17,6 +17,10 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+ok!
+
+
+
 
 body {
     color: #333;
@@ -55,6 +59,11 @@ body {
     font-weight: 700;
     color: #fff;
     text-shadow: 2px 2px 4px #000000;
+}
+.page-title-gray {
+  text-align: center;
+  font-weight: 700;
+  color: #666666;
 }
 .contact-card{
     max-width: 45%;

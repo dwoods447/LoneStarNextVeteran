@@ -11,7 +11,8 @@
     padding:  0.2em !important;
   }
 </style>
-<h1>Students</h1>
+<div class="container">
+<h1 class="page-title-gray">Current Veterans Affairs Students</h1>
 
 <table class="table table-bordered table-hover table-responsive">
   <thead>
@@ -39,20 +40,19 @@
         <td><%= student.email %></td>
         <td><%= student.federal_benefit.benefit_name %></td>
         <td><%= student.state_benefit.benefit_name %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', student, class: 'btn btn-primary' %></td>
+        <td><%= link_to 'Edit', edit_student_path(student), class: 'btn btn-success' %></td>
+        <td><%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<div class="row">
-<div class="col-lg-12 col-md-12 col-sm-12">
-<%= link_to  new_student_path , class: 'btn btn-default', style:'margin: 1em;'  do %>
-      Add New Student&nbsp; <i class='fa fa-plus' aria-hidden='true'></i>
+  <%= link_to new_student_path, class:'btn btn-default pull-right' do %>
+      <span>Add New Student</span>&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></span>
+  <% end %>
+</div>
+<%= link_to admin_users_path, class:'btn btn-default' do %>
+    <span><span>Back to Admin Panel</span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
 <% end %>
-</div>
-</div>
