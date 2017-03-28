@@ -49,10 +49,10 @@
 </table>
 
 <br>
+  <%= link_to admin_users_path, class:'btn btn-default pull-left' do %>
+      <span><span>Back to Admin Panel</span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+  <% end %>
   <%= link_to new_student_path, class:'btn btn-default pull-right' do %>
       <span>Add New Student</span>&nbsp;<i class="fa fa-plus" aria-hidden="true"></i></span>
   <% end %>
 </div>
-<%= link_to admin_users_path, class:'btn btn-default' do %>
-    <span><span>Back to Admin Panel</span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-<% end %>

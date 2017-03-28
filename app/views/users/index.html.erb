@@ -27,9 +27,11 @@
     </tbody>
   </table>
 </div>
+  <%= link_to  admin_users_path, class:'btn btn-default pull-left' do %>
+      <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+  <%  end %>
+  <%=link_to('Add Another User', new_user_path(@selected_user),  :class => 'btn btn-default pull-right') %>
 
 </div>
+
 </div>
-<%= link_to  admin_users_path, class:'btn btn-default' do %>
-    <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-<%  end %>

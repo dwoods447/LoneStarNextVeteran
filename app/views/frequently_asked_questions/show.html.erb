@@ -2,28 +2,33 @@
 
 <style>
 
-  .faq-link{
+  .faq-link {
     display: inline-block;
     margin: 0.5em;
   }
 
 </style>
+<center>
+  <div class="contact-card">
+    <h1 class="page-title">Confirm Your FAQ is Correct</h1>
+    <ul class="contact-list">
+      <li class="contact-item">Question:&nbsp;  <%= @frequently_asked_question.question %></li>
+      <li class="contact-item">Answer:&nbsp;  <%= @frequently_asked_question.answer %></li>
+    </ul>
+    <br/>
+    <center>
+      <div class="row">
+        <%= link_to admin_users_path, class: 'btn btn-default' do %>
+            <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+        <% end %>
+        <%= link_to 'Edit', edit_frequently_asked_question_path(@frequently_asked_question), class: 'btn btn-default' %>
+        <%= link_to 'Add New Question', frequently_asked_questions_path, class: 'btn btn-default' %>
+      </div>
+    </center>
+  </div>
 
-<p>
-  <strong>Question:</strong>
-  <%= @frequently_asked_question.question %>
-</p>
-
-<p>
-  <strong>Answer:</strong>
-  <%= @frequently_asked_question.answer %>
-</p>
-
-<ul>
-<li class="faq-link"><%= link_to 'Edit', edit_frequently_asked_question_path(@frequently_asked_question), class: 'btn btn-default' %></li>
-
-
-  <li class="faq-link"><%= link_to 'Back to Add New Question', frequently_asked_questions_path, class: 'btn btn-default' %></li>
-
-  <li class="faq-link"><%= link_to 'Back to Admin Panel', admin_users_path, class: 'btn btn-default' %></li>
-</ul>
+  </div>
+</center>
+<div style="margin: 20px auto; background-image: url('http://www.lonestar.edu/images/lscLogo_extended.svg'); background-repeat: no-repeat; background-position: top;">
+  <div style="visibility: hidden;"><img src="http://placehold.it/1200x70" id="lowerPlaceholder"></div>
+</div>
