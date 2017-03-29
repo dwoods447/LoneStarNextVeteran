@@ -3,24 +3,29 @@ class UsersController < ApplicationController
   before_action :confirm_admin_user,  :only => [:index, :delete, :edit]
 
   def index
+    @username = session[:username]
     @users = User.all
   end
 
   def new
+    @username = session[:username]
     @user = User.new
   end
 
 
   def show
+    @username = session[:username]
     @user = User.find(params[:id])
   end
 
    def edit
+     @username = session[:username]
     @user = User.find(params[:id])
    end
 
 
   def create
+    @username = session[:username]
     @user = User.new(user_params)
 
     respond_to do |format|
@@ -34,6 +39,7 @@ class UsersController < ApplicationController
   end
 
   def update
+    @username = session[:username]
     respond_to do |format|
       @user = User.find(params[:id])
       if @user.update(user_params)
@@ -47,6 +53,7 @@ class UsersController < ApplicationController
   end
 
   def destroy
+    @username = session[:username]
     @user = User.find(params[:id])
     @user.destroy
     respond_to do |format|

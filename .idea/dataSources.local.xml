@@ -22,6 +22,7 @@
     </data-source>
     <data-source name="Rails cis4375: production" uuid="ecc2c93f-be73-4026-9459-c20b98d8f09b">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />
+      <introspection-schemas>cis4375_psql_production:public</introspection-schemas>
     </data-source>
     <data-source name="Rails cis4375: test" uuid="2dddf032-a2ac-436e-8c4c-088da190ed02">
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" />

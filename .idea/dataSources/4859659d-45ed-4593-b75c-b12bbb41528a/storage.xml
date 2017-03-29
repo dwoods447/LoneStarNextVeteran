@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
+=======
+<?xml version="1.0" encoding="UTF-8"?>
+>>>>>>> 3a4c198dd3ae597611b14b071931b4c1bd9c521e
 <storage-settings staging-layout="plain" base-layout="schema-zip" language="PostgreSQL"/>

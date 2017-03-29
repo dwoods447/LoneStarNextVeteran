@@ -44,9 +44,7 @@ gem 'pg'
 # Bootstrap
 gem 'bootstrap-sass'
 
-gem 'bootstrap-toggle-rails'
 #gem 'rmagick',  '~> 2.0'
-
 
 gem 'cloudinary'
 

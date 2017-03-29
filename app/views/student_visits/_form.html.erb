@@ -16,6 +16,11 @@
        font-weight: 600;
 
      }
+
+    label{
+      text-transform: capitalize;
+    }
+
 </style>
 
 <style>
@@ -190,7 +195,7 @@
     <%if !@student_first_name.nil? %>
     <h2>Hi, welcome back&nbsp;<%= @student_first_name %></h2>
      <% else%>
-        <h2>Hi, welcome to the Veterans Affairs Center. We're looking forward to speaking with you!.  </h2>
+        <h2>Hi, welcome to the Veterans Affairs Center. We're looking forward to speaking with you!</h2>
      <%end%>
     <% if student_visit.errors.any? %>
         <div id="error_explanation">
@@ -206,7 +211,7 @@
 
     <div class="field">
 
-      <%= f.label 'Please enter your student id number'%>
+      <%= f.label 'Please enter your Student ID number'%>
       <%= f.number_field :student_id, :value => @student_id,  class: 'form-control',  :id => 'student-number', placeholder: 'Please enter your Student ID', :required => true %>
 
     </div>
