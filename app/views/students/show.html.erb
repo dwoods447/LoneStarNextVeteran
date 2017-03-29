@@ -1,4 +1,32 @@
-<p id="notice"><%= notice %></p>
+<style>
+  .notice{
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #259819;
+    text-shadow: 2px 2px 4px #011702;
+  }
+</style>
+
+
+
+<!-- Begin Flash Notice -->
+<div class="row">
+
+  <div class="col-lg-12 col-md-12 col-sm-12">
+    <% if !flash[:notice].blank? %>
+
+        <div class="notice" >
+
+          <%= flash[:notice] %>
+
+
+        </div>
+
+    <% end %>
+  </div>
+</div>
+
+<!-- End Flash Notice -->
 
 
 

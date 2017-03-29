@@ -1,12 +1,14 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Nextveteran</title>
+    <title>NextVeteran</title>
     <%= csrf_meta_tags %>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:800" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Francois+One" rel="stylesheet">
+
+
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -17,5 +19,6 @@
   <%= render 'layouts/header' %>
     <%= yield %>
   <%= render 'layouts/footer' %>
+
   </body>
 </html>

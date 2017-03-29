@@ -7,6 +7,7 @@ class CertifiersController < ApplicationController
   # GET /certifiers
   # GET /certifiers.json
   def index
+    @username = session[:username]
     @certifiers = Certifier.all
   end
 
@@ -17,16 +18,19 @@ class CertifiersController < ApplicationController
 
   # GET /certifiers/new
   def new
+    @username = session[:username]
     @certifier = Certifier.new
   end
 
   # GET /certifiers/1/edit
   def edit
+    @username = session[:username]
   end
 
   # POST /certifiers
   # POST /certifiers.json
   def create
+    @username = session[:username]
     @certifier = Certifier.new(certifier_params)
 
     respond_to do |format|
@@ -43,6 +47,7 @@ class CertifiersController < ApplicationController
   # PATCH/PUT /certifiers/1
   # PATCH/PUT /certifiers/1.json
   def update
+    @username = session[:username]
     respond_to do |format|
       if @certifier.update(certifier_params)
         format.html { redirect_to @certifier, notice: 'Certifier was successfully updated.' }
@@ -57,6 +62,7 @@ class CertifiersController < ApplicationController
   # DELETE /certifiers/1
   # DELETE /certifiers/1.json
   def destroy
+    @username = session[:username]
     @certifier.destroy
     respond_to do |format|
       format.html { redirect_to certifiers_url, notice: 'Certifier was successfully destroyed.' }

@@ -7,6 +7,7 @@ class FrequentlyAskedQuestionsController < ApplicationController
   # GET /frequently_asked_questions
   # GET /frequently_asked_questions.json
   def index
+
     @frequently_asked_questions = FrequentlyAskedQuestion.all
 
 
@@ -20,6 +21,7 @@ class FrequentlyAskedQuestionsController < ApplicationController
 
   # GET /frequently_asked_questions/new
   def new
+    @username = session[:username]
     @frequently_asked_question = FrequentlyAskedQuestion.new
   end
 

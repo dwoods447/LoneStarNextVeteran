@@ -1,5 +1,6 @@
 class ReportsController < ApplicationController
   def reports
+    @username = session[:username]
     # This is the number of students seen in the past 6 months
     @six_months = StudentVisit.where(created_at: 6.months.ago..Time.now).count
 
