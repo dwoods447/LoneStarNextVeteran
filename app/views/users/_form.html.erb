@@ -70,20 +70,14 @@
         </div>
       </div>
 
-      <div class="form-group row ">
-        <div class="col-md-offset-4 col-md-4">
-            <%= f.submit 'Submit', class: 'btn btn-danger input-lg input-field', style: 'margin-top:10px' %>
+      <div class="form-group row">
+        <div class="col-md-12">
+          <br/><br/>
+          <%= link_to 'Back to View All Users', users_path , class: 'btn btn-default' %>
+
+          <%= f.submit 'Add/Update Information', class: 'btn btn-default' %>
 
         </div>
-
-      </div>
-      <div class="form-group row ">
-        <div class="col-md-offset-4 col-md-4">
-      <%= link_to  admin_users_path, class:'btn btn-default' do %>
-          <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-      <%  end %>
-        </div>
-
       </div>
   <% end %>
 </div>

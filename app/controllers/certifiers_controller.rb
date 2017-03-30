@@ -65,7 +65,7 @@ class CertifiersController < ApplicationController
     @username = session[:username]
     @certifier.destroy
     respond_to do |format|
-      format.html { redirect_to certifiers_url, notice: 'Certifier was successfully destroyed.' }
+      format.html { redirect_to certifiers_url, notice: 'Certifier was successfully removed.' }
       format.json { head :no_content }
     end
   end

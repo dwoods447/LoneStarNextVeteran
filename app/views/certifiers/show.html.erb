@@ -24,19 +24,18 @@ $(function(){
     <li class="contact-item">Email: &nbsp; <%= @certifier.email %></li>
     <li class="contact-item">Available: &nbsp; <span id="status"><%= @certifier.IsAvailable %></span></li>
   </ul>
-  <div class="contact-links-container">
-    <ul class="link-list">
-      <li class="link-list-item"> <%= link_to 'Edit', edit_certifier_path(@certifier), class: 'btn btn-default' %></li>
-      <li class="link-list-item"><%= link_to 'Return to Student Lobby', student_visits_path, class: 'btn btn-default' %></li>
-
-
-
-    </ul>
+  <br/>
+  <center>
+  <div class="form-group row">
+    <div class="col-md-12">
+      <%= link_to 'Edit Information', edit_certifier_path(@certifier), class: 'btn btn-default' %>
+    </div>
   </div>
+
+  <div class="contact-links-container">
+    <%= link_to 'Return to Student Lobby', student_visits_path, class: 'btn btn-default' %>
+    <%= link_to 'Back to View All Staff', certifiers_path , class: 'btn btn-default' %>
+  </div>
+  </center>
 </div>
-
-
-
-
-
-<!--# link_to 'Back', certifiers_path%>-->
+<br/>

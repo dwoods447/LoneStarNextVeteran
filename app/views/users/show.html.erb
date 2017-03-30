@@ -9,15 +9,17 @@
     <li class="contact-item">User ID:&nbsp; <%= @user.id %></li>
     <li class="contact-item">Email:&nbsp;  <%= @user.email %></li>
   </ul>
+  <br/>
   <center>
-    <br/>
-  <div class="row">
-      <%= link_to  admin_users_path, class:'btn btn-default' do %>
-          <span>Back to Admin Panel</span><span>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-      <%  end %>
-      <%= link_to('Edit Information',  edit_user_path(@user), :class => 'btn btn-default') %>
+    <div class="form-group row">
+      <div class="col-md-12">
+        <%= link_to 'Edit Information', edit_user_path(@user), class: 'btn btn-default' %>
+      </div>
+    </div>
+    <div class="contact-links-container">
+      <%= link_to 'Back to View All Users', users_path , class: 'btn btn-default' %>
       <%=link_to('Add Another User', new_user_path(@selected_user),  :class => 'btn btn-default') %>
-  </div>
+    </div>
   </center>
 </div>
 

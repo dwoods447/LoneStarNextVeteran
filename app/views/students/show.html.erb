@@ -42,13 +42,21 @@
     <li class="contact-item">Phone:&nbsp; <%= @student.phone_number %></li>
     <li class="contact-item">Campus:&nbsp; <%= @student.campus.campus_name %></li>
   </ul>
+  <br/>
+  <center>
   <div class="contact-links-container">
-    <ul class="link-list">
-      <li class="link-list-item"><%= link_to('Edit Information',  edit_student_path(@student), :class => 'btn btn-default') %></li>
-
-
-      <li class="link-list-item"> <%=link_to('Proceed to Sign In', new_student_visit_path(@selected_student),  :class => 'btn btn-default') %></li>
-    </ul>
+    <%= link_to('Edit Information', edit_student_path(@student), :class => 'btn btn-default') %>
+    <%= link_to('Proceed to Sign In', new_student_visit_path(@selected_student), :class => 'btn btn-default') %>
+  </div>
+  </center>
+</div>
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2">
+    <%= link_to :back do %>
+        <span class="back-link-style"><strong>GO BACK</strong>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+    <%end %>
+  </div>
+  <div class="col-lg-10 col-md-10 col-sm-10">
   </div>
 </div>
 
