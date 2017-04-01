@@ -2,13 +2,15 @@
 
 
 <script>
+
     $(function() {
         $('#confirm').on('click', function(e){
             e.preventDefault();
             $("#dialog").toggle().dialog();
+            var  $closeButton = $('span.ui-button-icon.ui-icon.ui-icon-closethick');
             var redirect = setTimeout(redirectAfter13sec, 13000);
 
-            $('span.ui-button-icon-primary.ui-icon.ui-icon-closethick').on('click', function(){
+            $closeButton.on('click', function(){
                 window.location = "<%= student_kiosk_index_path %>";
             });
 
@@ -22,19 +24,25 @@
 
     });
 </script>
+<style>
+  .confirm-visit{
+    width: 125px;
+  }
+</style>
+
 <div class="contact-card">
   <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
   <h3 class="contact-name"><%= @student_visit.student.fullname %></h3>
   <ul class="contact-list">
-    <li class="contact-item">Speak with:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
-    <li class="contact-item">Reason For Visit:  &nbsp;  <%= @student_visit.service_requested %></li>
+    <li class="contact-item">Your here to see:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
+    <li class="contact-item">Reason for visit:  &nbsp;  <%= @student_visit.service_requested %></li>
   </ul>
 </div>
 
 
 <div class="contact-links-container">
   <ul class="link-list">
-    <li class="link-list-item"><%= link_to('Confirm', student_kiosk_index_path, :class => 'btn btn-default', :id => 'confirm') %></li>
+    <li class="link-list-item"><%= link_to('Confirm', student_kiosk_index_path, :class => 'btn btn-default confirm-visit animsition-link', :id => 'confirm') %></li>
   </ul>
 </div>
 
@@ -43,14 +51,14 @@
   <p style="max-width: 85%;">Thank you <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.student.first_name}" %></span>  for providing that information. <br /><br /> Please have a seat and <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.certifier.set_fullname}" %></span> will be with you shortly.</p>
 </div>
 
-
 <script>
   $(function(){
 
      $('#confirm').click(function(){
 
-         $('#dialog').css("max-width", "425px")
+         $('#dialog').css("max-width", "435px")
      });
 
   });
 </script>
+

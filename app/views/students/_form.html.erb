@@ -109,8 +109,16 @@
     padding: 1.8em;
   }
 </style>
-
-
+<div class="row">
+  <div class="col-lg-2 col-md-2 col-sm-2">
+    <%= link_to :back do %>
+        <span class="back-link-style"><strong>GO BACK</strong>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
+    <%end %>
+  </div>
+  <div class="col-lg-10 col-md-10 col-sm-10">
+  </div>
+</div>
+</div>
 <div class="row">
 <div class="col-lg-12 col-md-12 col-sm-12">
     <h1 style="text-align: center; color: #fff; font-weight: 600; -webkit-text-stroke-width: 1px; -webkit-text-stroke-color: black;">Please Enter Your Information</h1>
@@ -211,60 +219,12 @@
  </div>
 <% end %>
 </div>
-<div class="row">
-  <div class="col-lg-2 col-md-2 col-sm-2">
-    <%= link_to :back do %>
-        <span class="back-link-style"><strong>GO BACK</strong>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
-    <%end %>
-  </div>
-  <div class="col-lg-10 col-md-10 col-sm-10">
-  </div>
-</div>
-</div>
 <div style="margin: 20px auto; background-image: url('http://www.lonestar.edu/images/lscLogo_extended.svg'); background-repeat: no-repeat; background-position: top;">
   <div style="visibility: hidden;"><img src="http://placehold.it/1200x70" id="lowerPlaceholder"></div>
 </div>
-</div>
 
 <script>
-// Validates Email is a my.lonestar.edu email
-  $(document).ready(function(){
-
-      var $form = $("#student_info");
-      $form.on("submit", function(e){
-          var proceed = $("#proceed");
-          var studentID = $("#studentID").val()
-          var emailAddress = $("#emailAddress").val();
-          var firstName = $("#firstName").val();
-          var lastName = $("#lastName").val();
-          var phoneNumber =$("#phoneNumber").val();
-          /*
-          function resetFormValues(){
-
-              $("#studentID").val(studentID);
-              $("#emailAddress").val(emailAddress);
-              $("#firstName").val(firstName);
-              $("#lastName").val(lastName);
-              $("#phoneNumber").val(phoneNumber);
-
-              removeDisabled();
-
-          }
-*/
-          if(!emailAddress.includes("@my.lonestar.edu")){
-              alert(emailAddress + " " +" is incorrect. " + " Must use a my.lonestar.edu email");
-              e.preventDefault();
-              $form[0].reset();
-             /* resetFormValues();*/
-          }
-
-      });
-/*
-      function removeDisabled(){
-          $("#proceed").removeAttr("disabled");
-          alert("Attribute Removed");
-      }
-*/
-  });
-
+    $(document).ready(function(){var a=$("#student_info");a.on("submit",function(b){var e=($("#proceed"),$("#studentID").val(),$("#emailAddress").val());$("#firstName").val(),$("#lastName").val(),$("#phoneNumber").val();e.includes("@my.lonestar.edu")||(alert(e+"  is incorrect.  Must use a my.lonestar.edu email"),b.preventDefault(),a[0].reset())})});
 </script>
+
+

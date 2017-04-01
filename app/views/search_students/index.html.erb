@@ -1,7 +1,6 @@
 
 
 
-
 <style>
   .notice{
     font-size: 1.5em;
@@ -34,12 +33,13 @@
 
 
 
+
 <h1 class="page-title">Please enter your <strong>Student ID</strong> number.</h1>
 <%= form_tag(search_students_findStudent_path, :method => :post, :class => 'searchbox') do%>
     <div class="input-group">
     <%= text_field_tag(:student_id, params[:student_id], class: 'form-control', placeholder: 'Enter your Student ID', :id => 'student_id')%>
       <div class="input-group-btn">
-    <%= button_tag("Search", class: 'btn btn-default', :id => 'submit')  do%>
+    <%= button_tag("Search", class: 'btn btn-default ', :id => 'submit')  do%>
             <i class="glyphicon glyphicon-search"></i>
      <%end%>
       </div>
@@ -48,7 +48,7 @@
 
 <div class="row">
   <div class="col-lg-12 col-md-12 col-sm-12">
-    <%= link_to student_kiosk_index_path do %>
+    <%= link_to student_kiosk_index_path,  class:'animsition-link' do %>
         <span class="back-link-style"><strong>GO BACK</strong>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
     <%end %>
   </div>
@@ -57,74 +57,5 @@
 
 
 <script>
-    $(document).ready(function(){
-
-        var $body = $('#body');
-
-
-        var lapTopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1490534744/img_assets/aircraft-carrier_1366x768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534744/img_assets/aircraft-carrier-2-1366-768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/airforce-2-1366-768.jpg')",  "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/airforce-1366-768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/army_3_1366_768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/army_4_1366_768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/coast_guard_ship-1366_768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/marines_2_1366x768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/marines_1366x768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/skydiving-1366-768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/soldiers-1366-768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/sqaud-goals.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/army_1366_768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/army_2_1366_768.jpg')" ];
-        var desktopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1490534737/img_assets/aircraft-carrier-1-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/aircraft-carrier-2-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/airforce-2-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534739/img_assets/airforce-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/army_2_1920_1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/army_3_1920_1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/army_4_1920_1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534738/img_assets/army_1920_1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/coast_guard_1-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/coast_guard_ship-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534742/img_assets/marines_2_1920_1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/marines_1920x1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/skydiving-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/soldiers-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/sqaud-goals1920x1080.jpg')"];
-
-
-
-        function getRandomInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-
-
-        function getImageIndex(){
-            var min = 0;
-            var max = 13;
-            var randomInt = getRandomInt(min, max);
-            return randomInt
-        }
-
-        if(window.screen.width >= 0 && window.screen.width <= 1366){
-            $body.css({"background-image": lapTopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
-        }
-        else{
-            $body.css({"background-image": desktopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
-        }
-    });
+    $(document).ready(function(){function d(a,b){return a=Math.ceil(a),b=Math.floor(b),Math.floor(Math.random()*(b-a))+a}function e(){var a=0,b=13,c=d(a,b);return c}var a=$("#body"),b=["url('http://res.cloudinary.com/dpwoods/image/upload/v1490534744/img_assets/aircraft-carrier_1366x768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534744/img_assets/aircraft-carrier-2-1366-768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/airforce-2-1366-768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/airforce-1366-768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/army_3_1366_768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/army_4_1366_768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/coast_guard_ship-1366_768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/marines_2_1366x768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534746/img_assets/marines_1366x768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/skydiving-1366-768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/soldiers-1366-768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534747/img_assets/sqaud-goals.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/army_1366_768.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534745/img_assets/army_2_1366_768.jpg')"],c=["url('http://res.cloudinary.com/dpwoods/image/upload/v1490534737/img_assets/aircraft-carrier-1-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/aircraft-carrier-2-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/airforce-2-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534739/img_assets/airforce-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/army_2_1920_1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/army_3_1920_1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/army_4_1920_1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534738/img_assets/army_1920_1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/coast_guard_1-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534740/img_assets/coast_guard_ship-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534742/img_assets/marines_2_1920_1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/marines_1920x1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/skydiving-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/soldiers-1920-1080.jpg')","url('http://res.cloudinary.com/dpwoods/image/upload/v1490534743/img_assets/sqaud-goals1920x1080.jpg')"];window.screen.width>=0&&window.screen.width<=1366?a.css({"background-image":b[e()],"background-repeat":"no-repeat","background-size":"cover"}):a.css({"background-image":c[e()],"background-repeat":"no-repeat","background-size":"cover"})});
 </script>
-
-
-
-
-
-
-<!--<script>
-    $(document).ready(function(){
-
-        var $body = $('#body');
-
-
-        var lapTopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1487443904/projects-assets/motor-lifeboat-2037942.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489350239/projects-assets/coast_guard_ship-1366_768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489465687/projects-assets/parachute-skydiving-parachuting-jumping-1366-768.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1487446053/projects-assets/aircraft-carrier-2-1366-768.jpg')"];
-        var desktopURL = ["url('http://res.cloudinary.com/dpwoods/image/upload/v1487446543/projects-assets/aircraft-carrier-2-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489348924/projects-assets/parachute-skydiving-parachuting-jumping-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489342756/projects-assets/soldiers-1920-1080.jpg')", "url('http://res.cloudinary.com/dpwoods/image/upload/v1489348510/projects-assets/coast_guard_1-1920-1080.jpg')"];
-
-
-
-        function getRandomInt(min, max) {
-            min = Math.ceil(min);
-            max = Math.floor(max);
-            return Math.floor(Math.random() * (max - min)) + min;
-        }
-
-
-        function getImageIndex(){
-            var min = 0;
-            var max = 4;
-            var randomInt = getRandomInt(min, max);
-            return randomInt
-        }
-
-        if(window.screen.width >= 0 && window.screen.width <= 1366){
-            $body.css({"background-image": lapTopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
-        }
-        else{
-            $body.css({"background-image": desktopURL[getImageIndex()], "background-repeat": "no-repeat", "background-size": "cover"});
-        }
-    });
-</script>-->

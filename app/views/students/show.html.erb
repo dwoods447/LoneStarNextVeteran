@@ -7,7 +7,7 @@
   }
 </style>
 
-
+<div class="animsition">
 
 <!-- Begin Flash Notice -->
 <div class="row">
@@ -45,14 +45,14 @@
   <br/>
   <center>
   <div class="contact-links-container">
-    <%= link_to('Edit Information', edit_student_path(@student), :class => 'btn btn-default') %>
-    <%= link_to('Proceed to Sign In', new_student_visit_path(@selected_student), :class => 'btn btn-default') %>
+    <%= link_to('Edit Information', edit_student_path(@student), :class => 'btn btn-default animsition-link') %>
+    <%= link_to('Proceed to Sign In', new_student_visit_path(@selected_student), :class => 'btn btn-default animsition-link') %>
   </div>
   </center>
 </div>
 <div class="row">
   <div class="col-lg-2 col-md-2 col-sm-2">
-    <%= link_to :back do %>
+    <%= link_to :back, class:'animsition-link' do %>
         <span class="back-link-style"><strong>GO BACK</strong>&nbsp;<i class="fa fa-arrow-left" aria-hidden="true"></i></span>
     <%end %>
   </div>
@@ -67,7 +67,7 @@
 <div style="margin: 20px auto; background-image: url('http://www.lonestar.edu/images/lscLogo_extended.svg'); background-repeat: no-repeat; background-position: top;">
   <div style="visibility: hidden;"><img src="http://placehold.it/1200x70" id="lowerPlaceholder"></div>
 </div>
-
+</div>
 <script>
     $(document).ready(function(){
 
@@ -114,6 +114,33 @@
 
 
 
+<script>
+
+    $(document).ready(function() {
+        $(".animsition").animsition({
+            inClass: 'fade-in',
+            outClass: 'fade-out',
+            inDuration: 1500,
+            outDuration: 800,
+            linkElement: '.animsition-link',
+            // e.g. linkElement: 'a:not([target="_blank"]):not([href^="#"])'
+            loading: true,
+            loadingParentElement: 'body', //animsition wrapper element
+            loadingClass: 'animsition-loading',
+            loadingInner: '', // e.g '<img src="loading.svg" />'
+            timeout: false,
+            timeoutCountdown: 5000,
+            onLoadEvent: true,
+            browser: [ 'animation-duration', '-webkit-animation-duration'],
+            // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+            // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+            overlay : false,
+            overlayClass : 'animsition-overlay-slide',
+            overlayParentElement : 'body',
+            transition: function(url){ window.location.href = url; }
+        });
+    });
+</script>
 
 
 
