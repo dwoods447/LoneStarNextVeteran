@@ -64,7 +64,7 @@ class FrequentlyAskedQuestionsController < ApplicationController
   def destroy
     @frequently_asked_question.destroy
     respond_to do |format|
-      format.html { redirect_to frequently_asked_questions_url, notice: 'Frequently asked question was successfully destroyed.' }
+      format.html { redirect_to frequently_asked_questions_url, notice: 'Frequently asked question was successfully removed.' }
       format.json { head :no_content }
     end
   end
