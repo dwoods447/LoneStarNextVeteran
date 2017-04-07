@@ -1,0 +1,111 @@
+= Next Veteran User Documentation
+
+This application will serve as a student walk-in management system. It will help
+streamline the LSC Veterans Affairs student services process.
+
+
+== Getting Started
+Thank you for making the NextVeteran your visitor management
+system of choice. This user guide will provide you with detailed
+information on the NextVeteran Student Kiosk,  NextVeteran User Console, and the NextVeteran
+Admin Users Console. In conjunction with the installation and training offered by
+Cougar Solutions you will have all you need to gain a full
+understanding of the proper use of NextVeteran at your facility.
+
+
+== Student Kiosk
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491371762/img_assets/documentation-kiosk.jpg[NextVeteran Student Kiosk, 1300,622]
+
+Student Kiosk::
+
+ Students who come in to the veterans affairs center must choose either:
+    * First Time Visitor (only chosen once)
+
+    * Returning Visitor
+
+
+
+
+Students will enter their information into this form. The form will validate the information entered
+valid information is as follows:
+
+
+Student ID: Must be 7 digit number not already stored in the database.
+Phone Number: Must be a 10 digit number with no dashes or hyphens
+Email: The student must enter a *my.lonestar.edu email address* in order to proceed
+
+
+Once information is entered students will then be asked to confirm their information is correct.
+Students may chose to go back and edit if they wish or chose to proceed to sign in (see section titled
+Student Check in).
+
+ Student Check-In::
+
+     * Once information the student's initial information has been provided
+      and stored, student will proceed to check to see a VA staff member.
+
+
+===== Student Check-In
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491480768/documentation-student_visits_s6cqrw.png[NextVeteran Student Visits,1300,632]
+
+== User Console
+The Next Veteran User Console will be used by VA staff members to view
+students waiting in the lobby.
+
+
+
+The User Console contains the following parts:
+
+
+====  User Switchboard:
+------------------------------------
+- This displays VA staff who will be handling student issues. If the staff member is marked available by the (green thumbs ups see image below), then that staff member will be displayed on the student Check-In screen for students to choose.
+------------------------------------
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491493265/user-switchboard-documentation_agxghd.png[NextVeteran User-Switchboard, 400,700]
+
+
+
+
+-------------------------------------------------------------------
+
+Next to each VA Staff member name are 3 icons
+-------------------------------------------------------------------
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491493668/green-thumbs-up-documentation_bvmp7f.png[Staff Availability,25,29]
+
+----------------------------------------------------------------------------------
+*Staff Availability - determines whether or not a staff is ready to see students*
+----------------------------------------------------------------------------------
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491493654/student-count-docuementation_euwg6g.png[Student Count,30,27]
+-----------------------------------------------------------------------------
+*Assigned Student Count- displays the amount of students assigned*
+
+-----------------------------------------------------------------------------
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491493654/staff-information-documentation_mht1fq.png[Staff Availability,42,28]
+
+-------------------------------------------------------------------------------------------------------
+*Staff Member Profile - allows for updating staff member information in particular staff availability*
+-------------------------------------------------------------------------------------------------------
+
+
+
+
+===== Student Lobby:
+ - This displays the students that are currently checked-in and either waiting to see a staff member or they are currently seeing the staff member.
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491493057/student-lobby-main-documentation_rm8joj.png[NextVeteran Student Lobby, 1300,290]
+
+== Admin User Console
+
+
+In the Admin User Console you will be able to add New VA Staff members and create and remove system users. You will also
+ be able to view reports on the amount of student traffic coming in.
+
+
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491529125/admin-console-documentation_lbqexe.png[Admin,1300,637]
+
+
+

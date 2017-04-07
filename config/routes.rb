@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
 
 
+  get 'doc/mydoc'
 
 
   get 'users/index'

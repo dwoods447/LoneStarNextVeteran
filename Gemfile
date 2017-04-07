@@ -48,6 +48,10 @@ gem 'bootstrap-sass'
 
 gem 'cloudinary'
 
+
+gem 'asciidoctor'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

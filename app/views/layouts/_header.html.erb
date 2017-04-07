@@ -12,30 +12,44 @@
         <% end %>
 
     </div>
+    <style>
+      .top-list{
+        display: block;
+        height: 90px;
+        padding: 1em;
+        text-align: center;
+        vertical-align: middle;
+      }
+    </style>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">&nbsp;</a></li>
-        <li><a href="#">&nbsp;</a></li>
-        <li><a href="#">&nbsp;</a></li>
-        <li><a href="#">&nbsp;</a></li>
+
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
         <%if @username.nil? %>
-        <li>
+        <li class="top-list">
             <%=link_to access_login_path do %>
               <span style="color: #fff;">Login&nbsp;<span class="glyphicon glyphicon-log-in"></span></span>
              <% end %>
         </li>
         <% else %>
-            <li>
+            <li class="top-list">
               <span style="color: #fff; font-weight: 600; display: inline-block;">Logged in as:&nbsp;<%= @username %></span>
+
+              <%=link_to  access_logout_path, style: 'display: inline-block;' do %>
+                  <span style="color: #fff; ">Logout&nbsp;<span class="glyphicon glyphicon-log-out"></span></span>
+              <% end %>
             </li>
-            <li>
-            <%=link_to  access_logout_path do %>
-               <span style="color: #fff;">Logout&nbsp;<span class="glyphicon glyphicon-log-out"></span></span>
-            <% end %>
+
         <% end %>
+
+        <li class="top-list">
+          <%=link_to  doc_mydoc_path do %>
+          <i style="color:#fff;" class="fa fa-question-circle-o fa-3x" aria-hidden="true"></i>
+          <% end %>
+        </li>
+
       </ul>
     </div>
   </div>
