@@ -11,6 +11,18 @@ module StudentVisitsHelper
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
    def student_visit_counts(certifier_id, options={})
 
      if certifier_id
@@ -23,6 +35,13 @@ module StudentVisitsHelper
 
 
 
+  def one_year_totals
+    StudentVisit.where(created_at: 1.year.ago..Time.now).count
+  end
+
+  def six_month_totals
+    StudentVisit.where(created_at: 6.months.ago..Time.now).count
+  end
 
 
 
@@ -30,7 +49,7 @@ module StudentVisitsHelper
 
     if reason_for_visit_id
 
-      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:reason_for_visit_id => reason_for_visit_id).count
+      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:isSignedin => false).where(:reason_for_visit_id => reason_for_visit_id).count
     end
 
 
@@ -44,7 +63,7 @@ module StudentVisitsHelper
 
     if reason_for_visit_id
 
-      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:reason_for_visit_id => reason_for_visit_id).count
+      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:isSignedin => false).where(:reason_for_visit_id => reason_for_visit_id).count
     end
 
 
@@ -54,7 +73,7 @@ module StudentVisitsHelper
 
     if certifier_id
 
-      StudentVisit.where(created_at: 30.days.ago..Time.now).where(:certifier_id => certifier_id ).count
+      StudentVisit.where(created_at: 30.days.ago..Time.now).where(:isSignedin => false).where(:certifier_id => certifier_id ).count
     end
 
 
@@ -70,7 +89,7 @@ module StudentVisitsHelper
 
     if certifier_id
 
-      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:certifier_id => certifier_id ).count
+      StudentVisit.where(created_at: 6.months.ago..Time.now).where(:isSignedin => false).where(:certifier_id => certifier_id ).count
     end
 
 
@@ -86,7 +105,7 @@ module StudentVisitsHelper
 
     if certifier_id
 
-      StudentVisit.where(created_at: 1.year.ago..Time.now).where(:certifier_id => certifier_id ).count
+      StudentVisit.where(created_at: 1.year.ago..Time.now).where(:isSignedin => false).where(:certifier_id => certifier_id ).count
     end
 
 

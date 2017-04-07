@@ -133,7 +133,7 @@
         <h3 class="switchboard-header">Past 6 Months</h3>
       </div>
       <div class="switchboard-panel switchboard-group">
-        <center><span style="font-size: 2em;"><%= @six_months %></span></center>
+        <center><span style="font-size: 2em;"><%= six_month_totals() %></span></center>
       </div>
     </div>
     <div class="switchboard col-md-6">
@@ -141,7 +141,7 @@
         <h3 class="switchboard-header">Past Year</h3>
       </div>
         <div class="switchboard-panel switchboard-group">
-          <center><span style="font-size: 2em;"><%= @one_year_ago %></span></center>
+          <center><span style="font-size: 2em;"><%=  one_year_totals() %></span></center>
         </div>
 
     </div>

@@ -2,10 +2,10 @@ class ReportsController < ApplicationController
   def reports
     @username = session[:username]
     # This is the number of students seen in the past 6 months
-    @six_months = StudentVisit.where(created_at: 6.months.ago..Time.now).count
+    @six_months = nil
 
     # This is the number of students seen in the past year
-    @one_year_ago = StudentVisit.where(created_at: 1.year.ago..Time.now).count
+    @one_year_ago = nil
 
  ##################################### Certifying Officials Totals ###########################################
 
