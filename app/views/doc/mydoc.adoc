@@ -21,12 +21,9 @@ Student Kiosk::
  Students who come in to the veterans affairs center must choose either:
     * First Time Visitor (only chosen once)
 
-    * Returning Visitor
-
-
-
-
 Students will enter their information into this form. The form will validate the information entered
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491548524/student-form-documentation_fuxjxu.png[Student Form,1300,632]
 valid information is as follows:
 
 
@@ -38,6 +35,11 @@ Email: The student must enter a *my.lonestar.edu email address* in order to proc
 Once information is entered students will then be asked to confirm their information is correct.
 Students may chose to go back and edit if they wish or chose to proceed to sign in (see section titled
 Student Check in).
+
+
+    * Returning Visitor
+
+image::http://res.cloudinary.com/dpwoods/image/upload/v1491549194/returning-visitor-form-documentation_txna14.png[Returning Student Form,1300,632]
 
  Student Check-In::
 
