@@ -2,19 +2,35 @@
 
 <style>
   table{
+
     font-size: 0.8em !important;
-    padding:  0.2em !important;
+
+  }
+  table th{
+    max-width: 215px;
+    text-align: center;
+    text-transform: capitalize;
   }
 
   table td{
     font-size: 0.98em !important;
-    padding:  0.2em !important;
+    padding:  0.1em !important;
+    max-width: 215px;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: ellipsis !important;
+    overflow: hidden;
+  }
+  #sorted{
+    text-align: center;
+    font-size: 0.8em;
   }
 </style>
 <div class="container">
 <h1 class="page-title-gray">Current Veterans Affairs Students</h1>
+  <p  id="sorted">Sorted Alphabetically from A - Z by "Last Name"</p>
 
-<table class="table table-bordered table-hover table-responsive">
+<table class="table table-bordered table-hover table-condensed table-responsive">
   <thead>
     <tr>
       <th>Student ID</th>
@@ -32,14 +48,14 @@
   <tbody>
     <% @students.each do |student| %>
       <tr>
-        <td><%= student.student_id %></td>
-        <td><%= student.campus.campus_name%></td>
-        <td><%= student.first_name %></td>
-        <td><%= student.last_name %></td>
-        <td><%= student.phone_number %></td>
-        <td><%= student.email %></td>
-        <td><%= student.federal_benefit.benefit_name %></td>
-        <td><%= student.state_benefit.benefit_name %></td>
+        <td title="<%= student.student_id %>"><%= student.student_id %></td>
+        <td title="<%= student.campus.campus_name%>"><%= student.campus.campus_name%></td>
+        <td title="<%= student.first_name %>"><%= student.first_name %></td>
+        <td title="<%= student.last_name %>"><%= student.last_name %></td>
+        <td title="<%= student.phone_number %>"><%= student.phone_number %></td>
+        <td title="<%= student.email %>"><%= student.email %></td>
+        <td title="<%= student.federal_benefit.benefit_name %>"><%= student.federal_benefit.benefit_name %></td>
+        <td title="<%= student.state_benefit.benefit_name %>"><%= student.state_benefit.benefit_name %></td>
         <td><%= link_to 'Show', student, class: 'btn btn-primary' %></td>
         <td><%= link_to 'Edit', edit_student_path(student), class: 'btn btn-success' %></td>
         <td><%= link_to 'Delete', student, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>

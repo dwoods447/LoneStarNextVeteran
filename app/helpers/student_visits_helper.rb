@@ -11,18 +11,6 @@ module StudentVisitsHelper
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
    def student_visit_counts(certifier_id, options={})
 
      if certifier_id

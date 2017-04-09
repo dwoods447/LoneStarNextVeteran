@@ -3,6 +3,17 @@
 
 <h1 class="page-title-gray">Current Veterans Affairs Staff Members</h1>
 
+  <style>
+    table th{
+     text-align: center;
+     text-transform: capitalize;
+    }
+    table td{
+      text-align: center;
+      max-width: 250px;
+      font-size: 0.8em !important;
+    }
+  </style>
 <table class="table table-bordered table-hover table-responsive">
   <thead>
     <tr>
@@ -21,14 +32,14 @@
   <tbody>
     <% @certifiers.each do |certifier| %>
       <tr>
-        <td><%= certifier.certifier_id %></td>
-        <td><%= certifier.first_name %></td>
-        <td><%= certifier.last_name %></td>
-        <td><%= certifier.email %></td>
-        <td><%= certifier.benefit_assigned %></td>
-        <td><%= certifier.avatar %></td>
+        <td title="<%= certifier.certifier_id %>"><%= certifier.certifier_id %></td>
+        <td title="<%= certifier.first_name %>"><%= certifier.first_name %></td>
+        <td title="<%= certifier.last_name %>"><%= certifier.last_name %></td>
+        <td title="<%= certifier.email %>"><%= certifier.email %></td>
+        <td title="<%= certifier.benefit_assigned %>"><%= certifier.benefit_assigned %></td>
+        <td title="<%= certifier.avatar %>"><%= certifier.avatar %></td>
         <td><%= certifier.IsAvailable%></td>
-        <td><%= certifier.letters_assigned%></td>
+        <td title="<%= certifier.letters_assigned%>"><%= certifier.letters_assigned%></td>
         <td><%= link_to 'Show', certifier, class: 'btn btn-primary' %></td>
         <td><%= link_to 'Edit', edit_certifier_path(certifier), class: 'btn btn-success' %></td>
         <td><%= link_to 'Delete', certifier, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger' %></td>

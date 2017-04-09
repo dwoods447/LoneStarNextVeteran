@@ -10,7 +10,7 @@ class StudentsController < ApplicationController
   # GET /students.json
   def index
     @username = session[:username]
-    @students = Student.all
+    @students = Student.order(:last_name => :asc)
   end
 
   # GET /students/1

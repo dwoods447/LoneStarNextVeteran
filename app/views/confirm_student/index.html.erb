@@ -14,10 +14,10 @@
   <li class="contact-item">Student ID:  &nbsp; <%= @student_id %></li>
   <li class="contact-item">Email: &nbsp; <%= @student_email %></li>
 </ul>
-<div class="contact-links-container">
-  <ul class="link-list">
-    <li class="link-list-item"> <%=link_to('Confirm this is\'nt you', student_kiosk_index_path,  :class => 'btn btn-default') %></li>
-    <li class="link-list-item"><%= link_to('Confirm this is you', new_student_visit_path, :class => 'btn btn-default') %></li>
+<div class="contact-links-container" >
+  <ul class="link-list" style="max-width: 600px;">
+    <li class="link-list-item"> <%=link_to('Confirm this is\'nt you', student_kiosk_index_path,  :class => 'btn btn-default', :style=> 'max-width: 250px; text-transform: capitalize; font-weight: 800;') %></li>
+    <li class="link-list-item"><%= link_to('Confirm this is you', new_student_visit_path, :class => 'btn btn-default', :style => 'max-width: 250px; text-transform: capitalize; font-weight: 800;') %></li>
   </ul>
 </div>
 </div>
