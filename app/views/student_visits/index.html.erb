@@ -11,6 +11,9 @@
   }
 </style>
 <style>
+  a:hover{
+    background-color: transparent !important;
+  }
   #switchboard{
     border: 1px solid #666;
     height: 100%;
@@ -142,7 +145,7 @@
   </ul>
   </div>
 </div>-->
-
+<div class="container-fluid">
 <!-- Begin Flash Notice -->
 <div class="row">
 
@@ -204,7 +207,7 @@
             <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.student.state_benefit.benefit_name %>"><%= student_visit.student.state_benefit.benefit_name %></td>
             <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 120px;" title="<%= student_visit.reason_for_visit.visit_reason_name %>"><%= student_visit.reason_for_visit.visit_reason_name %></td>
             <td style="white-space: nowrap; text-overflow: ellipsis !important; overflow: hidden; max-width: 140px;" title="<%= student_visit.service_requested %>"><%= student_visit.service_requested %></td>
-            <td><%= link_to 'Sign Out',   edit_student_visit_path(student_visit), :title => "Do you want to sign this student out?", class:'btn-default', :style => 'color: red; font-weight: 700;' %></td>
+            <td><%= link_to 'Sign Out',   edit_student_visit_path(student_visit), :title => "Do you want to sign this student out?", :style => 'color: red; font-weight: 700;' %></td>
           </tr>
       <% end %>
       </tbody>
@@ -264,3 +267,4 @@
     document.addEventListener("webkitAnimationStart", insertListener, false); // Chrome + Safari
 </script>
 
+</div>
