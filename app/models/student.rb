@@ -21,6 +21,11 @@ class Student < ApplicationRecord
 
   validates_uniqueness_of :student_id
 
+
+  validates :student_id,
+            presence: true, uniqueness: {:message => "with that StudentID# already exists in the system. Please choose Returning Visitor."}
+
+
   validates_length_of :student_id,  :maximum => 7
   validates_length_of :phone_number,  :maximum => 13
 
