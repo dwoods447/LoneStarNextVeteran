@@ -11,7 +11,7 @@ class SearchStudentsController < ApplicationController
       redirect_to(confirm_student_index_path)
 
     else
-      flash[:notice] = "No student record found for: #{params[:student_id]}  Please go back and choose First Time User"
+      flash[:notice] = "No student record found for: #{params[:student_id]}  Please go back and choose First Time Visitor."
       redirect_to(search_students_index_path)
     end
 

@@ -12,9 +12,10 @@ This application will serve as a Student Check-In app for LoneStar Veterans Affa
 
 * ** Janea’ Lord ** - *Project Manager*
 * ** Wilson Xu ** - *Assistant Project Manager* 
-* ** Demaria Woods ** - *Back-End Developer* 
+* ** Demaria Woods ** - *Front/Back-End Developer* 
 * ** Andrea Nguyen ** - *Front-End Developer* 
-* ** Saemah Salahuddin ** - *Analyst/ Back-End Developer* 
+* ** Saemah Salahuddin ** - *Analyst* 
+* ** Lucky Panelo ** - *Tester*
 * ** Zhi Chen ** - *Database Designer* 
 
 
