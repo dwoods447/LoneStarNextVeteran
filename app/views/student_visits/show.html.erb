@@ -34,7 +34,7 @@
   <div class="avatar"><i class="fa fa-user-circle-o" aria-hidden="true"></i></div>
   <h3 class="contact-name"><%= @student_visit.student.fullname %></h3>
   <ul class="contact-list">
-    <li class="contact-item">Your here to see:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
+    <li class="contact-item">You're here to see:  &nbsp; <%= @student_visit.certifier.set_fullname %></li>
     <li class="contact-item">Reason for visit:  &nbsp;  <%= @student_visit.reason_for_visit.visit_reason_name %></li>
   </ul>
 </div>
@@ -48,7 +48,7 @@
 
 
 <div id="dialog" title="Success, Thank You!">
-  <p style="max-width: 85%;">Thank you <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.student.first_name}" %></span>  for providing that information. <br /><br /> Please have a seat and <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.certifier.set_fullname}" %></span> will be with you shortly.</p>
+  <p style="max-width: 85%; font-size: 1.2em;">Thank you <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.student.first_name}" %></span>  for providing that information. <br /><br /> Please have a seat and <span style="color: #4A597F; font-weight: 800;"><%= "#{@student_visit.certifier.set_fullname}" %></span> will be with you shortly.</p>
 </div>
 
 <script>
