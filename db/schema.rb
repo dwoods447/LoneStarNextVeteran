@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 20170325204936) do
     t.string   "benefit_assigned"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
+    t.integer  "status_id"
     t.boolean  "IsAvailable",      default: true
     t.string   "avatar"
     t.string   "letters_assigned"
